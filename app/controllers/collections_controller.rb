@@ -1,6 +1,6 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, only: [:index, :new, :edit, :create, :update, :destroy]
+  before_filter :authenticate, only: [:create, :update, :destroy]
   # GET /collections
   # GET /collections.json
   def index
@@ -32,7 +32,7 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.save
-        format.html { redirect_to @collection, notice: 'Collection was successfully created.' }
+        format.html { redirect_to admin_collection_path(@collection), notice: 'Collection was successfully created.' }
         format.json { render :show, status: :created, location: @collection }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class CollectionsController < ApplicationController
   def update
     respond_to do |format|
       if @collection.update(collection_params)
-        format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
+        format.html { redirect_to admin_collection_path(@collection), notice: 'Collection was successfully updated.' }
         format.json { render :show, status: :ok, location: @collection }
       else
         format.html { render :edit }

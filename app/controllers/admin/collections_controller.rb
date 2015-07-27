@@ -1,6 +1,7 @@
 class Admin::CollectionsController < AdminController
-  before_filter :find_collection, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_collection, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, only: [:create, :update, :destroy]
+  # GET /collections
 
   # GET /collections
   # GET /collections.json
@@ -57,14 +58,26 @@ class Admin::CollectionsController < AdminController
   def destroy
     @collection.destroy
     respond_to do |format|
-      format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
+      format.html { redirect_to admin_collections_url, notice: 'Collection was successfully destroyed.' }
       # format.json { head :no_content }
     end
   end
 
-  protected
-
-  def find_collection
-    @post = Collection.find_by_permalink(params[:id])
+  protected 
+    def authenticate
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV['ADMIN_USERNAME'] && password == ENV['ADMIN_PASSWORD']
+      end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_collection
+      @collection = Collection.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def collection_params
+      params.require(:collection).permit(:name, :description)
+    end
 end

@@ -16,9 +16,9 @@
       <tr>
         <td><%= collection.name %></td>
         <td><%= collection.description %></td>
-        <td><%= link_to 'Show', collection %></td>
-        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_collection_path(collection) %></td>
+        <td><%= link_to 'Edit', edit_admin_collection_path(collection) %></td>
+        <td><%= link_to 'Destroy', admin_collection_path(collection), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Collection', new_collection_path %>
+<%= link_to 'New Collection', new_admin_collection_path %>
