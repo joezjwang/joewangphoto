@@ -1,6 +1,6 @@
 class Admin::CollectionsController < AdminController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, only: [:create, :update, :destroy]
+  #before_filter :authenticate, only: [:create, :update, :destroy]
   # GET /collections
 
   # GET /collections
