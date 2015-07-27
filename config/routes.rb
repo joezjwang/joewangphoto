@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
   resources :collections
   resources :photographs
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'photographs#index'
+
+  namespace :admin do
+    root to: 'admin#index'
+    resources :photographs, only: [:index, :show, :new, :create, :update, :edit, :destroy]
+    resources :collections,  only: [:index, :show, :new, :create, :update, :edit, :destroy] 
+  end
+
+  #  match '/collection', to: redirect('/')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

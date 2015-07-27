@@ -1,6 +1,5 @@
-class PhotographsController < ApplicationController
+class Admin::PhotographsController < AdminController
   before_action :set_photograph, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate, only: [:index, :new, :edit, :create, :update, :destroy]
 
   # GET /photographs
   # GET /photographs.json
@@ -14,13 +13,15 @@ class PhotographsController < ApplicationController
   end 
 
   # GET /photographs/new
-  # def new
-  #   @photograph = Photograph.new
-  # end
+  def new
+    @photograph = Photograph.new
 
-  # # GET /photographs/1/edit
-  # def edit
-  # end
+    @collections = Collection.all
+  end
+
+  # GET /photographs/1/edit
+  def edit
+  end
 
   # POST /photographs
   # POST /photographs.json
@@ -54,19 +55,12 @@ class PhotographsController < ApplicationController
 
   # DELETE /photographs/1
   # DELETE /photographs/1.json
-  # def destroy
-  #   @photograph.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to photographs_url, notice: 'Photograph was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
-
-  protected 
-    def authenticate
-      authenticate_or_request_with_http_basic do |username, password|
-        username == ENV['ADMIN_USERNAME'] && password == ENV['ADMIN_PASSWORD']
-      end
+  def destroy
+    @photograph.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_photographs_url, notice: 'Photograph was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
