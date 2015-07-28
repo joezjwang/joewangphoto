@@ -1,25 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photograph.title %>
-</p>
+		<%= link_to 'Edit', edit_admin_photograph_path(@photograph), class: 'pure-button' %>
+		<%= link_to 'Back', admin_photographs_path, class: 'pure-button' %>
+		<br><br>
+	  <h3>Title</h3>
+	  <p>
+		  <%= @photograph.title %>
+		</p>
+		
+	  <h3>Description</h3>
+	  <p>
+		  <%= @photograph.description %>
+		</p>
+		
+		<h3>Collection(s)</h3>
+		<p>
+			<ul>
+			  <% @photograph.collections.each do |collection| %>
+			    <li><%= collection.name %></li>
+			  <% end %>
+			</ul>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @photograph.description %>
-</p>
+		<h3>Photo Files</h3>
+		<p>
+			<%= image_tag @photograph.photo.url %>
+			<%= @photograph.photo_file_size.to_i/1000 %> KB
+			<%= image_tag @photograph.photo.url(:large) %>
+			<%= image_tag @photograph.photo.url(:small) %>
+			<%= image_tag @photograph.photo.url(:thumb) %>
+		</p>
+		</div>
+  <div class="pure-u-2-24"></div>
+</div>
 
-<ul>
-  <% @photograph.collections.each do |collection| %>
-    <li><%= collection.name %></li>
-  <% end %>
-</ul>
-
-<%= image_tag @photograph.photo.url %>
-<%= image_tag @photograph.photo.url(:large) %>
-<%= image_tag @photograph.photo.url(:small) %>
-<%= image_tag @photograph.photo.url(:thumb) %>
-
-<%= link_to 'Edit', edit_admin_photograph_path(@photograph) %> |
-<%= link_to 'Back', admin_photographs_path %>

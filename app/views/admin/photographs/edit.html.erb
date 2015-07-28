@@ -1,11 +1,17 @@
-<h1>Editing Photograph</h1>
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+		<h1>Editing Photograph</h1>
 
-<%= render 'form' %>
+		<%= link_to 'Back', admin_photographs_path, class: 'pure-button' %>
+		<br><br>
+		<%= render 'form' %>
 
-<%= link_to 'Show', admin_photograph_path(@photograph) %> |
-<%= link_to 'Back', admin_photographs_path %>
+		<%= image_tag @photograph.photo.url %>
+		<%= image_tag @photograph.photo.url(:large) %>
+		<%= image_tag @photograph.photo.url(:small) %>
+		<%= image_tag @photograph.photo.url(:thumb) %>
+	</div>
+	<div class="pure-u-2-24"></div>
 
-<%= image_tag @photograph.photo.url %>
-<%= image_tag @photograph.photo.url(:large) %>
-<%= image_tag @photograph.photo.url(:small) %>
-<%= image_tag @photograph.photo.url(:thumb) %>
+</div>
