@@ -10,6 +10,12 @@
   <%= @photograph.description %>
 </p>
 
+<ul>
+  <% @photograph.collections.each do |collection| %>
+    <li><%= collection.name %></li>
+  <% end %>
+</ul>
+
 <%= image_tag @photograph.photo.url %>
 <%= image_tag @photograph.photo.url(:large) %>
 <%= image_tag @photograph.photo.url(:small) %>

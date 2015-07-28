@@ -25,33 +25,33 @@ class Admin::PhotographsController < AdminController
 
   # POST /photographs
   # POST /photographs.json
-  def create
-    @photograph = Photograph.new(photograph_params)
+  # def create
+  #   @photograph = Photograph.new(photograph_params)
 
-    respond_to do |format|
-      if @photograph.save
-        format.html { redirect_to admin_photograph_url(@photograph), notice: 'Photograph was successfully created.' }
-        format.json { render :show, status: :created, location: @photograph }
-      else
-        format.html { render :new }
-        format.json { render json: @photograph.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @photograph.save
+  #       format.html { redirect_to admin_photograph_url(@photograph), notice: 'Photograph was successfully created.' }
+  #       format.json { render :show, status: :created, location: @photograph }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @photograph.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # PATCH/PUT /photographs/1
-  # PATCH/PUT /photographs/1.json
-  def update
-    respond_to do |format|
-      if @photograph.update(photograph_params)
-        format.html { redirect_to admin_photograph_url(@photograph), notice: 'Photograph was successfully updated.' }
-        format.json { render :show, status: :ok, location: @photograph }
-      else
-        format.html { render :edit }
-        format.json { render json: @photograph.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /photographs/1
+  # # PATCH/PUT /photographs/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @photograph.update(photograph_params)
+  #       format.html { redirect_to admin_photograph_url(@photograph), notice: 'Photograph was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @photograph }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @photograph.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /photographs/1
   # DELETE /photographs/1.json

@@ -17,7 +17,15 @@
       <tr>
         <td><%= photograph.title %></td>
         <td><%= photograph.description %></td>
-        <td><%= photograph.collections.first.name %></td>
+        <td>
+        <% unless photograph.collections.empty? %>
+          <ul>
+            <% photograph.collections.each do |collection| %>
+            <li><%= collection.name %></li>
+            <% end %>
+          <% end %>
+          </ul>
+        </td>
         <td><%= link_to 'Show', admin_photograph_path(photograph) %></td>
         <td><%= link_to 'Edit', edit_admin_photograph_path(photograph) %></td>
         <td><%= link_to 'Destroy', admin_photograph_path(photograph), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,3 +37,4 @@
 <br>
 
 <%= link_to 'New Photograph', new_admin_photograph_path %>
+<%= link_to 'New Collection', new_admin_collection_path %>
