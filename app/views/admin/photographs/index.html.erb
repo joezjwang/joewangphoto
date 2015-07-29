@@ -7,15 +7,16 @@
 
 
     <%= link_to 'New Photograph', new_admin_photograph_path , class: "pure-button pure-button-primary" %>
-    <%= link_to 'New Collection', new_admin_collection_path , class: "pure-button pure-button-primary" %>
+    <%= link_to 'Collections', admin_collections_path , class: "pure-button" %>
 
     <br><br>
 
     <table class="pure-table pure-table-horizontal">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Description</th>
+          <th style="max-width:100px;">Title</th>
+          <th>Location</th>
+          <th style="max-width:400px;">Description</th>
           <th>Collection</th>
           <th>Preview</th>
           <th colspan="3"></th>
@@ -25,19 +26,18 @@
       <tbody>
         <% @photographs.each do |photograph| %>
           <tr>
-            <td><%= photograph.title %></td>
-            <td><%= photograph.description %></td>
+            <td style="max-width:100px;"><%= photograph.title %></td>
+            <td><%= photograph.location %></td>
+            <td style="max-width:400px;"><%= photograph.description %></td>
             <td>
             <% unless photograph.collections.empty? %>
-              <ul>
                 <% photograph.collections.each do |collection| %>
-                <li><%= collection.name %></li>
+                <%= link_to collection.name, admin_collection_path(collection) %><br>
                 <% end %>
               <% end %>
-              </ul>
             </td>
             <td>
-              <%= image_tag photograph.photo.url(:thumb), :height => '50'%>
+              <%= image_tag photograph.photo.url(:thumb), :height => '60'%>
             </td>
             <td><%= link_to 'Show', admin_photograph_path(photograph), class: "pure-button" %></td>
             <td><%= link_to 'Edit', edit_admin_photograph_path(photograph), class: "pure-button" %></td>

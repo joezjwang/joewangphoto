@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518125138) do
+ActiveRecord::Schema.define(version: 20150729041409) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -30,11 +30,14 @@ ActiveRecord::Schema.define(version: 20150518125138) do
   add_index "collectionphotographs", ["photograph_id"], name: "index_collectionphotographs_on_photograph_id", using: :btree
 
   create_table "collections", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "category_id", limit: 4
+    t.string   "name",                limit: 255
+    t.text     "description",         limit: 65535
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.integer  "category_id",         limit: 4
+    t.integer  "cover_photograph_id", limit: 4
+    t.boolean  "featured",            limit: 1,     default: false
+    t.boolean  "published",           limit: 1,     default: false
   end
 
   create_table "photographs", force: :cascade do |t|
@@ -46,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150518125138) do
     t.string   "photo_content_type", limit: 255
     t.integer  "photo_file_size",    limit: 4
     t.datetime "photo_updated_at"
+    t.string   "location",           limit: 255
   end
 
 end

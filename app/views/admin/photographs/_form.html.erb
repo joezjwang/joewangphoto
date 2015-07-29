@@ -13,13 +13,17 @@
   <div class="field">
     <%= hidden_field_tag "photograph[collection_ids][]", nil %>
     <% Collection.all.each do |collection| %>
-      <%= check_box_tag "photograph[collection_ids][]", collection.id, @photograph.collection_ids.include?(collection.id), id: dom_id(collection) %>
+      <%= check_box_tag "photograph[collection_ids][]", collection.id, @photograph.collection_ids.include?(collection.id) || params[:new_collection_id].to_i== collection.id, id: dom_id(collection) %>
       <%= label_tag dom_id(collection), collection.name %><br>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: 'pure-input-2-3' %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, class: 'pure-input-2-3' %>
   </div>
   <div class="field">
     <%= f.label :description %><br>

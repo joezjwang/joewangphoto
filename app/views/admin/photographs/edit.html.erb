@@ -4,6 +4,7 @@
 		<h1>Editing Photograph</h1>
 
 		<%= link_to 'Back', admin_photographs_path, class: 'pure-button' %>
+		<%= link_to 'Destroy', admin_photograph_path(@photograph), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %>
 		<br><br>
 		<%= render 'form' %>
 
