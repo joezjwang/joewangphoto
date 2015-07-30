@@ -1,5 +1,6 @@
 class Admin::PhotographsController < AdminController
   before_action :set_photograph, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /photographs
   # GET /photographs.json
