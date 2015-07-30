@@ -1,27 +1,20 @@
-<p id="notice"><%= notice %></p>
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides({
+	  speed: 900,
+	  timeout: 10000,    
+    });
+  });
+</script>
 
-<h1>Listing Photographs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Preview</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photographs.each do |photograph| %>
-      <tr>
-        <td><%= photograph.title %></td>
-        <td><%= photograph.description %></td>
-        <td>
-        <%= image_tag photograph.photo.url(:thumb), :height => '50'%>
-        </td>
-        <td><%= link_to 'Show', photograph %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="pure-g">
+	<div class="pure-u-24-24">
+		<div id="slideshow-asset">
+		  <ul class="rslides">
+			  <% @photographs.each do |photograph| %>
+			  	<%= image_tag(photograph.photo.url(:large)) %>
+			  <% end %>
+		  </ul>
+		</div>
+	</div>
+</div>

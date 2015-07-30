@@ -16,8 +16,7 @@ class Photograph < ActiveRecord::Base
         @collections.each do |collection|
         	puts "ZZZ"
         	@updating_collection = Collection.find(collection.id)
-      @updating_collection.update_attribute(:cover_photograph_id,nil)
-
+          updating_collection.update_attribute(:cover_photograph_id,nil)
         end
       end
     end

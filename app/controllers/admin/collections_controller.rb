@@ -14,8 +14,8 @@ class Admin::CollectionsController < AdminController
   def show
     @photographs=@collection.photographs
     unless @collection.cover_photograph_id.nil?
-    @cover_photograph=@collection.photographs.find(@collection.cover_photograph_id)
-  end
+      @cover_photograph=@collection.photographs.find(@collection.cover_photograph_id)
+    end
   end
 
   # GET /collections/new

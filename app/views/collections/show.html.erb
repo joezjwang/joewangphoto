@@ -1,13 +1,33 @@
-<p id="notice"><%= notice %></p>
+<span id="page-top"></span>
+<div class"pure-g">
+	<div class="pure-u-2-24"></div>
+	<div class="pure-u-20-24">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @collection.name %>
-</p>
+		<p>
+		  <strong>Name:</strong>
+		  <%= @collection.name %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @collection.description %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @collection.description %>
+		</p>
 
-<%= link_to 'Back', collections_path %>
+		<% @photographs.each do |photograph| %>
+
+		<%= image_tag(photograph.photo.url(:large)) %>
+		<%= photograph.title %>
+		<%= photograph.description %>
+		<%= photograph.location %>
+
+		<% end %>
+		<div class="collection_show_footer">
+		<%= link_to 'Back', collections_path, class: 'pure-button' %>
+		<%= link_to 'Top', "#page-top", class: 'pure-button' %>
+		</div>
+	</div>
+	<div class="pure-u-2-24"></div>
+</div>
+
+

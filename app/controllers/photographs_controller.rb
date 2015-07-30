@@ -5,13 +5,15 @@ class PhotographsController < ApplicationController
   # GET /photographs
   # GET /photographs.json
   def index
-    @photographs = Photograph.all
+    @photographs= Collection.where({name: "Portfolio"}).first.photographs
+    #where returns an array of active records, thus .first is used to fetch the AR from the array
+    #maybe there is a better way of doing this. 
   end
 
   # GET /photographs/1
   # GET /photographs/1.json
-  def show
-  end 
+  # def show
+  # end 
 
   # GET /photographs/new
   # def new

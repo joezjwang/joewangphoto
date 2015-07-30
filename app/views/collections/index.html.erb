@@ -1,23 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class"pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+    <p id="notice"><%= notice %></p>
 
-<h1>Listing Collections</h1>
+    <h1>Collections</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Show</th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @collections.each do |collection| %>
-      <tr>
-        <td><%= collection.name %></td>
-        <td><%= collection.description %></td>
-        <td><%= link_to 'Show', collection %></td>
-      </tr>
+      
+        <% unless collection.cover_photograph_id.nil? %>
+          <div class="collection-cover">
+          <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:small), :height => '240'), collection_path(collection)) %>
+          <div class="collection_name">
+            <%= collection.name %>
+          </div>
+        </div>
+        <% end %>
+
     <% end %>
-  </tbody>
-</table>
+
+  </div>
+  <div class="pure-u-2-24"></div>
+</div>
