@@ -19,7 +19,43 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% unless params[:controller].include?('admin') %>
 
+<header id="nav-section">
+
+    <div class="logo">
+    <h1><a href="http://www.joewangphoto.com" title="Joe Wang Photography">
+    <img src="/images/joe-wang-photography-logo.png" alt="logo">
+    </a></h1>
+    </div>
+    <div id="menu-section">
+        <div class="toggle">
+      <a href="#open">MENU&nbsp;&nbsp;&#9776;</a>
+        </div>
+        <ul id="menu" class="group">
+            <li class="extraspace captital-on-mobile"><a href="/" >Home</a></li>
+            <% @collections= Collection.where({published: true}) %>
+            <% @collections.each do |collection| %>
+            <li>
+            <%= link_to collection.name, collection_path(collection) %>
+            </li>
+            <% end %>
+
+            <li class="extraspace captital-on-mobile"><a href="/about.php" >About/Contact</a></li>
+<!--             <li class="captital-on-mobile"><a href="https://prime.500px.com/zjwang">Buy Photos</a></li> -->
+            
+        </ul>
+    </div>
+    <div class="keyboard-instructions">
+        Press "L" to turn OFF lights
+    </div>
+    <div class="copyright">
+        &copy; Joe Wang 2015
+    </div>
+</header>
+<div id="lightbox">
+</div>
+<% end %>
 <%= yield %>
 
 </body>

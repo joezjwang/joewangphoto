@@ -1,7 +1,5 @@
 <span id="page-top"></span>
-<div class"pure-g">
-	<div class="pure-u-2-24"></div>
-	<div class="pure-u-20-24">
+<div class"pure-g collection-asset" id="page-content">
 		<p id="notice"><%= notice %></p>
 
 		<p>
@@ -15,19 +13,19 @@
 		</p>
 
 		<% @photographs.each do |photograph| %>
+		<div class="collection-photo">
 
 		<%= image_tag(photograph.photo.url(:large)) %>
 		<%= photograph.title %>
 		<%= photograph.description %>
 		<%= photograph.location %>
-
+		</div>
 		<% end %>
 		<div class="collection_show_footer">
 		<%= link_to 'Back', collections_path, class: 'pure-button' %>
 		<%= link_to 'Top', "#page-top", class: 'pure-button' %>
 		</div>
 	</div>
-	<div class="pure-u-2-24"></div>
 </div>
 
 
