@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729041409) do
+ActiveRecord::Schema.define(version: 20150731162930) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -38,7 +38,10 @@ ActiveRecord::Schema.define(version: 20150729041409) do
     t.integer  "cover_photograph_id", limit: 4
     t.boolean  "featured",            limit: 1,     default: false
     t.boolean  "published",           limit: 1,     default: false
+    t.string   "slug",                limit: 255
   end
+
+  add_index "collections", ["slug"], name: "index_collections_on_slug", using: :btree
 
   create_table "photographs", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -50,6 +53,9 @@ ActiveRecord::Schema.define(version: 20150729041409) do
     t.integer  "photo_file_size",    limit: 4
     t.datetime "photo_updated_at"
     t.string   "location",           limit: 255
+    t.string   "slug",               limit: 255
   end
+
+  add_index "photographs", ["slug"], name: "index_photographs_on_slug", using: :btree
 
 end

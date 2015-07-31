@@ -33,6 +33,9 @@ gem "paperclip", "~> 4.2"
 gem 'unicorn'
 gem 'unicorn-rails'
 
+# friendly URL
+gem 'friendly_id'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
