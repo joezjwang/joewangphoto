@@ -36,6 +36,9 @@ gem 'unicorn-rails'
 # friendly URL
 gem 'friendly_id'
 
+# Highvoltage for static pages
+gem 'high_voltage', '~> 2.4.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
