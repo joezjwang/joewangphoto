@@ -7,14 +7,12 @@
   });
 </script>
 
-<div id="pure-g">
-	<div id="page-content">
-		<div id="slideshow-asset">
-		  <ul class="rslides">
-			  <% @photographs.each do |photograph| %>
-			  	<%= image_tag(photograph.photo.url(:large)) %>
-			  <% end %>
-		  </ul>
-		</div>
+<div id="page-content">
+	<div id="slideshow-asset">
+	  <ul class="rslides">
+		  <% @photographs.each do |photograph| %>
+		  	<%= image_tag(photograph.photo.url(:large)) %>
+		  <% end %>
+	  </ul>
 	</div>
 </div>

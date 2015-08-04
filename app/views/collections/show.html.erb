@@ -5,7 +5,7 @@ body {
 }
 
 </style>
-<div class"pure-g" id="page-content">
+<div id="page-content">
 		<p id="notice"><%= notice %></p>
 		<div id="set-intro">
 		<h1></h1>
@@ -21,10 +21,8 @@ body {
 				<% else %>
 					<%= image_tag(photograph.photo.url(:large)) %>
 				<div class="photo-text-container">
-				<div>
 					<div class="photo-title"><%= photograph.title %></div>
 					<div class="photo-location"><%= photograph.location %></div>
-					</div>
 				</div>
 				<% end %>
 		</div><br>

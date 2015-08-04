@@ -117,12 +117,19 @@ h1 {
     width: 100%;
 }
 
-.collection-group .collection-photo  {
+.collection-group, .collection-covers, .collection-photo  {
     margin:  70px 0px;
     display: inline-block;
     white-space: nowrap;
 }
 
+.collection-covers {
+    margin:  20px 0px;
+}
+
+.collection-covers #collection-0 {
+    margin-top: 150px;
+}
 .collection-group #photo-0  {
     margin-top:  0px;
     margin-bottom: 70px;
@@ -143,7 +150,7 @@ h1 {
     display:none;
 }
 
-.photo-text-container {
+.photo-text-container, .collection-text-container{
     width: auto;
     white-space: nowrap;
     color: #fff;
@@ -165,7 +172,7 @@ h1 {
     
 }
 
-.photo-title{
+.photo-title, .collection-name{
     display: inline-block;
     max-width: 50%;
     font-size: 18px;
