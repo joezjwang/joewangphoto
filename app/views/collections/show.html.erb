@@ -1,30 +1,38 @@
-<span id="page-top"></span>
-<div class"pure-g collection-asset" id="page-content">
+<style type="text/css">
+	
+body {
+	text-align: center;
+}
+
+</style>
+<div class"pure-g" id="page-content">
 		<p id="notice"><%= notice %></p>
-
+		<div id="set-intro">
+		<h1></h1>
 		<p>
-		  <strong>Name:</strong>
-		  <%= @collection.name %>
+		<%= @collection.description  %>
 		</p>
-
-		<p>
-		  <strong>Description:</strong>
-		  <%= @collection.description %>
-		</p>
-
-		<% @photographs.each do |photograph| %>
-		<div class="collection-photo">
-
-		<%= image_tag(photograph.photo.url(:large)) %>
-		<%= photograph.title %>
-		<%= photograph.description %>
-		<%= photograph.location %>
-		</div>
+	</div>
+<div class="collection-group">
+		<% @photographs.each_with_index do |photograph, index| %>
+			<div class="collection-photo" id="<%= "photo-#{index}" %>" >
+				<% if mobile_device? %>
+					<%= image_tag(photograph.photo.url(:small)) %>
+				<% else %>
+					<%= image_tag(photograph.photo.url(:large)) %>
+				<div class="photo-text-container">
+				<div>
+					<div class="photo-title"><%= photograph.title %></div>
+					<div class="photo-location"><%= photograph.location %></div>
+					</div>
+				</div>
+				<% end %>
+		</div><br>
 		<% end %>
 		<div class="collection_show_footer">
-		<%= link_to 'Back', collections_path, class: 'pure-button' %>
-		<%= link_to 'Top', "#page-top", class: 'pure-button' %>
+		<%= link_to '^ Top', "#page-top", class: 'pure-button' %>
 		</div>
+	</div>
 	</div>
 </div>
 
