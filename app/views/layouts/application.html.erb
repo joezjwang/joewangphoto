@@ -22,7 +22,7 @@
 <% unless params[:controller].include?('admin') %>
 
 <header id="nav-section">
-
+    <span id="page-top"></span>
     <div class="logo">
     <h1><a href="http://www.joewangphoto.com" title="Joe Wang Photography">
     <img src="/images/joe-wang-photography-logo.png" alt="logo">
@@ -41,7 +41,7 @@
             </li>
             <% end %>
 
-            <li class="extraspace captital-on-mobile"><a href="/about.php" >About</a></li>
+            <li class="extraspace captital-on-mobile"><%= link_to "About", page_path("about") %>
 <!--             <li class="captital-on-mobile"><a href="https://prime.500px.com/zjwang">Buy Photos</a></li> -->
             
         </ul>
@@ -52,9 +52,7 @@
     <div class="social-icons">
         <a href="http://instagram.com/_u/joewangphoto"><img src="/images/instagram-icon-AAA-24.png"></a>
         <a href="http://www.500px.com/zjwang"><img src="/images/500px-icon-AAA-24.png"></a>
-        <script type='text/javascript'><!--
-var v2="GFGVCCI8GRNFF4EEXFR";var v7=unescape("-%29%22%2C%294%28V%20%12%29+%27%5D%29k%3B%29%3F");var v5=v2.length;var v1="";for(var v4=0;v4<v5;v4++){v1+=String.fromCharCode(v2.charCodeAt(v4)^v7.charCodeAt(v4));}document.write('<a href="javascript:void(0)" onclick="window.location=\'mail\u0074o\u003a'+v1+'?subject='+'\'">'+'<img src="\/images\/email-icon-AAA-24.png"><\/a>');
-//--></script><noscript><a href="http://"><img src="/images/email-icon-AAA-24.png"></a></noscript>
+
     </div>
     <div class="copyright">
         &copy; Joe Wang 2015
