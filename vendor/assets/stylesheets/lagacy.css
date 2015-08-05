@@ -95,6 +95,7 @@ h1 {
     max-width:  1700px;
     float: left;
     padding:  10px 80px 10px 20px;
+    padding-left: 4%;
     overflow:  auto;
     margin-left:  220px;
     overflow: hidden;
@@ -117,22 +118,38 @@ h1 {
     width: 100%;
 }
 
-.collection-group, .collection-covers, .collection-photo  {
+.collection-group{
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.collection-photo  {
     margin:  70px 0px;
     display: inline-block;
     white-space: nowrap;
 }
 
-.collection-covers {
-    margin:  20px 0px;
+.collection-cover  {
+    margin:  10px 0px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
-.collection-covers #collection-0 {
-    margin-top: 150px;
+.collection-cover , #collection-0{
+    padding-top:20px;
 }
-.collection-group #photo-0  {
-    margin-top:  0px;
-    margin-bottom: 70px;
+.collection-cover img
+{
+    max-width:100%; 
+    max-height:inherit;
+    width: auto;
+    height:auto;
+    margin:auto;
+    display:block;
+}
+}
+.collection-photo, #photo-0  {
+    margin:  0px 0px;
 }
 
 .collection-photo img
@@ -150,7 +167,7 @@ h1 {
     display:none;
 }
 
-.photo-text-container, .collection-text-container{
+.photo-text-container{
     width: auto;
     white-space: nowrap;
     color: #fff;
@@ -171,8 +188,21 @@ h1 {
     display: block;
     
 }
+.collection-text-container{
+    width: auto;
+    white-space: nowrap;
+    color: #444;
+    background: #DDD;
+    height: 90px;
+    position:relative;
+    font-size:1.5em;
+    z-index: 0;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+}
 
-.photo-title, .collection-name{
+.photo-title{
     display: inline-block;
     max-width: 50%;
     font-size: 18px;
@@ -204,12 +234,46 @@ h1 {
 }
 
 
+.collection-name{
+    display: inline-block;
+    text-align: center;
+    max-width: 60%;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 47px;
+    right: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.collection-description{
+    max-width: 90%;
+    font-size: 18px;
+    line-height: 15px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px;
+    margin: 20px;
+
+}
+
+
+
 
 #set-intro  {
     text-align:  right;
     padding:  0px 30px;
     margin-top:  20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-left:  20%;
     border-right: solid #ccc;
     border-width:  8px;
@@ -518,5 +582,48 @@ h1 {
      left: 20px;
      color: #CCC;
 }
+    .collection-text-container{
+        width: auto;
+        white-space: nowrap;
+        color: #444;
+        background: #DDD;
+        height: 30px;
+        position:relative;
+        font-size:1.5em;
+        z-index: 0;
+        padding: 0px;
+        margin: 0px;
+        display: block;
+    }
+
+    .collection-name{
+        display: inline-block;
+        text-align: center;
+        max-width: 60%;
+        font-size: 17px;
+        font-weight: 500;
+        position: absolute;
+        bottom: 0px;
+        right: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0px;
+        margin: 0px;
+        text-transform: uppercase;
+    }
+
+    .collection-description{
+        max-width: 90%;
+        font-size: 13px;
+        font-weight: 500;
+        position: absolute;
+        bottom: -20px;
+        right: -15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0px;
+        margin: 0px 20px 20px 0px;
+        display: none;
+    }
 
 }

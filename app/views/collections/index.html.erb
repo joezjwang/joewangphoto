@@ -1,30 +1,31 @@
 <style type="text/css">
-  
-body {
+  body {
   text-align: center;
 }
 
 </style>
 
 <div id="page-content">
-    <p id="notice"><%= notice %></p>
-
     <% @collections.each_with_index do |collection, index| %>
         <% unless collection.cover_photograph_id.nil? %>
-          <div class="collection-covers" id="<%= 
+          <div class="collection-cover" id="<%= 
           "collection-#{index}" %>">
           <% if mobile_device? %>
-          <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:small), :height => '200'), collection_path(collection)) %>
+            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:small), :height => '200'), collection_path(collection)) %>
           <% else %>
-            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:small), :height => '280'), collection_path(collection)) %>
+            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:small), :height => '480'), collection_path(collection)) %>
           <% end %>
+          <%= link_to collection_path(collection) do %>
           <div class="collection-text-container">
-          <div class="collection-name">
-            <%= collection.name %>
+            <div class="collection-name">
+              <%= collection.name %>
+            </div>
+            <div class="collection-description">
+              <%= collection.description %>
+            </div>
           </div>
-        </div>
-        </div>
+          <% end %>
+        </div><br>
         <% end %>
-
     <% end %>
 </div>

@@ -19,7 +19,7 @@ body {
 				<% if mobile_device? %>
 					<%= image_tag(photograph.photo.url(:small)) %>
 				<% else %>
-					<%= image_tag(photograph.photo.url(:large)) %>
+					<%= image_tag(photograph.photo.url(:original)) %>
 				<div class="photo-text-container">
 					<div class="photo-title"><%= photograph.title %></div>
 					<div class="photo-location"><%= photograph.location %></div>
