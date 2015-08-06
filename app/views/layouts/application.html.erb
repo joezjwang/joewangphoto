@@ -8,13 +8,12 @@
   <!-- custom head content -->
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=yes">
 
-
 <% if params[:controller].include?('admin') %>
   <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
 	<![endif]-->
 	<!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 	<!--<![endif]-->
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <% else %>
@@ -25,6 +24,7 @@
   <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
 <!--<![endif]-->
 <% end %>
+
   <!-- end -->
   <%= csrf_meta_tags %>
 </head>
@@ -39,21 +39,18 @@
     </a></h1>
     </div>
     <div id="menu-section">
-        <div class="toggle">
-      <a href="#open">MENU&nbsp;&nbsp;&#9776;</a>
-        </div>
+      <div class="toggle">
+        <a href="#open">MENU&nbsp;&nbsp;&#9776;</a>
+      </div>
         <ul id="menu" class="group">
-            <li class="extraspace captital-on-mobile"><a href="/" >Home</a></li>
-            <% @collections= Collection.where({published: true}) %>
-            <% @collections.each do |collection| %>
+          <li class="extraspace captital-on-mobile"><a href="/" >Home</a></li>
+          <% @collections= Collection.where({published: true}) %>
+          <% @collections.each do |collection| %>
             <li>
             <%= link_to collection.name, collection_path(collection) %>
             </li>
-            <% end %>
-
-            <li class="extraspace captital-on-mobile"><%= link_to "About", page_path("about") %>
-<!--             <li class="captital-on-mobile"><a href="https://prime.500px.com/zjwang">Buy Photos</a></li> -->
-            
+          <% end %>
+          <li class="extraspace captital-on-mobile"><%= link_to "About", page_path("about") %>
         </ul>
     </div>
     <div class="keyboard-instructions">
@@ -62,15 +59,15 @@
     <div class="social-icons">
         <a href="http://instagram.com/_u/joewangphoto"><img src="/images/instagram-icon-AAA-24.png"></a>
         <a href="http://www.500px.com/zjwang"><img src="/images/500px-icon-AAA-24.png"></a>
-
     </div>
     <div class="copyright">
-        &copy; Joe Wang 2015
+        &copy; Joe Wang 2014-2015
     </div>
 </header>
 <div id="lightbox">
 </div>
 <% end %>
+
 <%= yield %>
 
 </body>
