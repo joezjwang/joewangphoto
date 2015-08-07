@@ -8,10 +8,18 @@
 </script>
 
 <div id="page-content">
-	<div id="slideshow-asset">
+	<% if mobile_device? %>
+		<div id="slideshow-asset-mobile">
+	<% else %>
+		<div id="slideshow-asset">
+	<% end %>
 	  <ul class="rslides">
 		  <% @photographs.each do |photograph| %>
+		   <% if mobile_device? %>
+		   <%= image_tag(photograph.photo.url(:small)) %>
+		   <% else %>
 		  	<%= image_tag(photograph.photo.url(:large)) %>
+		  	<% end %>
 		  <% end %>
 	  </ul>
 	</div>

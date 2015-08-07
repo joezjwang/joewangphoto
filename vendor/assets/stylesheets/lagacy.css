@@ -112,6 +112,16 @@ h1 {
     padding:  30px 0px;
 }
 
+#slideshow-asset-mobile  {
+    position:  absolute;
+    width:100%;
+    top:0;
+    left:0;
+    z-index: -1;
+    padding:  0px 0px;
+}
+
+
 .collection-group {
     position:  relative;
     float: left;
@@ -342,7 +352,7 @@ h1 {
 
 #nav-section #menu-section > ul  {
      margin:  20px 0;
-     font-size:  1.0em;
+     font-size:  1.1em;
      position: fixed;
      bottom: 110px;
      left: 0px;
@@ -355,6 +365,79 @@ h1 {
      margin-bottom:  5px;
      list-style-type:  none;
 }
+
+/*Mobile Home Menu Styles*/
+
+#nav-section .logo-mobile-home img  {
+     text-align:  center;
+     width:  43%;
+     padding:  3% 7%;
+     position: absolute;
+     top: 10px;
+     margin-bottom: 100px;
+     z-index:2;
+ }
+
+
+#nav-section .social-icons-mobile-home  {
+    font-size:  0.9em;
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    color: #BBB;
+    display: block;
+    z-index:2;
+}
+
+#nav-section .social-icons-mobile-home img {
+    padding: 6px;
+    z-index:2;
+}
+
+.mobile-home-mask {
+    background: #000;
+    background: rgba(0,0,0,0.4);
+    min-height: 100%;
+    min-width: 1080px;
+
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:1;
+}
+
+#nav-section #menu-section-mobile-home > ul  {
+    color:#444;
+
+    font-size:  1.22em;
+    position: fixed;
+    top: 110px;
+    width: 70%;
+    overflow:  auto;
+    z-index: 10;
+    padding: 40px 20px 20px 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: inline-block;
+}
+
+#nav-section #menu-section-mobile-home a{
+    font-family:  Georgia, serif;
+    color:#FFF;
+    font-weight: bold;
+/*    text-shadow: 0px 0px 1px #111;*/
+}
+
+#nav-section #menu-section-mobile-home ul li  {
+    text-align: center;
+    margin-bottom:  5px;
+    list-style-type:  none;
+    line-height:  2.5;
+    text-transform: uppercase;
+}
+
 #nav-section #menu-section .extraspace {
      line-height:  3;
  }
@@ -533,7 +616,6 @@ h1 {
     padding:  20px 0 0;
     height: 70px;
 }
-
 
 .collection_show_footer {
 
