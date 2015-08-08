@@ -1,6 +1,9 @@
-  <title>Joe Wang Photography</title>
+<title>
+  <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+  Joe Wang Photography
+</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="">
+  <meta name="description" content="<%= if content_for?(:description) then yield(:description) end %>">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
