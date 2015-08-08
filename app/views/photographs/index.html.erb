@@ -16,9 +16,9 @@
 	  <ul class="rslides">
 		  <% @photographs.each do |photograph| %>
 		   <% if mobile_device? %>
-		   <%= image_tag(photograph.photo.url(:small)) %>
+		   <%= image_tag(photograph.photo.url(:mobile_large)) %>
 		   <% else %>
-		  	<%= image_tag(photograph.photo.url(:large)) %>
+		  	<%= image_tag(photograph.photo.url(:pc_large)) %>
 		  	<% end %>
 		  <% end %>
 	  </ul>

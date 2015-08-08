@@ -32,8 +32,9 @@
 		<p>
 			<%= image_tag @photograph.photo.url %>
 			<%= @photograph.photo_file_size.to_i/1000 %> KB
-			<%= image_tag @photograph.photo.url(:large) %>
-			<%= image_tag @photograph.photo.url(:small) %>
+			<%= image_tag @photograph.photo.url(:pc_large) %>
+			<%= image_tag @photograph.photo.url(:pc_small) %>
+			<%= image_tag @photograph.photo.url(:mobile_large) %>
 			<%= image_tag @photograph.photo.url(:thumb) %>
 		</p>
 		</div>

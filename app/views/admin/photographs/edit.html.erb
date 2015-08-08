@@ -9,8 +9,9 @@
 		<%= render 'form' %>
 
 		<%= image_tag @photograph.photo.url %>
-		<%= image_tag @photograph.photo.url(:large) %>
-		<%= image_tag @photograph.photo.url(:small) %>
+		<%= image_tag @photograph.photo.url(:pc_large) %>
+		<%= image_tag @photograph.photo.url(:pc_small) %>
+		<%= image_tag @photograph.photo.url(:mobile_large) %>
 		<%= image_tag @photograph.photo.url(:thumb) %>
 	</div>
 	<div class="pure-u-2-24"></div>

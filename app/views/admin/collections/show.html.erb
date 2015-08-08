@@ -29,7 +29,7 @@
 		<p>
 
 			<% unless @cover_photograph.blank? %>
-		  <%= image_tag(@cover_photograph.photo.url(:small), :height => '150') %>
+		  <%= image_tag(@cover_photograph.photo.url(:pc_small), :height => '150') %>
 		  <% else %>
 		  Undefined Cover Photo
 		  <% end %>
@@ -40,7 +40,7 @@
 	<br><br>
 		<% unless @photographs.blank? %>
 			<% @photographs.each do |photograph| %>
-			<%= link_to(image_tag(photograph.photo.url(:small), :height => '240'), edit_admin_photograph_path(photograph)) %>
+			<%= link_to(image_tag(photograph.photo.url(:pc_small), :height => '240'), edit_admin_photograph_path(photograph)) %>
 			<% end %>
 		<% else %>
 		No Photographs in Collections

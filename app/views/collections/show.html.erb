@@ -17,9 +17,9 @@ body {
 		<% @photographs.each_with_index do |photograph, index| %>
 			<div class="collection-photo" id="<%= "photo-#{index}" %>" >
 				<% if mobile_device? %>
-					<%= image_tag(photograph.photo.url(:small)) %>
+					<%= image_tag(photograph.photo.url(:mobile_large)) %>
 				<% else %>
-					<%= image_tag(photograph.photo.url(:original)) %>
+					<%= image_tag(photograph.photo.url(:pc_large)) %>
 				<div class="photo-text-container">
 					<div class="photo-title"><%= photograph.title %></div>
 					<div class="photo-location"><%= photograph.location %></div>
