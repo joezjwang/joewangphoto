@@ -7,10 +7,10 @@ class PhotographsController < ApplicationController
   def index
     if mobile_device?
       #provide portrait style photos on mobile
-      @photographs= Collection.where({name: "mobile"}).first.photographs
+      @photographs= Collection.where({name: "Mobile Slideshow"}).first.photographs
     else
       #provide landscape style photos on pc
-      @photographs= Collection.where({name: "Portfolio"}).first.photographs
+      @photographs= Collection.where({name: "PC Slideshow"}).first.photographs
     end
     #where returns an array of active records, thus .first is used to fetch the AR from the array
     #maybe there is a better way of doing this. 
