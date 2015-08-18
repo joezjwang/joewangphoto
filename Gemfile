@@ -31,7 +31,6 @@ gem "paperclip", "~> 4.2"
 
 # Use Unicorn as the app server
 gem 'unicorn'
-gem 'unicorn-rails'
 
 # friendly URL
 gem 'friendly_id'
