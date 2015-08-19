@@ -15,15 +15,15 @@ $(function() {
 
     });
   });
-// $( document ).ready(function() {
-//     $(".collection-photo").mouseover(function(){
-//     console.log("mouseover");
-//     $(".photo-text-container").fadeIn();
-//     });
-//     $(".collection-photo").mouseout(function(){
-//     $(".photo-text-container").fadeOut();
-//     });
-// });
+$( document ).ready(function() {
+    $(".collection-photo").mouseover(function(){
+    console.log("mouseover");
+    $(".photo-text-container").fadeIn();
+    });
+    $(".collection-photo").mouseout(function(){
+    $(".photo-text-container").fadeOut();
+    });
+});
 
 
     // function scrollToAnchor(aid){

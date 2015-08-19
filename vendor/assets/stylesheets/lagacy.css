@@ -132,7 +132,7 @@ h1 {
     display: inline-block;
     white-space: nowrap;
 }
-
+    
 .collection-photo  {
     margin:  70px 0px;
     display: inline-block;
@@ -145,7 +145,7 @@ h1 {
     white-space: nowrap;
 }
 
-.collection-cover , #collection-0{
+#collection-0{
     padding-top:20px;
 }
 .collection-cover img
@@ -158,8 +158,8 @@ h1 {
     display:block;
 }
 
-.collection-photo, #photo-0  {
-    margin:  0px 0px;
+#photo-0  {
+    margin-bottom:  70px;
 }
 
 .collection-photo img
@@ -195,7 +195,7 @@ h1 {
     z-index: 5;
     padding: 0px;
     margin: 0px;
-    display: block;
+    display: none;
     
 }
 .collection-text-container{
