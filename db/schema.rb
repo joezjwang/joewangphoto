@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820163833) do
+ActiveRecord::Schema.define(version: 20150821091238) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150820163833) do
     t.boolean  "featured",            limit: 1,     default: false
     t.boolean  "published",           limit: 1,     default: false
     t.string   "slug",                limit: 255
+    t.integer  "prominence",          limit: 4
   end
 
   add_index "collections", ["slug"], name: "index_collections_on_slug", using: :btree

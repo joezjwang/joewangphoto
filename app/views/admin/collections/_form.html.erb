@@ -22,6 +22,7 @@
     <%= f.label :name %><br>
     <%= f.text_field :name, class: 'pure-input-2-3' %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description, class: 'pure-input-2-3' %>
@@ -29,6 +30,11 @@
   <div class="field">
   <%= f.label :cover_photograph %>
   <%= f.collection_select :cover_photograph_id, @collection.photographs.order(:title), :id, :title, {include_blank: true}%>
+  </div>
+  <% prominence_array=(1..Collection.count()).to_a %>
+  <div class="field">
+    <%= f.label :prominence %><br>
+    <%= f.select(:prominence, prominence_array, {selected: @collection.prominence, include_blank: true})%>
   </div>
   <br><br>
   <div class="actions">

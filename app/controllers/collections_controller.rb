@@ -5,7 +5,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.where({published: true})
+    @collections = Collection.where({published: true}).order("prominence IS NULL, prominence ASC")
   end
 
   # GET /collections/1
@@ -85,7 +85,7 @@ class CollectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def collection_params
-      params.require(:collection).permit(:name, :description, :featured, :published, :cover_photograph_id, :collection_ids)
+      params.require(:collection).permit(:name, :description, :featured, :published, :prominence, :cover_photograph_id, :collection_ids)
     end
 
 

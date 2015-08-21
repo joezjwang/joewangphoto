@@ -6,7 +6,7 @@
     </div>
       <div id='menu-section-mobile-home'>
         <ul id="menu" class="group">
-          <% @collections= Collection.where({featured: true, published: true}) %>
+          <% @collections= Collection.where({featured: true, published: true}).order("prominence IS NULL, prominence ASC") %>
           <% @collections.each do |collection| %>
             <li>
             <%= link_to collection.name, collection_path(collection) %>
