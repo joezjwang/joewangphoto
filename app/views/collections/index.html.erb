@@ -14,9 +14,9 @@
           <div class="collection-cover" id="<%= 
           "collection-#{index}" %>">
           <% if mobile_device? %>
-            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:mobile_large), :height => '200'), collection_path(collection)) %>
+            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:mobile_large), height: '200', alt: collection.name), collection_path(collection)) %>
           <% else %>
-            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:pc_small), :height => '480'), collection_path(collection)) %>
+            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:pc_small), height: '480', alt: collection.name), collection_path(collection)) %>
           <% end %>
           <%= link_to collection_path(collection) do %>
           <div class="collection-text-container">
