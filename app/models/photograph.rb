@@ -1,6 +1,6 @@
 class Photograph < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :history]
   has_many :collectionphotographs
   has_many :collections, through: :collectionphotographs
   has_one :category
@@ -12,10 +12,12 @@ class Photograph < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png)$/
   validates_attachment_size :photo, :less_than => 10.megabytes
 
+
   def should_generate_new_friendly_id?
-    new_record?
+    slug.blank? || title_changed?
   end
 
+  # Remove cover id attached to collection if cover photo is deleted
   def find_remove_cover
     @collections=Collection.where({cover_photograph_id: id})
     unless @collections.blank?

@@ -1,6 +1,7 @@
 class PhotographsController < ApplicationController
   before_action :set_photograph, only: [:show, :edit, :update, :destroy]
-  #before_filter :authenticate, only: [:create, :update]
+  # Not sure how to move create and update actions to admin controllers
+  before_filter :authenticate, only: [:create, :update]
 
   # GET /photographs
   # GET /photographs.json

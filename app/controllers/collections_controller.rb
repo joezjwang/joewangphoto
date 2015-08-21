@@ -1,6 +1,7 @@
 class CollectionsController < ApplicationController
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
-  #before_filter :authenticate, only: [:create, :update, :destroy]
+  # Not sure how to move create and update actions to admin controllers
+  before_filter :authenticate, only: [:create, :update]
   # GET /collections
   # GET /collections.json
   def index
@@ -77,6 +78,9 @@ class CollectionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_collection
       @collection = Collection.friendly.find(params[:id])
+      if request.path != collection_path(@collection)
+        redirect_to @collection, status: :moved_permanently
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
