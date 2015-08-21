@@ -117,8 +117,15 @@ h1 {
     width:100%;
     top:0;
     left:0;
+    bottom: 0;
     z-index: -1;
     padding:  0px 0px;
+    overflow: hidden;
+}
+
+#slideshow-asset-mobile img{
+    position:  absolute;
+    height:100%;
 }
 
 
@@ -383,14 +390,14 @@ h1 {
     font-size:  0.9em;
     position: fixed;
     top: 40px;
-    right: 20px;
+    right: 30px;
     color: #BBB;
     display: block;
     z-index:2;
 }
 
 #nav-section .social-icons-mobile-home img {
-    padding: 6px;
+    padding: 8px;
     z-index:2;
 }
 
@@ -409,17 +416,17 @@ h1 {
 }
 
 #nav-section #menu-section-mobile-home > ul  {
-    color:#444;
 
+    color:#444;
     font-size:  1.22em;
     position: fixed;
     top: 110px;
-    width: 70%;
+    width: 86%;
     overflow:  auto;
     z-index: 10;
-    padding: 40px 20px 20px 20px;
-    margin-left: 15%;
-    margin-right: 15%;
+    padding: 60px 10px 10px 20px;
+    margin-left: 7%;
+    margin-right: 7%;
     display: inline-block;
 }
 
