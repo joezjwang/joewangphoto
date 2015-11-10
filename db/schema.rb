@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821091238) do
+ActiveRecord::Schema.define(version: 20151110145720) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -71,5 +71,13 @@ ActiveRecord::Schema.define(version: 20150821091238) do
   end
 
   add_index "photographs", ["slug"], name: "index_photographs_on_slug", using: :btree
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 65535
+    t.boolean  "published",  limit: 1,     default: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
 
 end

@@ -1,0 +1,24 @@
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+		<p id="notice"><%= notice %></p>
+
+		<%= link_to 'Edit', edit_admin_post_path(@post), class: 'pure-button' %>
+		<%= link_to 'Back', admin_posts_path, class: 'pure-button' %>
+		<br><br>
+	  <h3>Title</h3>
+	  <p>
+		  <%= @post.title %>
+		</p>
+	  <h3>Body</h3>
+	  <p>
+		  <%= @post.body %>
+		</p>
+		  <h3>Published?</h3>
+	  <p>
+		  <%= @post.published %>
+		</p>
+	</div>
+  <div class="pure-u-2-24"></div>
+</div>
+
