@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+<section class="post">
+  <header class="post-header">
+      <img class="post-avatar" alt="Post Cover Photo" height="220" width="220" src="">
+
+      <h2 class="post-title"><%= link_to post.title, post_path(post) %></h2>
+
+      <p class="post-meta">
+          <div class="post-length">5 min read</div>  <div class="post-photocount">5 Photos</a>
+      </p>
+  </header>
+
+  <div class="post-description">
+      <p>
+      <%= post.body_preview_pc %>
+      </p>
+  </div>
+</section>
+<% end %>

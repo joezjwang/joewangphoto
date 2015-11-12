@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+<section class="post">
+  <header class="post-header">
+      <h2 class="post-title-mobile"><%= link_to post.title, post_path(post) %></h2>
+
+      <p class="post-meta">
+          <div class="post-length">5 min read</div>  <div class="post-photocount">5 Photos</a>
+      </p>
+  </header>
+
+  <div class="post-description">
+      <p>
+      <%= post.body_preview_mobile %>
+      </p>
+  </div>
+</section>
+<% end %>
