@@ -1,31 +1,81 @@
 <div id="page-content">
 
-  <h1>Listing Posts</h1>
+<style type="text/css">
+  .post {
+    padding-bottom: 2em;
+}
+.post-title {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    float: right;
+    margin-left: 1em;
+}
+.post-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
 
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Published</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
 
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.title %></td>
-          <td><%= post.body %></td>
-          <td><%= post.published %></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+</style>
+<div id="recent-posts">
+<% @posts.each do |post| %>
 
-  <br>
+<section class="post">
+      <header class="post-header">
+          <img class="post-avatar" alt="Post Cover Photo" height="200" width="200" src="">
+
+          <h2 class="post-title"><%= post.title %></h2>
+
+          <p class="post-meta">
+              <div class="post-length">5 min read</div>  <div class="post-photocount">5 Photos</a>
+          </p>
+      </header>
+
+      <div class="post-description">
+          <p>
+          <%= post.body_preview_pc %>
+          </p>
+      </div>
+  </section>
+</div>
+<% end %>
+
 
 </div>
