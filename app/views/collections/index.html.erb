@@ -1,5 +1,11 @@
 <% title "All Collections" %>
-<% description "All collections" %>
+<%
+  collectionstring=String.new
+  @collections.each do |collection| 
+    collectionstring = collectionstring + " " + collection.name
+  end
+  description "All collections -"+collectionstring 
+%>
 
 <style type="text/css">
   body {

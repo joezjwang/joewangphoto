@@ -1,5 +1,8 @@
 <% title @collection.name %>
 <% description @collection.description %>
+<% og_image_url request.base_url + Photograph.find(@collection.cover_photograph_id).photo.url(:mobile_large) %>
+<% og_page_url request.original_url %>
+
 <style type="text/css">
 	
 body {
