@@ -1,6 +1,10 @@
 <% title @collection.name %>
 <% description @collection.description %>
-<% og_image_url request.base_url + Photograph.find(@collection.cover_photograph_id).photo.url(:mobile_large) %>
+<% 
+unless @collection.cover_photograph_id.nil?
+	og_image_url request.base_url + Photograph.find(@collection.cover_photograph_id).photo.url(:mobile_large)
+end 
+%>
 <% og_page_url request.original_url %>
 
 <style type="text/css">
