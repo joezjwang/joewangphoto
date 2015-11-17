@@ -1,22 +1,36 @@
 <div class="pure-g">
   <div class="pure-u-2-24"></div>
-  <div class="pure-u-20-24">
-		<p id="notice"><%= notice %></p>
+  <div class="pure-u-4-24">
+  	<p id="notice"><%= notice %></p>
 
 		<%= link_to 'Edit', edit_admin_post_path(@post), class: 'pure-button' %>
 		<%= link_to 'Back', admin_posts_path, class: 'pure-button' %>
+  	<h3>Published?</h3>
+	  <p>
+		  <%= @post.published %>
+		</p>
+		<h3>Word Count</h3>
+	  <p>
+		  <%= @post.word_count %>
+		</p>
+		<h3>Reading Time</h3>
+	  <p>
+		  <%= @post.reading_time %>
+		</p>
+  </div>
+  <div class="pure-u-16-24">
 		<br><br>
 	  <h3>Title</h3>
 	  <p>
-		  <%= @post.title %>
+		  <h1><%= @post.title %></h1>
 		</p>
 	  <h3>Body</h3>
 	  <p>
-		  <%= @post.body %>
+		  <%= markdown(@post.body) %>
 		</p>
-		  <h3>Published?</h3>
+		 <h3>Body Raw</h3>
 	  <p>
-		  <%= @post.published %>
+		  <%= @post.body %>
 		</p>
 	</div>
   <div class="pure-u-2-24"></div>
