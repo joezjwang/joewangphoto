@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :title, use: [:slugged, :history]
-
   	validates :title, :presence => true
 
 	def should_generate_new_friendly_id?
@@ -13,10 +12,16 @@ class Post < ActiveRecord::Base
 	end
 
 	def reading_time
-		#count words.convert to float and divide by 275 plus number of photos*0.5 and round the end result
-		(word_count.to_f/275).round
+		#count words.convert to float and divide by 275 plus number of photos*0.1(6seconds) and round the end result
+		minutes=((word_count.to_f/250)+(photo_count*0.1)).round
+		if minutes >= 1
+			minutes
+		else
+			1
+		end
 	end
 	def photo_count
+		3
 		#count number of photos associated with post. Count in database relation or in body?
 	end
 
