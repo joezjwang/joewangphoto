@@ -1,18 +1,41 @@
 <div id="page-content">
 
-<p>
-  <strong>Title:</strong>
+<div class="article-title">
+<h1>
   <%= @post.title %>
-</p>
+</h1>
+</div>
+
+<style type="text/css">
+	
+	.article-body {
+		max-width: 600px;
+		font-size: 16px;
+				padding-top: 50px;
+		padding-bottom: 200px;
+		  margin-left: auto ;
+		  margin-right: auto ;
+	}
+
+	.article-title {
+		text-align: center;
+		padding-top: 30px;
+		max-width: 1000px;
+		font-size: 20px;
+		margin-left: auto ;
+		margin-right: auto ;
+	}
+	.article-meta {
+		max-width: 300px;
+		font-size: 10px;
+		text-align: right;
+		float:right;
+	}
+</style>
+<div class="article-body">
 
 <p>
-  <strong>Body:</strong>
-  <%= @post.body %>
+  <%= markdown(@post.body) %>
 </p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @post.published %>
-</p>
-
+</div>
 </div>
