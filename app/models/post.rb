@@ -2,10 +2,23 @@ class Post < ActiveRecord::Base
 	extend FriendlyId
   	friendly_id :title, use: [:slugged, :history]
   	validates :title, :presence => true
+  	#before save is called upon during create and update using this to insert current time to
+  	#published_at if user checks the publish box
+  	before_save :published_at_create
+
+  	#callback functions
+
+  	def published_at_create
+  		if self.published?
+  			self.published_at=Time.now
+  		end
+  	end
 
 	def should_generate_new_friendly_id?
 		slug.blank? || title_changed?
 	end
+
+	#end of callback functions
 
 	def word_count
 		body.scan(/[[:alpha:]]+/).count
