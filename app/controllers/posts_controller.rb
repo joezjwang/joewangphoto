@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(Published: true)
+    @posts = Post.where(Published: true).order("published_at" + " " + "desc")
+    @post_most_recent=@posts.first
+    
   end
 
   # GET /posts/1

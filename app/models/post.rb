@@ -20,13 +20,17 @@ class Post < ActiveRecord::Base
 
 	#end of callback functions
 
-	def word_count
+	def long_title?
+		title.size>40 ? true : false
+	end
+
+	def body_word_count
 		body.scan(/[[:alpha:]]+/).count
 	end
 
 	def reading_time
 		#count words.convert to float and divide by 275 plus number of photos*0.1(6seconds) and round the end result
-		minutes=((word_count.to_f/250)+(photo_count*0.1)).round
+		minutes=((body_word_count.to_f/250)+(photo_count*0.1)).round
 		if minutes >= 1
 			minutes
 		else
