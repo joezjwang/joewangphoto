@@ -1,5 +1,11 @@
 <style type="text/css">
 
+.post-assets-container {
+  width: 792px;
+  margin: 0 auto;
+  padding:0;
+}
+
 .post-large-asset {
   position: relative;
     overflow: hidden;
@@ -92,12 +98,8 @@
     overflow: hidden;
     float:right;
   }
-
-  .asset-row{
-
-  }
 </style>
-
+<div class="post-assets-container">
   <section class="post-large-asset">
   <%= link_to post_path(@post_most_recent) do %>
     <header class="post-large-asset-header">
@@ -119,26 +121,26 @@
   <% end %>
   </section>
 
-<% @posts.each_with_index do |post, index| %>
-<% if index>0 %>
-    <section class="post-small-asset">
-    <%= link_to post_path(post) do %>
-      <header class="post-small-asset-header">
-        <% if post.long_title? %>
-          <h2 class="post-small-asset-title" style="font-size: 17px;">
-        <% else %>
-          <h2 class="post-small-asset-title">
-        <% end %>
-        <%= post.title %>
-        </h2>
-        <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+  <% @posts.each_with_index do |post, index| %>
+    <% if index>0 %>
+      <section class="post-small-asset">
+      <%= link_to post_path(post) do %>
+        <header class="post-small-asset-header">
+          <% if post.long_title? %>
+            <h2 class="post-small-asset-title" style="font-size: 17px;">
+          <% else %>
+            <h2 class="post-small-asset-title">
+          <% end %>
+          <%= post.title %>
+          </h2>
+          <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+          </div>
+        </header>
+        <div class="post-small-asset-image">
+          <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
         </div>
-      </header>
-      <div class="post-small-asset-image">
-        <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
-      </div>
+      <% end %>
+      </section>
     <% end %>
-  </section>
   <% end %>
-
-<% end %>
+</div>

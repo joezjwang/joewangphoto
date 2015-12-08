@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @posts = Post.where.not(id: @post.id).where(Published: true).order("published_at" + " " + "desc")
   end
 
   # GET /posts/new
