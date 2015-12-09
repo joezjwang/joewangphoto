@@ -17,6 +17,7 @@
 		<div id="slideshow-asset">
 	<% end %>
 	  <ul class="rslides">
+	  	<% if @photographs.present? %>
 		  <% @photographs.each do |photograph| %>
 		   <% if mobile_device? %>
 		   <%= image_tag(photograph.photo.url(:mobile_large), alt: photograph.title) %>
@@ -24,6 +25,7 @@
 		  	<%= image_tag(photograph.photo.url(:pc_large), alt: photograph.title) %>
 		  	<% end %>
 		  <% end %>
+		<% end %>
 	  </ul>
 	</div>
 </div>

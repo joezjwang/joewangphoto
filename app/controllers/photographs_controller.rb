@@ -6,15 +6,17 @@ class PhotographsController < ApplicationController
   # GET /photographs
   # GET /photographs.json
   def index
-    if mobile_device?
-      #provide portrait style photos on mobile
-      @photographs= Collection.where({name: "Mobile Slideshow"}).first.photographs
-    else
-      #provide landscape style photos on pc
-      @photographs= Collection.where({name: "PC Slideshow"}).first.photographs
+    if Collection.exists?
+      if mobile_device?
+        #provide portrait style photos on mobile
+        @photographs= Collection.where({name: "Mobile Slideshow"}).first.photographs
+      else
+        #provide landscape style photos on pc
+        @photographs= Collection.where({name: "PC Slideshow"}).first.photographs
+      end
+      #where returns an array of active records, thus .first is used to fetch the AR from the array
+      #maybe there is a better way of doing this. 
     end
-    #where returns an array of active records, thus .first is used to fetch the AR from the array
-    #maybe there is a better way of doing this. 
   end
 
   # GET /photographs/1
