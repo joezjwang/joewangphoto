@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   	#before save is called upon during create and update using this to insert current time to
   	#published_at if user checks the publish box
   	before_save :published_at_create
+  	has_many :blogimages, :dependent => :destroy
 
   	#callback functions
 

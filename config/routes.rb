@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogimages
+  resources :blog_images
   resources :posts, :path => 'blog'
   resources :collections
   resources :photographs

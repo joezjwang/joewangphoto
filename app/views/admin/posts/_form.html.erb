@@ -1,4 +1,4 @@
-<%= form_for @post, :html => {:class => 'pure-form' } do |f| %>
+<%= form_for @post, :html => {:class => 'pure-form', multipart: true} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -26,6 +26,16 @@
   <div class="field">
     <%= f.label :published %><br>
     <%= f.check_box :published %>
+  </div>
+  <div class="field">
+    <%= f.label :pictures, class: 'pure-input-2-3' %>
+      <!-- The magic is coming ...look at my eyes....shazammmm -->
+      <!-- Use HTML5 multiple attribute to enable multiple selection
+           and pass back to controller all files as an array, ready 
+           for paperclip!!
+           file_field_tag, since images is not a gallery attribute
+       -->
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

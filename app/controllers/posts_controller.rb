@@ -6,8 +6,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(Published: true).order("published_at" + " " + "desc")
-    @post_most_recent=@posts.first
+    if Post.exists?
+      @posts = Post.where(Published: true).order("published_at" + " " + "desc")
+      @post_most_recent=@posts.first
+    end
     
   end
 
@@ -33,6 +35,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @post.blogimages.create(image: image)
+        }
+      end
+
         format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
