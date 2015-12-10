@@ -19,7 +19,7 @@
           <th style="max-width:200px;">Title</th>
           <th style="max-width:400px;">Body</th>
           <th>Word Count</th>
-          <th>Photo Count</th>
+          <th>Image Count</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -33,7 +33,7 @@
             <td style="max-width:200px;"><%= post.title %></td>
             <td style="max-width:400px;"><%= post.body_preview_admin %></td>
             <td><%= post.body_word_count %></td>
-            <td>0</td>
+            <td><%= post.blogimages.count %></td>
             <td><%= link_to 'Show', admin_post_path(post), class: "pure-button" %></td>
             <td><%= link_to 'Edit', edit_admin_post_path(post), class: "pure-button" %></td>
             <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>
