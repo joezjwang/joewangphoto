@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'admin#index'
+    resources :blogimages, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :posts, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :photographs, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :collections,  only: [:index, :show, :new, :create, :update, :edit, :destroy] 

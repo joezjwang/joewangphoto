@@ -28,7 +28,7 @@ class BlogimagesController < ApplicationController
 
     respond_to do |format|
       if @blogimage.save
-        format.html { redirect_to @blogimage, notice: 'Blogimage was successfully created.' }
+        format.html { redirect_to admin_blogimage_url(@blogimage), notice: 'Blogimage was successfully created.' }
         format.json { render :show, status: :created, location: @blogimage }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BlogimagesController < ApplicationController
   def update
     respond_to do |format|
       if @blogimage.update(blogimage_params)
-        format.html { redirect_to @blogimage, notice: 'Blogimage was successfully updated.' }
+        format.html { redirect_to admin_blogimage_url(@blogimage), notice: 'Blogimage was successfully updated.' }
         format.json { render :show, status: :ok, location: @blogimage }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class BlogimagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blogimage_params
-      params.require(:blogimage).permit(:title, :caption, :preview_color)
+      params.require(:blogimage).permit(:title, :caption, :preview_color, :image)
     end
 end

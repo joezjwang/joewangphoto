@@ -5,9 +5,7 @@
 
     <h1>Listing Blog Images</h1>
 
-
-    <%#= link_to 'New Photograph', new_admin_photograph_path , class: "pure-button pure-button-primary" %>
-    <%#= link_to 'Collections', admin_collections_path , class: "pure-button" %>
+    <%= link_to 'New Post', admin_posts_path , class: "pure-button" %>
 
     <br><br>
 
@@ -29,7 +27,8 @@
             <td style="max-width:100px;"><%= image.title %></td>
             <td style="max-width:400px;"><%= image.caption %></td>
             <td>
-              <%= image_tag image.image.url(:pc_small), :height => '100'%>
+              <%= image_tag image.image.url(:pc_small), :width => '100'%>
+              <%= image_tag image.image.url(:pc_small), :width => '160'%>
             </td>
             <td><%#= link_to 'Show', admin_photograph_path(photograph), class: "pure-button" %></td>
             <td><%#= link_to 'Edit', edit_admin_photograph_path(photograph), class: "pure-button" %></td>
