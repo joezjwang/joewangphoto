@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use paperclip for photo upload and sizing
 gem "paperclip", "~> 4.2"
+# Upload multiple files using jQuery-File-Upload
+gem "jquery-fileupload-rails"
 
 # Use Unicorn as the app server
 gem 'unicorn'
