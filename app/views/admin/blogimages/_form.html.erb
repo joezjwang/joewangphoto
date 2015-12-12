@@ -1,0 +1,30 @@
+<%= form_for @blogimage, :html => {:class => 'pure-form' }  do |f| %>
+  <% if @blogimage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blogimage.errors.count, "error") %> prohibited this blogimage from being saved:</h2>
+
+      <ul>
+      <% @blogimage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "pure-input-1-3" %>
+  </div>
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text_area :caption, class: "pure-input-1-3" %>
+  </div>
+  <br>
+    <div class="field">
+   <%= f.file_field :image %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "pure-button pure-button-primary" %>
+  </div>
+<% end %>

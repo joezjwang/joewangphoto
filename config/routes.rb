@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :blogimages
+  resources :blog_images
+  resources :posts, :path => 'blog'
   resources :collections
   resources :photographs
  
@@ -10,6 +13,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'admin#index'
+    resources :blogimages, only: [:index, :show, :new, :create, :update, :edit, :destroy]
+    resources :posts, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :photographs, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :collections,  only: [:index, :show, :new, :create, :update, :edit, :destroy] 
   end

@@ -1,0 +1,8 @@
+<div id="page-content">
+<p id="notice"><%= notice %></p>
+  <% if mobile_device? %>
+    <%= render 'mobile_post_asset' %>
+  <% else %>
+    <%= render 'pc_post_asset' %>
+  <% end %>
+</div>

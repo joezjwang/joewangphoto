@@ -1,0 +1,137 @@
+<div id="page-content">
+<article class='post'>
+	<header class="article-title">
+	<h1>
+	  <%= @post.title %>
+	</h1>
+	<div class="article-meta"><%= @post.published_at.to_formatted_s(:post_date) %></div>
+	<div class="article-meta"><%= @post.reading_time %>min Read</div>
+	</header>
+
+	<style type="text/css">
+		
+figure {
+
+  padding: 0;
+}
+figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #666;
+  padding-bottom: 30px;
+  padding-top: 5px;
+
+}
+		.article-body {
+			width: 600px;
+			font-size: 16px;
+			padding-top: 100px;
+			padding-bottom: 200px;
+			margin: 0 auto;
+		}
+
+		.article-title {
+			text-align: center;
+			padding-top: 30px;
+			max-width: 800px;
+			font-size: 20px;
+			margin: 0 auto;
+		}
+		.article-date {
+			font-size: 10px;
+			padding:10px 30px 10px 30px;
+			color: #333;
+			text-align: right;
+			float:right;
+		}
+		.article-meta {
+			font-size: 14px;
+			padding:10px 30px 10px 30px;
+			color: #555;
+			text-align: right;
+			float:right;
+		}
+
+
+		.post-assets-container {
+  width: 792px;
+  margin: 0 auto;
+  padding:0;
+}
+.post-small-asset {
+
+    float:left;
+    overflow: hidden;
+    margin: 10px 36px 50px 36px;
+    width: 324px;
+    background-color: #f8f8f8;
+}
+  .post-small-asset-header {
+    padding: 5px 18px 10px 25px;
+    position: relative;
+    height: 150px;
+  }
+
+  .post-small-asset-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    clear: both;
+    line-height: 0;
+/*    background: url('../img/svg/logo_slider.svg?1435758447') no-repeat 0 0;
+    -moz-background-size: 64px 65px;
+    -o-background-size: 64px 65px;
+    -webkit-background-size: 64px 65px;
+    background-size: 64px 65px;
+    background-position: center center;*/
+    background-color: #E2E3E4;
+  }
+  .post-small-asset-title{
+    font-size: 22px;
+    line-height: 28px;
+    height: 80px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    color: #020C22;
+  }
+  .post-small-asset-meta-right {
+    font-size: 13px;
+    color: #020C22;
+    overflow: hidden;
+    float:right;
+  }
+
+	</style>
+	<div class="article-body">
+
+	<p>
+	  <%= markdown(@post.body) %>
+	</p>
+	</div>
+
+</article>
+
+<div class="post-assets-container">
+  <% @posts.each_with_index do |post, index| %>
+      <section class="post-small-asset">
+      <%= link_to post_path(post) do %>
+        <header class="post-small-asset-header">
+          <% if post.long_title? %>
+            <h2 class="post-small-asset-title" style="font-size: 17px;">
+          <% else %>
+            <h2 class="post-small-asset-title">
+          <% end %>
+          <%= post.title %>
+          </h2>
+          <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+          </div>
+        </header>
+        <div class="post-small-asset-image">
+          <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
+        </div>
+      <% end %>
+      </section>
+  <% end %>
+</div>
+</div>

@@ -1,0 +1,45 @@
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Listing Blog Images</h1>
+
+    <%= link_to 'Posts', admin_posts_path , class: "pure-button" %>
+
+    <br><br>
+
+    <table class="pure-table pure-table-horizontal">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th style="max-width:100px;">Title</th>
+          <th style="max-width:400px;">Caption</th>
+          <th style="max-width:400px;">Post Title</th>
+          <th>Preview</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @blogimages.each do |blogimage| %>
+          <tr>
+            <td><%= blogimage.id %></td>
+            <td style="max-width:100px;"><%= blogimage.title %></td>
+            <td style="max-width:400px;"><%= blogimage.caption %></td>
+            <td style="max-width:400px;"><%= blogimage.post.title %></td>
+            <td>
+              <%= image_tag blogimage.image.url(:pc_small), :height => '100'%>
+            </td>
+            <td><%= link_to 'Edit', edit_admin_blogimage_path(blogimage), class: "pure-button" %></td>
+            <td><%= link_to 'Destroy', admin_blogimage_path(blogimage), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  </div>
+  <div class="pure-u-2-24"></div>
+</div>
