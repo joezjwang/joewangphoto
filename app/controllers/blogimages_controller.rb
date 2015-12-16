@@ -24,17 +24,7 @@ class BlogimagesController < ApplicationController
   # POST /blogimages
   # POST /blogimages.json
   def create
-    @blogimage = Blogimage.new(blogimage_params)
-
-    respond_to do |format|
-      if @blogimage.save
-        format.html { redirect_to admin_blogimage_url(@blogimage), notice: 'Blogimage was successfully created.' }
-        format.json { render :show, status: :created, location: @blogimage }
-      else
-        format.html { render :new }
-        format.json { render json: @blogimage.errors, status: :unprocessable_entity }
-      end
-    end
+    @blogimage = Blogimage.create(blogimage_params)
   end
 
   # PATCH/PUT /blogimages/1

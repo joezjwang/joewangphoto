@@ -9,34 +9,33 @@
 
     <br><br>
 
-    <table class="pure-table pure-table-horizontal">
+    <%= form_for Blogimage.new do |f| %>
+      <%= f.label :image, "Upload paintings:" %>
+      <%= f.file_field :image, multiple: true, name: "blogimage[image]" %>
+    <% end %>
+    <br>
+
+    <table id="blogimages" class="pure-table pure-table-horizontal">
       <thead>
         <tr>
-          <th>Id</th>
+          <th>Image</th>
           <th style="max-width:100px;">Title</th>
-          <th style="max-width:400px;">Caption</th>
-          <th style="max-width:400px;">Post Title</th>
-          <th>Preview</th>
+          <th style="max-width:400px;">Description</th>
           <th colspan="2"></th>
         </tr>
       </thead>
 
-      <tbody>
-        <% @blogimages.each do |blogimage| %>
-          <tr>
-            <td><%= blogimage.id %></td>
-            <td style="max-width:100px;"><%= blogimage.title %></td>
-            <td style="max-width:400px;"><%= blogimage.caption %></td>
-            <td style="max-width:400px;"><%= blogimage.post.title %></td>
-            <td>
-              <%= image_tag blogimage.image.url(:pc_small), :height => '100'%>
-            </td>
-            <td><%= link_to 'Edit', edit_admin_blogimage_path(blogimage), class: "pure-button" %></td>
-            <td><%= link_to 'Destroy', admin_blogimage_path(blogimage), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>
-          </tr>
-        <% end %>
-      </tbody>
+      <%= render @blogimages %>
     </table>
+    <div class="clear"></div>
+
+    <script id="template-upload" type="text/x-tmpl">
+    <div class="upload">
+      {%=o.name%}
+      <div class="progress"><div class="bar" style="width: 0%"></div></div>
+    </div>
+    </script>
+
 
     <br>
 

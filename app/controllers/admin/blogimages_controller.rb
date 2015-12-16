@@ -4,7 +4,7 @@ class Admin::BlogimagesController < AdminController
   # GET /blogimages
   # GET /blogimages.json
   def index
-    @blogimages = Blogimage.all
+    @blogimages = Blogimage.all.order("updated_at" + " " + "desc")
   end
 
   # GET /blogimages/1
@@ -58,6 +58,7 @@ class Admin::BlogimagesController < AdminController
     respond_to do |format|
       format.html { redirect_to admin_blogimages_url, notice: 'Blogimage was successfully destroyed.' }
       format.json { head :no_content }
+      format.js { render layout: false } 
     end
   end
 
