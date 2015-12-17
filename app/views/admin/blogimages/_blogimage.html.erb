@@ -1,11 +1,9 @@
-<tr id="<%= dom_id(blogimage) %>">
-  <td><%= link_to image_tag blogimage.image.url(:pc_small), :height => '120' %></td>
-  <td><%= blogimage.title %></td>
-  <td><%= blogimage.caption %></td>
-  <td>
+<div class="blogimage" id="<%= dom_id(blogimage) %>">
+  <%= image_tag blogimage.image.url(:pc_small), :height => '140', class: "blogimage-preivew" %>
+  <div class="title"><%= blogimage.title %> [<%= blogimage.id %>]</div>
+  <div class="caption"><%= blogimage.caption %></div>
+  <div class="actions">
     <%= link_to 'Edit', edit_admin_blogimage_path(blogimage), class: "pure-button", target: "_blank" %>
-	</td>
-	<td>
-    <%= link_to 'Destroy', admin_blogimage_path(blogimage), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button", remote: true %>
-    </td>
-</tr>
+    <%= link_to 'Destroy', admin_blogimage_path(blogimage), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button delete-blogimage", remote: true %>
+  </div>
+</div>

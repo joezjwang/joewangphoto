@@ -14,19 +14,9 @@
       <%= f.file_field :image, multiple: true, name: "blogimage[image]" %>
     <% end %>
     <br>
-
-    <table id="blogimages" class="pure-table pure-table-horizontal">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th style="max-width:100px;">Title</th>
-          <th style="max-width:400px;">Description</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
-
-      <%= render @blogimages %>
-    </table>
+    <div id="blogimages">
+    <%= render @blogimages %>
+    </div>
     <div class="clear"></div>
 
     <script id="template-upload" type="text/x-tmpl">

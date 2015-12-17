@@ -36,13 +36,12 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         if params[:images]
-        #===== The magic is here ;)
         params[:images].each { |image|
           @post.blogimages.create(image: image)
         }
       end
 
-        format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully created.' }
+        format.html { redirect_to new_admin_post_url, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -56,6 +55,12 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
+        if params[:images]
+        #update will add more images if images are selected for upload.
+        params[:images].each { |image|
+          @post.blogimages.create(image: image)
+        }
+      end
         format.html { redirect_to admin_post_url(@post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else

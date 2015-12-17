@@ -15,10 +15,12 @@ class Admin::PostsController < AdminController
   # GET /posts/new
   def new
     @post = Post.new
+    @blogimages = Blogimage.all.order("updated_at" + " " + "desc")
   end
 
   # GET /posts/1/edit
   def edit
+    @blogimages = Blogimage.all.order("updated_at" + " " + "desc")
   end
 
   # POST /posts

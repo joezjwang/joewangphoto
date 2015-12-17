@@ -5,6 +5,7 @@
 
 		<%= link_to 'Edit', edit_admin_post_path(@post), class: 'pure-button' %>
 		<%= link_to 'Back', admin_posts_path, class: 'pure-button' %>
+		<%= link_to 'Live', post_path(@post), class: 'pure-button' %>
   	<h3>Published?</h3>
 	  <p>
 		  <%= @post.published %>
@@ -33,12 +34,7 @@
 	  <p>
 		  
 		</p>
-		<h3>All Associated Images Preview</h3>
-	  <p>
-		  <% @post.blogimages.each do |blogimage| %>
-		  <%= image_tag blogimage.image.url(:mobile_large), :width => '160'%>
-		  <% end %>
-		</p>
+
   </div>
   <div class="pure-u-16-24">
 		<br><br>
