@@ -4,15 +4,28 @@
 	<h1>
 	  <%= @post.title %>
 	</h1>
-	<div class="article-meta"><%= @post.published_at.to_formatted_s(:post_date) %></div>
-	<div class="article-meta"><%= @post.reading_time %>min Read</div>
+	<div class="article-meta">
+    <div class="article-date"><%= @post.published_at.to_formatted_s(:post_date) %></div>
+	<div class="article-date"><%= @post.reading_time %>min Read</div>
+  </div>
 	</header>
 
 	<style type="text/css">
-		
-figure {
+		pre {
+      margin-top:50px;
+      margin-bottom:50px;
+    }
+figure img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+figure{
 
   padding: 0;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 figcaption {
   text-align: center;
@@ -20,11 +33,16 @@ figcaption {
   font-style: italic;
   color: #666;
   padding-bottom: 30px;
-  padding-top: 5px;
+  margin: 0 auto;
+}
 
+p{
+  padding-right:50px;
+  padding-left:50px;
+  line-height: 1.5;
 }
 		.article-body {
-			width: 600px;
+			width: 720px;
 			font-size: 16px;
 			padding-top: 100px;
 			padding-bottom: 200px;
@@ -39,13 +57,14 @@ figcaption {
 			margin: 0 auto;
 		}
 		.article-date {
-			font-size: 10px;
+			font-size: 12px;
 			padding:10px 30px 10px 30px;
 			color: #333;
 			text-align: right;
 			float:right;
 		}
 		.article-meta {
+      max-width: 720px;
 			font-size: 14px;
 			padding:10px 30px 10px 30px;
 			color: #555;
@@ -79,12 +98,6 @@ figcaption {
     cursor: pointer;
     clear: both;
     line-height: 0;
-/*    background: url('../img/svg/logo_slider.svg?1435758447') no-repeat 0 0;
-    -moz-background-size: 64px 65px;
-    -o-background-size: 64px 65px;
-    -webkit-background-size: 64px 65px;
-    background-size: 64px 65px;
-    background-position: center center;*/
     background-color: #E2E3E4;
   }
   .post-small-asset-title{
@@ -110,28 +123,28 @@ figcaption {
 	</p>
 	</div>
 
-</article>
+  </article>
 
-<div class="post-assets-container">
-  <% @posts.each_with_index do |post, index| %>
-      <section class="post-small-asset">
-      <%= link_to post_path(post) do %>
-        <header class="post-small-asset-header">
-          <% if post.long_title? %>
-            <h2 class="post-small-asset-title" style="font-size: 17px;">
-          <% else %>
-            <h2 class="post-small-asset-title">
-          <% end %>
-          <%= post.title %>
-          </h2>
-          <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+  <div class="post-assets-container">
+    <% @posts.each_with_index do |post, index| %>
+        <section class="post-small-asset">
+        <%= link_to post_path(post) do %>
+          <header class="post-small-asset-header">
+            <% if post.long_title? %>
+              <h2 class="post-small-asset-title" style="font-size: 17px;">
+            <% else %>
+              <h2 class="post-small-asset-title">
+            <% end %>
+            <%= post.title %>
+            </h2>
+            <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+            </div>
+          </header>
+          <div class="post-small-asset-image">
+            <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
           </div>
-        </header>
-        <div class="post-small-asset-image">
-          <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
-        </div>
-      <% end %>
-      </section>
-  <% end %>
-</div>
+        <% end %>
+        </section>
+    <% end %>
+  </div>
 </div>

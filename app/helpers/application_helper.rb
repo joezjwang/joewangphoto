@@ -52,8 +52,8 @@ class CustomMardownRenders < Redcarpet::Render::HTML
       # .find_by here b'cause it won't raise ActiveRecord::RecordNotFound
       # if none found - no image output
       if img = Blogimage.find_by(id: link_or_id)
-        #image_tag(img.image.url(style), title: title, alt: img.title, class: css)
-        "<figure><img src='#{img.image.url(style)}' alt='#{img.caption}'><br/><figcaption>#{img.caption}</figcaption></figure>"
+        #
+        "<figure><img src='#{img.image.url(style)}' alt=\"#{img.title}\"><br/><figcaption>#{img.caption}</figcaption></figure>"
       else
         ''
       end
