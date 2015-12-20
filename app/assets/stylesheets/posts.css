@@ -1,0 +1,228 @@
+/*Post Show*/
+.article-body {
+	width: 720px;
+	font-size: 16px;
+	padding-top: 100px;
+	padding-bottom: 120px;
+	margin: 0 auto;
+}
+
+.article-title {
+	text-align: center;
+	padding-top: 30px;
+	max-width: 800px;
+	font-size: 20px;
+	margin: 0 auto;
+}
+.article-date {
+	font-size: 13px;
+	padding:0px 30px 0px 30px;
+	color: #444;
+	text-align: right;
+	float:right;
+}
+.article-meta {
+  max-width: 720px;
+	font-size: 14px;
+	padding:0px 30px 10px 30px;
+	text-align: right;
+	float:right;
+}
+.show-post-assets-container {
+  width: 792px;
+  margin: 0 auto;
+  padding-top:100px;
+  padding-bottom: 70px;
+}
+
+.share-section {
+  margin: 0 auto;
+  max-width: 90%;
+  text-align: center;
+}
+.share-button {
+  padding: 0.5em 1em;
+  color: #ddd;
+  margin: 10px;
+  position: relative;
+  font-size: 18px;
+  background: #3b5998;
+  display: inline-block;
+}
+.vk-button{ background: #45668e; }
+.facebook-button { background: #3b5998; }
+.weibo-button { background: #E6162D; }
+
+
+/*Post Show Mobile (Tablet size and Phone media queries)*/
+
+@media only screen and (max-width: 768px)  {
+
+  .show-post-assets-container {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top:60px;
+    padding-bottom: 30px;
+  }
+  .article-body {
+    width: 100%;
+    font-size: 16px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+  }
+
+  .article-title {
+    text-align: center;
+    padding-top: 10px;
+    max-width: 90%;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+  .article-date {
+    font-size: 13px;
+    padding:0px 10px 0px 10px;
+    color: #444;
+    display: inline-block;
+    float: none;
+  }
+  .article-meta {
+    width: 90%;
+    font-size: 14px;
+    padding:0px;
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+  }
+
+}
+
+/*Post Index*/
+
+.post-assets-container {
+  width: 792px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+///*Post Assets*/
+
+/*Post Large Asset*/
+
+  .post-large-asset {
+    position: relative;
+      overflow: hidden;
+      margin: 30px 36px 80px 36px;
+      width: 720px;
+      background-color: #f8f8f8;
+  }
+  .post-large-asset-header {
+    padding: 15px 25px 25px 30px;
+    position: relative;
+    height: 160px;
+  }
+  .post-large-asset-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    clear: both;
+    line-height: 0;
+    background-color: #E2E3E4;
+  }
+  .post-large-asset-title{
+    font-size: 28px;
+    line-height: 33px;
+    height: 75px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    color: #020C22;
+  }
+  .post-large-asset-meta-right {
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    font-weight: 200;
+    float:right;
+  }
+  .post-large-asset-meta-left {
+    padding: 0.2em 1em;
+    color: #eee;
+    position: relative;
+    top: -5px;
+    font-size: 16px;
+    background: #5aba59;
+    float:left;
+}
+
+/*Post Small Asset Group PC*/
+
+  .post-small-asset {
+    float:left;
+    overflow: hidden;
+    margin: 10px 36px 50px 36px;
+    width: 324px;
+    background-color: #f8f8f8;
+  }
+  .post-small-asset-header {
+    padding: 8px 18px 10px 25px;
+    position: relative;
+    height: 150px;
+  }
+  .post-small-asset-image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    clear: both;
+    line-height: 0;
+    max-height: 216px;
+    background-color: #E4E4E4;
+  }
+  .post-small-asset-image img {
+    max-width:100%;
+  }
+  .post-small-asset-title{
+    font-size: 22px;
+    line-height: 28px;
+    height: 80px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    color: #051029;
+  }
+  .post-small-asset-meta-right {
+    font-size: 14px;
+    color: #777;
+    overflow: hidden;
+    float:right;
+  }
+
+/*Post Small Asset Group Mobile*/
+
+@media only screen and (max-width: 479px)  {
+
+  .post-small-asset {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 89%;
+    background-color: #f8f8f8;
+    float: none;
+  }
+  .post-small-asset-header {
+    padding: 5px 18px 10px 25px;
+    position: relative;
+    height: 150px;
+  }
+  .post-small-asset-image {
+    max-height: auto;
+  }
+  .post-small-asset-image img {
+    max-width:100%;
+  }
+  .post-small-asset-title{
+  }
+  .post-small-asset-meta-right {
+  }
+
+  }

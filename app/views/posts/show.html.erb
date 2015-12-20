@@ -5,146 +5,34 @@
 	  <%= @post.title %>
 	</h1>
 	<div class="article-meta">
-    <div class="article-date"><%= @post.published_at.to_formatted_s(:post_date) %></div>
-	<div class="article-date"><%= @post.reading_time %>min Read</div>
+    <div class="article-date"><%= @post.published_at.to_formatted_s(:post_date) %>
+  </div>
   </div>
 	</header>
 
 	<style type="text/css">
-		pre {
-      margin-top:50px;
-      margin-bottom:50px;
-    }
-figure img
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-figure{
 
-  padding: 0;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-figcaption {
-  text-align: center;
-  font-size: 0.9em;
-  font-style: italic;
-  color: #666;
-  padding-bottom: 30px;
-  margin: 0 auto;
-}
-
-p{
-  padding-right:50px;
-  padding-left:50px;
-  line-height: 1.5;
-}
-		.article-body {
-			width: 720px;
-			font-size: 16px;
-			padding-top: 100px;
-			padding-bottom: 200px;
-			margin: 0 auto;
-		}
-
-		.article-title {
-			text-align: center;
-			padding-top: 30px;
-			max-width: 800px;
-			font-size: 20px;
-			margin: 0 auto;
-		}
-		.article-date {
-			font-size: 12px;
-			padding:10px 30px 10px 30px;
-			color: #333;
-			text-align: right;
-			float:right;
-		}
-		.article-meta {
-      max-width: 720px;
-			font-size: 14px;
-			padding:10px 30px 10px 30px;
-			color: #555;
-			text-align: right;
-			float:right;
-		}
-
-
-		.post-assets-container {
-  width: 792px;
-  margin: 0 auto;
-  padding:0;
-}
-.post-small-asset {
-
-    float:left;
-    overflow: hidden;
-    margin: 10px 36px 50px 36px;
-    width: 324px;
-    background-color: #f8f8f8;
-}
-  .post-small-asset-header {
-    padding: 5px 18px 10px 25px;
-    position: relative;
-    height: 150px;
-  }
-
-  .post-small-asset-image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    clear: both;
-    line-height: 0;
-    background-color: #E2E3E4;
-  }
-  .post-small-asset-title{
-    font-size: 22px;
-    line-height: 28px;
-    height: 80px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    color: #020C22;
-  }
-  .post-small-asset-meta-right {
-    font-size: 13px;
-    color: #020C22;
-    overflow: hidden;
-    float:right;
-  }
 
 	</style>
-	<div class="article-body">
 
-	<p>
-	  <%= markdown(@post.body) %>
-	</p>
-	</div>
-
+	<article class="article-body">
+  	  <%= markdown(@post.body) %>
   </article>
+  <div class="share-section">
+    <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",  target: "_blank" do %>
+      <div class="share-button facebook-button">Share on Facebook &#x27A6;</div>
+    <% end %>
+    <%= link_to "http://vk.com/share.php?url=#{request.original_url}",  target: "_blank" do %>
+      <div class="share-button vk-button">Доля на ВКонтакте &#x27A6;</div>
+    <% end %>
+    <%= link_to "http://service.weibo.com/share/share.php?url=#{request.original_url}",  target: "_blank" do %>
+      <div class="share-button weibo-button">分享到微博 &#x27A6;</div>
+    <% end %>
+  </div>
 
-  <div class="post-assets-container">
-    <% @posts.each_with_index do |post, index| %>
-        <section class="post-small-asset">
-        <%= link_to post_path(post) do %>
-          <header class="post-small-asset-header">
-            <% if post.long_title? %>
-              <h2 class="post-small-asset-title" style="font-size: 17px;">
-            <% else %>
-              <h2 class="post-small-asset-title">
-            <% end %>
-            <%= post.title %>
-            </h2>
-            <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
-            </div>
-          </header>
-          <div class="post-small-asset-image">
-            <img class="post-avatar" style="background: rgb(211, 215, 227);" alt="Post Cover Photo" height="216" width="324" src="http://placehold.it/324/216">
-          </div>
-        <% end %>
-        </section>
+  <div class="show-post-assets-container">
+    <% @posts.each do |post| %>
+      <%= render 'small_asset_pc', post: post %>
     <% end %>
   </div>
 </div>

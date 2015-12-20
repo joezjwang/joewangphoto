@@ -1,0 +1,28 @@
+<section class="post-large-asset">
+  <%= link_to post_path(@post_most_recent) do %>
+    <header class="post-large-asset-header">
+      <% if @post_most_recent.long_title? %>
+        <h2 class="post-large-asset-title" style="font-size: 24px;">
+      <% else %>
+        <h2 class="post-large-asset-title">
+      <% end %>
+      <%= @post_most_recent.title %>
+      </h2>
+      <div class="post-large-asset-meta-left">NEW POST
+      </div>
+      <div class="post-large-asset-meta-right"><%= @post_most_recent.reading_time %> min read
+      </div>
+    </header>
+    <div class="post-large-asset-image">
+      <% if @post_most_recent.cover_blogimage_id.present? %>
+        <%= image_tag(Blogimage.find(@post_most_recent.cover_blogimage_id).image.url(:pc_small), alt: @post_most_recent.title) %>
+      <% end %>
+    </div>
+  <% end %>
+</section>
+
+<% @posts.each_with_index do |post, index| %>
+  <% if index>0 %>
+    <%= render 'small_asset_pc', post: post %>
+  <% end %>
+<% end %>
