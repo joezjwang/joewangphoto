@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208212124) do
+ActiveRecord::Schema.define(version: 20151218025058) do
 
   create_table "blogimages", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -100,14 +100,15 @@ ActiveRecord::Schema.define(version: 20151208212124) do
   add_index "postimages", ["Posts_id"], name: "index_postimages_on_Posts_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",        limit: 255
-    t.text     "body",         limit: 65535
-    t.boolean  "published",    limit: 1,     default: false
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
-    t.string   "slug",         limit: 255
+    t.string   "title",              limit: 255
+    t.text     "body",               limit: 65535
+    t.boolean  "published",          limit: 1,     default: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.string   "slug",               limit: 255
     t.datetime "published_at"
     t.datetime "taken_at"
+    t.integer  "cover_blogimage_id", limit: 4
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
