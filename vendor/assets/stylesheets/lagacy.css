@@ -574,6 +574,7 @@ h1 {
 #nav-section #menu-section > ul  {
     width:  100%;
     padding: 0px;
+    font-size: 17px;
     text-align: center;
     border:  none;
     position:  relative;
