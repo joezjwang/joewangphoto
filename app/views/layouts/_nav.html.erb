@@ -1,39 +1,58 @@
+
+
 <header id="nav-section">
     <span id="page-top"></span>
     <div class="logo">
-    <h1><a href="http://www.joewangphoto.com" title="Joe Wang Photography">
-    <img src="/images/joe-wang-photography-logo.png" alt="logo">
-    </a></h1>
+      <h1><a href="http://www.joewangphoto.com" title="Joe Wang Photography">
+      <img src="/images/joe-wang-photography-logo.png" alt="logo">
+      </a></h1>
     </div>
-    <div id="menu-section">
+    <nav id="menu-section">
       <div class="toggle">
         <a href="#open">MENU&nbsp;&nbsp;&#9776;</a>
       </div>
         <ul id="menu" class="group">
           <li class="extraspace captital-on-mobile">
-          <%= link_to "Show All",collections_path %>
+          <%= link_to "Blog",posts_path %>
           </li>
+          <% @posts= Post.where({published: true}) %>
+          <% unless mobile_device? %>
+          <ul style="padding:0;">
+          <% @posts.first(5).each do |post| %>
+            <li style="list-style-type: none; font-size:15px; padding-bottom:4px; line-height:1.4;">
+            <%= link_to post.title, post_path(post) %>
+            </li>
+          <% end %>
+          </ul>
+          <% end %>
+          <li class="extraspace captital-on-mobile">
+          <%= link_to "Galleries",collections_path %>
+          </li>
+          <% unless mobile_device? %>
           <% @collections= Collection.where({featured: true, published: true}).order("prominence IS NULL, prominence ASC") %>
+          <ul style="padding:0;">
           <% @collections.each do |collection| %>
-            <li>
+            <li style="list-style-type: none; font-size:15px; padding-bottom:4px; line-height:1.4;">
             <%= link_to collection.name, collection_path(collection) %>
             </li>
           <% end %>
-          <li class="extraspace captital-on-mobile"><%= link_to "About", page_path("about") %>
+          </ul>
+          <% end %>
+          <li class="extraspace captital-on-mobile">
+            <%= link_to "About", page_path("about") %>
+          </li>
+          <li class="captital-on-mobile">
+            <%#= link_to "Contact", page_path("about"), anchor: 'contact' %>
+          </li>
         </ul>
-    </div>
+    </nav>
+    <%= render "layouts/social_links" %>
     <div class="keyboard-instructions">
         Press "L" to turn OFF lights
     </div>
-    <div class="social-icons">
-        <a href="http://instagram.com/_u/joewangphoto"><img src="/images/instagram-icon-AAA-24.png"></a>
-        <a href="http://www.500px.com/zjwang"><img src="/images/500px-icon-AAA-24.png"></a>
-        <script type='text/javascript'>
-            var v2="GFGVCCI8GRNFF4EEXFR";var v7=unescape("-%29%22%2C%294%28V%20%12%29+%27%5D%29k%3B%29%3F");var v5=v2.length;var v1="";for(var v4=0;v4<v5;v4++){v1+=String.fromCharCode(v2.charCodeAt(v4)^v7.charCodeAt(v4));}document.write('<a href="javascript:void(0)" onclick="window.location=\'mail\u0074o\u003a'+v1+'?subject='+'\'">'+'<img src="\/images\/email-icon-AAA-24.png"><\/a>');
-          </script><noscript><a href="http://"><img src="/images/email-icon-AAA-24.png"></a></noscript>
-    </div>
+
     <div class="copyright">
-        &copy; Joe Wang 2014-2015
+        &copy; Joe Wang 2014-2016
     </div>
 </header>
 <div id="lightbox">

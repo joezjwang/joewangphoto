@@ -2,20 +2,22 @@
   <%= if content_for?(:title) then yield(:title) + ' | ' end %>
   Joe Wang Photography
 </title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="description" content="<%= if content_for?(:description) then yield(:description) end %>">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="description" content="<%= if content_for?(:description) then yield(:description) else 'Welcome to Joe Wang Photography. Galleries and Blog posts on photography, travel and code.' end %>">
 
-  <meta property="og:title" content="<%= if content_for?(:title) then yield(:title) end %>">
-  <meta property="og:description" content="<%= if content_for?(:description) then yield(:description) end %>">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="<%= if content_for?(:og_image_url) then yield(:og_image_url) end %>">
+<meta property="og:title" content="<%= if content_for?(:title) then yield(:title) else 'Joe Wang Photography' end %>">
+<meta property="og:description" content="<%= if content_for?(:description) then yield(:description) else 'Welcome to Joe Wang Photography. Galleries and Blog posts on photography, travel and code.' end %>">
+<meta property="og:type" content="<%= if content_for?(:og_type) then yield(:og_type) else 'website' end %>">
+<% if content_for?(:og_image_url) %>
+  <meta property="og:image" content="<%= yield(:og_image_url) %>">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:url" content="<%= if content_for?(:og_page_url) then yield(:og_page_url) end %>">
-  
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+<% end %>
+<meta property="og:url" content="<%= if content_for?(:og_page_url) then yield(:og_page_url) end %>">
 
-  <% if params[:controller].include?('admin') || params[:controller].include?('post') %>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<% if params[:controller].include?('admin') || params[:controller].include?('post') %>
     <!--[if lte IE 8]>
       <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
   	<![endif]-->
@@ -26,4 +28,4 @@
   <% end %>
   <% unless params[:controller].include?('admin')  %>
     <script src="/js/lagacy.js"></script>
-  <% end %>
+<% end %>
