@@ -1,35 +1,30 @@
+<% title @post.title %>
+<% description @post.body_preview_description %>
+<% 
+unless @post.cover_blogimage_id.nil?
+  og_image_url request.base_url + Blogimage.find(@post.cover_blogimage_id).image.url(:pc_large)
+end 
+%>
+<% og_page_url request.original_url %>
+<% og_type "article" %>
+
 <div id="page-content">
 <article class='post'>
 	<header class="article-title">
-	<h1>
-	  <%= @post.title %>
-	</h1>
-	<div class="article-meta">
-    <div class="article-date"><%= @post.published_at.to_formatted_s(:post_date) %>
-  </div>
-  </div>
+  	<h1>
+  	  <%= @post.title %>
+  	</h1>
+  	<div class="article-meta">
+      <div class="article-date">
+        <%= @post.published_at.to_formatted_s(:post_date) %>
+      </div>
+    </div>
 	</header>
-
-	<style type="text/css">
-
-
-	</style>
 
 	<article class="article-body">
   	  <%= markdown(@post.body) %>
   </article>
-  <div class="share-section">
-    <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",  target: "_blank" do %>
-      <div class="share-button facebook-button">Share on Facebook &#x27A6;</div>
-    <% end %>
-    <%= link_to "http://vk.com/share.php?url=#{request.original_url}",  target: "_blank" do %>
-      <div class="share-button vk-button">Доля на ВКонтакте &#x27A6;</div>
-    <% end %>
-    <%= link_to "http://service.weibo.com/share/share.php?url=#{request.original_url}",  target: "_blank" do %>
-      <div class="share-button weibo-button">分享到微博 &#x27A6;</div>
-    <% end %>
-  </div>
-
+  <%= render "layouts/social_share" %>
   <div class="show-post-assets-container">
     <% @posts.each do |post| %>
       <%= render 'small_asset_pc', post: post %>

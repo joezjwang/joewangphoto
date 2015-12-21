@@ -58,4 +58,7 @@ class Post < ActiveRecord::Base
 		#should count the number of words and reduce the sentence count if it is too long
 		body_preview(2)
 	end
+	def body_preview_description
+		body_preview(2)
+	end
 end
