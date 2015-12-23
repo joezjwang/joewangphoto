@@ -1,0 +1,19 @@
+<%= link_to collection_path(collection) do %>
+  <section class="gallery-asset" id="<%= 
+          "gallery-#{index}" %>">
+    <div class="gallery-asset-image">
+    <%= image_tag(Photograph.find(collection.cover_photograph_id).photo.url(size), alt: collection.name) %>
+    </div>
+    <header class="gallery-asset-header">
+      <div class="gallery-asset-header-date">
+        Jun 2013
+      </div>
+      <div class="gallery-asset-header-photo-count">
+        <%= collection.photographs.count %> Photographs
+      </div>
+      <div class="gallery-asset-header-name">
+        <p><%= collection.name %></p>
+      </div>
+    </header>
+  </section>
+<% end %>

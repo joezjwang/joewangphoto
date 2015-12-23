@@ -1,0 +1,22 @@
+<% if mobile_device? %>
+  <div class="galleries-single-column">
+    <% @collections.each_with_index do |collection, index| %>
+      <%= render "gallery_asset", collection: collection, index: index, size: "mobile_large" %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="galleries-left-column">
+    <% @collections.each_with_index do |collection, index| %>
+      <% if index % 2 == 0 %>
+        <%= render "gallery_asset", collection: collection, index: index, size: "pc_small"  %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="galleries-right-column">
+    <% @collections.each_with_index do |collection, index| %>
+      <% if index % 2 == 1 %>
+        <%= render "gallery_asset", collection: collection, index: index, size: "pc_small"  %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

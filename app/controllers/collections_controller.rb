@@ -5,7 +5,8 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.where({published: true}).order("prominence IS NULL, prominence ASC")
+    #query for all collection that are posted and contains a cover photo
+    @collections = Collection.where({published: true}).where('cover_photograph_id IS NOT NULL').order("prominence IS NULL, prominence ASC")
   end
 
   # GET /collections/1

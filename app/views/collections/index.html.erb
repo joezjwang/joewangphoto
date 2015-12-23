@@ -7,34 +7,8 @@
   description "Galleries -"+collectionstring 
 %>
 
-<style type="text/css">
-  body {
-  text-align: center;
-}
-</style>
-
 <div id="page-content">
-    <% @collections.each_with_index do |collection, index| %>
-        <% unless collection.cover_photograph_id.nil? %>
-          <section class="collection-cover" id="<%= 
-          "collection-#{index}" %>">
-          <% if mobile_device? %>
-            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:mobile_large), alt: collection.name), collection_path(collection)) %>
-          <% else %>
-            <%= link_to(image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:pc_large), alt: collection.name), collection_path(collection)) %>
-          <% end %>
-          <%= link_to collection_path(collection) do %>
-          <header class="collection-text-container">
-            <div class="collection-name">
-              <%= collection.name %>
-            </div>
-            <div class="collection-description">
-              <%= collection.description %>
-            </div>
-          </header>
-          </section>
-          <% end %>
-        <br>
-        <% end %>
-    <% end %>
+  <div class="galleries-content">
+    <%= render "gallery_list" %>
+  </div>
 </div>

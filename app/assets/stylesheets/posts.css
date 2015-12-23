@@ -122,10 +122,10 @@
 
   .post-large-asset {
     position: relative;
-      overflow: hidden;
-      margin: 30px 36px 80px 36px;
-      width: 720px;
-      background-color: #f8f8f8;
+    overflow: hidden;
+    margin: 30px 36px 80px 36px;
+    width: 720px;
+    background-color: #f8f8f8;
   }
   .post-large-asset-header {
     padding: 15px 25px 25px 30px;
