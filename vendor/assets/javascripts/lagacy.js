@@ -1,5 +1,6 @@
 $(function() {
 
+    //Hiding Logo once user scrolls down to provide a better viewing experience
     $(window).scroll(function() {
         var height = $(window).scrollTop();
         if (height>400)
@@ -14,7 +15,16 @@ $(function() {
         }
 
     });
+
+    //Toggling Menu
+
+    $(".toggle").click(function(){
+        $("#menu-section ul").slideToggle();
+    });
+
   });
+
+
 // $( document ).ready(function() {
 //     $(".collection-photo").mouseover(function(){
 //     console.log("mouseover");
@@ -45,7 +55,6 @@ $(document).keydown(function(e) {
         }
         else if ($('#nav-section .copyright').css("display")=="none")
         {
-            //console.log($('#lightbox').css("display"));
             $('#menu-section ul').fadeIn();
 
             if  ($(window).scrollTop()<400)
@@ -76,26 +85,6 @@ $(document).keydown(function(e) {
 });
 
 
-function initPage() {
-
-
-$(".toggle").click(function(){
-    $("#menu-section ul").slideToggle();
-});
-
-
-    var pageHeight = jQuery(window).height();
-    var pageWidth = jQuery(window).width();
-
-    if (pageWidth>768) {
-        var photoHeight = pageHeight-50;
-        var photoWidth = photoHeight*3/2;
-        console.log(photoWidth);
-        
-        $('.photograph').css({ "max-height": photoHeight + 'px' });
-        //$('.collection-photo').css({ "width": photoWidth + 'px' });
-    }
-}
 
 
 $(function() {

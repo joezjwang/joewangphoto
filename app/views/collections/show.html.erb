@@ -7,6 +7,25 @@ end
 %>
 <% og_page_url request.original_url %>
 
+<script type="text/javascript">
+
+function changePhotoHeight () {
+    var pageHeight = jQuery(window).height();
+    var pageWidth = jQuery(window).width();
+
+    if (pageWidth>768) {
+        var photoHeight = pageHeight-50;
+        var photoWidth = photoHeight*3/2;
+        console.log(photoWidth);
+        
+        $('.photograph').css({ "max-height": photoHeight + 'px' });
+    }
+  }
+
+  window.onload = changePhotoHeight;
+
+</script>
+
 <div id="page-content">
 	<div class="gallery-description">
 		<p>
@@ -29,3 +48,4 @@ end
 		<%= render "gallery_list" %>
 	</div>
 </div>
+
