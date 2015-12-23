@@ -36,6 +36,10 @@
     <%= f.label :prominence %><br>
     <%= f.select(:prominence, prominence_array, {selected: @collection.prominence, include_blank: true})%>
   </div>
+  <div class="field">
+    <%= f.label :date_taken %>
+    <%= f.date_field :date_taken %>
+  </div>
   <br><br>
   <div class="actions">
     <%= f.submit class: "pure-button pure-button-primary" %>

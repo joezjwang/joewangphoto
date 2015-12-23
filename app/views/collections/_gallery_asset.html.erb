@@ -6,7 +6,9 @@
     </div>
     <header class="gallery-asset-header">
       <div class="gallery-asset-header-date">
-        Jun 2013
+      <% if collection.date_taken.present? %>
+        <%= collection.date_taken.to_formatted_s(:gallery_date) %>
+      <% end %>
       </div>
       <div class="gallery-asset-header-photo-count">
         <%= collection.photographs.count %> Photographs

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151218025058) do
+ActiveRecord::Schema.define(version: 20151223224405) do
 
   create_table "blogimages", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20151218025058) do
     t.boolean  "published",           limit: 1,     default: false
     t.string   "slug",                limit: 255
     t.integer  "prominence",          limit: 4
+    t.datetime "date_taken"
   end
 
   add_index "collections", ["slug"], name: "index_collections_on_slug", using: :btree

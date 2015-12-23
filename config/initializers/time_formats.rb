@@ -2,7 +2,8 @@
 #Custom Date Time Formats
 
 #User Side
-#Post Show View Date
+
 Time::DATE_FORMATS[:post_date] =  '%b %d, %Y'
+Time::DATE_FORMATS[:gallery_date] =  '%-m. %Y'
 
 #Admin Side
