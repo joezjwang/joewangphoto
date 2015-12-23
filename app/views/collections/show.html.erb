@@ -7,40 +7,25 @@ end
 %>
 <% og_page_url request.original_url %>
 
-<style type="text/css">
-	
-body {
-	text-align: center;
-}
-
-</style>
 <div id="page-content">
-		<p id="notice"><%= notice %></p>
-		<div id="set-intro">
-		<h1></h1>
+	<div class="gallery-description">
 		<p>
-		<%= @collection.description  %>
+			<%= @collection.description  %>
 		</p>
 	</div>
-<div class="collection-group">
+	<div class="photograph-group">
 		<% @photographs.each_with_index do |photograph, index| %>
-			<div class="collection-photo" id="<%= "photo-#{index}" %>" >
+			<div class="photograph" id="<%= "photo-#{index}" %>" >
 				<% if mobile_device? %>
 					<%= image_tag(photograph.photo.url(:mobile_large), alt: photograph.title) %>
 				<% else %>
 					<%= image_tag(photograph.photo.url(:pc_large), alt: photograph.title) %>
-				<div class="photo-text-container">
-					<div class="photo-title"><%= photograph.title %></div>
-					<div class="photo-location"><%= photograph.location %></div>
-				</div>
 				<% end %>
-		</div><br>
+			</div><br>
 		<% end %>
-		<div class="collection_show_footer">
-		<%= link_to '^ Top', "#page-top", class: 'pure-button' %>
-		</div>
+	<%= render "layouts/social_share" %>
 	</div>
+	<div class="more-galleries-content">
+		<%= render "gallery_list" %>
 	</div>
 </div>
-
-

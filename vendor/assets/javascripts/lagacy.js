@@ -90,9 +90,9 @@ $(".toggle").click(function(){
     if (pageWidth>768) {
         var photoHeight = pageHeight-50;
         var photoWidth = photoHeight*3/2;
-        //console.log(photoWidth);
+        console.log(photoWidth);
         
-        $('.collection-photo').css({ "max-height": photoHeight + 'px' });
+        $('.photograph').css({ "max-height": photoHeight + 'px' });
         //$('.collection-photo').css({ "width": photoWidth + 'px' });
     }
 }

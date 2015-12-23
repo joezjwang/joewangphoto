@@ -3,7 +3,7 @@
 	width: 720px;
 	font-size: 16px;
 	padding-top: 70px;
-	padding-bottom: 100px;
+	padding-bottom: 75px;
 	margin: 0 auto;
 }
 
@@ -39,6 +39,7 @@
   margin: 0 auto;
   max-width: 90%;
   text-align: center;
+  padding-top: 20px;
 }
 .share-button {
   padding: 0.5em 1em;
@@ -62,20 +63,20 @@
     max-width: 100%;
     text-align: center;
     margin: 0 auto;
-    padding-top:60px;
+    padding-top: 50px;
     padding-bottom: 30px;
   }
   .article-body {
     width: 100%;
     font-size: 16px;
     padding-top: 40px;
-    padding-bottom: 80px;
+    padding-bottom: 70px;
     margin: 0 auto;
   }
 
   .article-title {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 55px;
     max-width: 90%;
     font-size: 0.7em;
     margin: 0 auto;
@@ -112,7 +113,7 @@
     max-width: 100%;
     text-align: center;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 30px;
     padding-bottom: 30px;
   }
 }
@@ -233,6 +234,10 @@
   .post-small-asset-title{
   }
   .post-small-asset-meta-right {
+  }
+
+  .share-section {
+    padding-top: 0px;
   }
 
   }

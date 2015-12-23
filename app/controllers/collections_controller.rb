@@ -13,6 +13,7 @@ class CollectionsController < ApplicationController
   # GET /collections/1.json
   def show
     @photographs=@collection.photographs
+    @collections = Collection.where.not(id: @collection.id).where(Published: true).where('cover_photograph_id IS NOT NULL').order("prominence IS NULL, prominence ASC")
   end
 
   def list
