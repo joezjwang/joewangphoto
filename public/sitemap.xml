@@ -10,6 +10,10 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
+  <loc>http://www.joewangphoto.com/blog</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
   <loc>http://www.joewangphoto.com/collections</loc>
   <changefreq>weekly</changefreq>
 </url>
@@ -34,6 +38,14 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>http://www.joewangphoto.com/collections/ukraninian-marshrutkas/</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.joewangphoto.com/collections/kyrgyz-marshrutkas/</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>http://www.joewangphoto.com/collections/tainan-taiwan/</loc>
   <changefreq>monthly</changefreq>
 </url>
@@ -42,7 +54,7 @@
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.joewangphoto.com/about.php</loc>
+  <loc>http://www.joewangphoto.com/about</loc>
   <changefreq>monthly</changefreq>
 </url>
 </urlset>
