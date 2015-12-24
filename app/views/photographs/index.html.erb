@@ -8,6 +8,22 @@
 	  timeout: 10000,    
     });
   });
+
+  function changeSlideHeight () {
+    var pageHeight = jQuery(window).height();
+    var pageWidth = jQuery(window).width();
+
+    if (pageWidth>768) {
+        var photoHeight = pageHeight-50;
+        var photoWidth = photoHeight*3/2;
+        console.log(photoWidth);
+        
+        $('#slideshow-asset').css({ "max-width": photoWidth + 'px' });
+    }
+  }
+
+  window.onload = changeSlideHeight;
+
 </script>
 
 <div id="page-content">
