@@ -1,11 +1,12 @@
 <% title "Galleries" %>
-<%
+<%#
   collectionstring=String.new
   @collections.each do |collection| 
     collectionstring = collectionstring + " " + collection.name
   end
   description "Galleries -"+collectionstring 
 %>
+<% og_page_url request.original_url %>
 
 <div id="page-content">
   <div class="galleries-content">
