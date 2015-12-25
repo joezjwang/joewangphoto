@@ -5,7 +5,7 @@
 <meta name="description" content="<%= if content_for?(:description) then yield(:description) else 'Joe Wang Photography. Galleries and stories on photography and travel. Based in Toronto.' end %>">
 
 <meta property="og:title" content="<%= if content_for?(:title) then yield(:title)+" | Joe Wang Photography" else 'Joe Wang Photography' end %>">
-<meta property="og:description" content="<%= if content_for?(:description) then yield(:description) else 'Welcome to Joe Wang Photography. Galleries and Blog posts on photography, travel and code.' end %>">
+<meta property="og:description" content="<%= if content_for?(:description) then yield(:description) else 'Joe Wang Photography. Galleries and Blog posts on photography and travel. Based in Toronto.' end %>">
 <meta property="og:type" content="<%= if content_for?(:og_type) then yield(:og_type) else 'website' end %>">
 <% if content_for?(:og_image_url) %>
   <meta property="og:image" content="<%= yield(:og_image_url) %>">

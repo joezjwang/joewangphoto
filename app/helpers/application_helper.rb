@@ -73,14 +73,9 @@ class CustomMardownRenders < Redcarpet::Render::HTML
     end
   end
   #Below section can be used for searching through markdown for custom markup
-  # def preprocess(full_document)
-  #   full_document.gsub(/\[figure:(.*)\]/) do
-  #     image = Blogimage.find_by(title: $1)
-  #     if image
-  #       "<span>#{$1}</span>"
-  #     else
-  #       $1
-  #     end 
-  #   end
-  # end
+  def postprocess(full_document)
+    full_document.gsub(/\[youtube (.*)\]/) do
+        "<div class=\"youtube-content\"><iframe class=\"youtube-video\" src=\"https://www.youtube.com/embed/#{$1}?rel=0&amp\" frameborder=\"0\" allowfullscreen></iframe></div>"
+    end
+  end
 end
