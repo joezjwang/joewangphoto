@@ -165,8 +165,9 @@
     height: 75px;
     margin-bottom: 10px;
     overflow: hidden;
-    color: #020C22;
+/*    color: #020C22;*/
   }
+  
   .post-large-asset-meta-right {
     font-size: 15px;
     color: #666;
