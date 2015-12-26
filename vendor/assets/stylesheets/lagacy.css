@@ -535,6 +535,9 @@ h1 {
     font-size: 0.9em;
 
 }
+ .directory-arrows {
+    display: none;
+ }
 
 }
 

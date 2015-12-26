@@ -58,6 +58,8 @@
   line-height: 28px;
 }
 .gallery-asset-header-name p {
+  padding-left: 10px;
+  padding-right: 10px;
   height: 60px;
   margin-top: 20px;
   position: absolute;
@@ -104,7 +106,7 @@
     font-size: 16px;
     line-height: 28px;
     height: 60px;
-    margin-top: 18px;
+    margin-top: 22px;
     overflow: hidden;
   }
   .gallery-asset-header-date {
@@ -117,6 +119,25 @@
 }
 
 @media only screen and (max-width: 479px)  {
+
+
+/*This is a hackish way to prevent mobile user who has desktop view
+enabled to view single column instead of two. The order of the 
+collection is not sorted properly with this solution. However it will
+affect a very low percentage of users.*/
+
+  .galleries-left-column{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .galleries-right-column{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+/*End of hackish way*/
 
   .galleries-content {
     display: inline-block;
