@@ -192,7 +192,7 @@
     overflow: hidden;
     margin: 10px 36px 50px 36px;
     width: 324px;
-    background-color: #f8f8f8;
+    background-color: #f2f2f2;
   }
   .post-small-asset-header {
     padding: 8px 18px 10px 25px;
@@ -217,7 +217,6 @@
     height: 80px;
     margin-bottom: 15px;
     overflow: hidden;
-    color: #051029;
   }
   .post-small-asset-meta-right {
     font-size: 14px;
@@ -236,7 +235,7 @@
     margin: 0 auto;
     margin-top: 30px;
     width: 89%;
-    background-color: #f8f8f8;
+    background-color: #f2f2f2;
     float: none;
   }
   .post-small-asset-header {
