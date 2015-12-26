@@ -632,6 +632,7 @@ h1 {
 
     #nav-section .copyright  {
 		z-index: -1;
+        padding-left:12px;
 		    }
 
 }

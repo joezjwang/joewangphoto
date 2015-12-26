@@ -62,7 +62,11 @@ class CustomMardownRenders < Redcarpet::Render::HTML
       # if none found - no image output
       if img = Blogimage.find_by(id: link_or_id)
         #alt text is img.title, caption is img.caption
-        "<figure><img src='#{img.image.url(style)}' alt=\"#{img.title}\"><br/><figcaption>#{img.caption}</figcaption></figure>"
+        if img.caption.present?
+          "<figure><img src='#{img.image.url(style)}' alt=\"#{img.title}\"><br/><figcaption>#{img.caption}</figcaption></figure>"
+        else
+          "<figure><img src='#{img.image.url(style)}' alt=\"#{img.title}\"><br/></figure>"  
+        end
       else
         ''
       end
