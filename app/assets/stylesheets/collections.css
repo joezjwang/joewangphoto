@@ -120,6 +120,25 @@
 
 @media only screen and (max-width: 479px)  {
 
+
+/*This is a hackish way to prevent mobile user who has desktop view
+enabled to view single column instead of two. The order of the 
+collection is not sorted properly with this solution. However it will
+affect a very low percentage of users.*/
+
+  .galleries-left-column{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .galleries-right-column{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+/*End of hackish way*/
+
   .galleries-content {
     display: inline-block;
     text-align: center;
