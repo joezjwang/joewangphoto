@@ -26,7 +26,7 @@ class Admin::ProductsController < AdminController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to admin_products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -39,6 +39,6 @@ class Admin::ProductsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :shopify_product_handle, :shopify_product_id, :product_display_mode_id, :product_type_id)
+      params.require(:product).permit(:name, :description, :shopify_product_handle, :shopify_product_id, :shopify_embed_code)
     end
 end

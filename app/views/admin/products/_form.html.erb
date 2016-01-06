@@ -1,4 +1,4 @@
-<%= form_for @product, :html => {:class => 'pure-form' } do |f| %>
+<%= form_for @product, :html => {class: 'pure-form' } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -11,16 +11,12 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: 'pure-input-2-3' %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description, class: 'pure-input-2-3' %>
   </div>
   <div class="field">
-    <%#= label :shopify_embed_code %><br>
-    <%#= text_area: :shopify_embed_code, class: 'pure-input-2-3' %>
+    <%= label_tag "Paste Shopify embed code:" %><br>
+    <%= text_area_tag 'shopify_embed_code', nil, cols: 100, rows: 20 %>
   </div>
   <div class="field">
    <%#= f.file_field :photo %>
