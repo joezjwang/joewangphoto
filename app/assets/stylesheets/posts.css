@@ -252,7 +252,7 @@ no used in most cases as is_mobile? handles it*/
     clear: both;
     line-height: 0;
     background-color: #E4E4E4;
-    max-height: auto;
+    height: auto;
   }
   .post-large-asset-image img {
     max-width:100%;
@@ -270,7 +270,7 @@ no used in most cases as is_mobile? handles it*/
     overflow: hidden;
     float:right;
   }
-
+}
   /*End of what is only relevent for mobile users viewing in desktop mode*/
 
 
@@ -293,7 +293,7 @@ no used in most cases as is_mobile? handles it*/
     height: 150px;
   }
   .post-small-asset-image {
-    max-height: auto;
+    height: auto;
   }
   .post-small-asset-image img {
     max-width:100%;
