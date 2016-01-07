@@ -1,215 +1,6 @@
-<style type="text/css">
+<% title "Shop" %>
+<% og_page_url request.original_url %>
 
-	.products-content {
-		padding-top: 30px;
-		float: left;
-	}
-	.product {
-		padding: 0px 0px 50px 10px;
-		min-height: 400px;
-		float: left;
-		clear:both;
-	}
-	.product-left-section-container {
-		float: left;
-		height: 400px;
-		width: 300px;
-		position: relative;
-	}
-	.shopify-iframe {
-		width: 100%;
-		height:140px;
-		padding: 5px;
-		background-color: #f0f0f0;
-	}
-	.product-info-container {
-		padding: 15px;
-		width:100%;
-		height:260px;
-		background-color: #f0f0f0;
-		float: none;
-		text-align: center;
-	}
-	.product-name {
-		font-size: 20px;
-		padding: 20px 10px 20px 10px;
-		text-transform: uppercase;
-	}
-	.product-description {
-		padding: 15px 20px;
-		width:100%;
-		background-color: #f0f0f0;
-		text-align: left;
-	}
-	.product-photo {
-		white-space: nowrap;
-	}
-	.shop-message {
-    padding: 0.4em 1em;
-    margin: 6px 20px;
-    color: #333;
-    font-size: 18px;
-    background: #eee;
-    float: left;
-    display: inline-block;
-    text-align: center;
-    clear: both;
-  }
-
-@media only screen and (max-width: 1279px)  {
-
-	.product {
-		padding: 0px 0px 50px 10px;
-		min-height: 320px;
-		float: left;
-		clear:both;
-	}
-	.product-left-section-container {
-		float: left;
-		height: 320px;
-		width: 300px;
-		position: relative;
-	}
-	.product-info-container {
-		padding: 15px;
-		width:100%;
-		height:180px;
-		background-color: #f0f0f0;
-		float: none;
-		text-align: center;
-	}
-
-	.product-photo {
-		white-space: nowrap;
-		height:320px;
-	}
-
-	.product-photo img {
-		height: 320px;
-	}
-}
-
-@media only screen and (max-width: 1023px)  {
-
-	.products-content {
-		padding-top: 30px;
-	}
-  .product {
-  	width: 450px;
-  	height:100%;
-  }	
-
- 	.product-left-section-container {
-		float: left;
-		height: 330px;
-		width: 450px;
-		position: relative;
-	}
-	.product-info-container {
-		padding: 15px;
-		width:100%;
-		height:190px;
-		background-color: #f0f0f0;
-		float: none;
-		text-align: center;
-	}
-	.product-name {
-		font-size: 20px;
-		padding: 20px 10px 20px 10px;
-		text-transform: uppercase;
-	}
-	.product-description {
-		padding: 15px 20px;
-		width:100%;
-		background-color: #f0f0f0;
-		text-align: left;
-	}
-	.product-photo {
-		float:left;
-		width: 450px;
-		height: auto;
-		margin-bottom: 50px;
-	}
-
-	.product-photo img {
-		width: 450px;
-		height: auto;
-	}
-
- }
-
-@media only screen and (max-width: 767px)  {
-
-	.products-content {
-		padding-top: 60px;
-		margin: 0 auto;
-		float: none;
-	}
-  .product {
-		padding: 0px 0px 50px 0px;
-  	margin: 0 auto;
-		float: none;
-  }	
-
-}
-
-@media only screen and (max-width: 479px)  {
-
-
-	.products-content {
-		margin: 0 auto;
-		float: none;
-	}
-	.shopify-iframe {
-		width: 100%;
-		height:160px;
-		padding: 5px;
-		padding-bottom: 0px;
-		background-color: #f0f0f0;
-	}
-  .product {
-  	width: 90%;
-  	margin: 0 auto;
-		float: none;
-  }	
-  .product-left-section-container {
-  	height:360px;
-	  width:100%;
-  }
-	.product-info-container {
-		height:200px;
-		width:100%;
-		background-color: #f0f0f0;
-		float: none;
-		text-align: center;
-	}
-	.product-name {
-		padding: 10px;
-		height:55px;
-		font-size: 20px;
-	}
-	.product-description {
-		height:15px;
-		width:100%;
-		padding: 15px 15px 5px 15px;
-	}
-	.product-photo {
-		float:left;
-		width: 100%;
-	}
-
-	.product-photo img {
-		width: 100%;
-	}
-
- }
-
-
-</style>
-
-<script type="text/javascript">
-document.getElementById('ShopifyEmbedScript') || document.write('<script type="text/javascript" src="https://widgets.shopifyapps.com/assets/widgets/embed/client.js" id="ShopifyEmbedScript"><\/script>');
-</script>
 
 <div id="page-content">
   <div class="products-content">
@@ -248,11 +39,20 @@ document.getElementById('ShopifyEmbedScript') || document.write('<script type="t
 	Printed in Canada	&#x1f341; on professional luster photo paper.
 	</div>
 	<div class="shop-message">
-	We ship worldwide including the International Space Station. Shipping rate vary by country.
+	We ship worldwide including the International Space Station.
 	</div>
 </div>
 
-<div data-checkout_button_text="Checkout" data-cart_button_text="Cart" data-button_text_color="ffffff" data-button_background_color="7fb466" data-background_color="ffffff" data-text_color="000000" data-accent_color="767676" data-cart_title="Hot off the press" data-discount_notice_text="Shipping and discount codes are added at checkout." data-cart_total_text="Total" data-sticky="true" data-empty_cart_text="Your cart is empty." data-embed_type="cart" data-shop="joewangphoto.myshopify.com"></div>
+<!-- Shopify Cart -->
+
+<div data-checkout_button_text="Checkout" data-cart_button_text="Cart" data-button_text_color="ffffff" data-button_background_color="7fb466" data-background_color="ffffff" data-text_color="000000" data-accent_color="767676" data-cart_title="Your Cart" data-discount_notice_text="Shipping and discount codes are added at checkout. Prices in Canadian Dollars" data-cart_total_text="Total" data-sticky="true" data-empty_cart_text="Your cart is empty." data-embed_type="cart" data-shop="joewangphoto.myshopify.com"></div>
+
+<!-- End of Shopify Cart -->
+
+<!-- Shopify js Includes -->
+
 <script type="text/javascript">
 document.getElementById('ShopifyEmbedScript') || document.write('<script type="text/javascript" src="https://widgets.shopifyapps.com/assets/widgets/embed/client.js" id="ShopifyEmbedScript"><\/script>');
 </script>
+
+<!-- End of Shopify js Includes -->
