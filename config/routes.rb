@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products, :path => 'shop'
   resources :blogimages
   resources :blog_images
   resources :posts, :path => 'blog'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'admin#index'
+    resources :products, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :blogimages, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :posts, only: [:index, :show, :new, :create, :update, :edit, :destroy]
     resources :photographs, only: [:index, :show, :new, :create, :update, :edit, :destroy]

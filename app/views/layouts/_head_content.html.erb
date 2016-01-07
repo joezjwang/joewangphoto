@@ -4,6 +4,7 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="description" content="<%= if content_for?(:description) then yield(:description) else 'Joe Wang Photography. Galleries and stories on photography and travel. Based in Toronto.' end %>">
 
+<meta property="og:app_id" conent="1733516093547845">
 <meta property="og:title" content="<%= if content_for?(:title) then yield(:title)+" | Joe Wang Photography" else 'Joe Wang Photography' end %>">
 <meta property="og:description" content="<%= if content_for?(:description) then yield(:description) else 'Joe Wang Photography. Galleries and Blog posts on photography and travel. Based in Toronto.' end %>">
 <meta property="og:type" content="<%= if content_for?(:og_type) then yield(:og_type) else 'website' end %>">
@@ -15,7 +16,19 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Joe Wang Photography",
+  "logo": "http://joewangphoto.com/images/joe-wang-photography-logo.png",
+  "url" : "http://www.joewangphoto.com",
+  "sameAs" : [
+    "http://www.facebook.com/joewangphoto",
+    "http://instagram.com/joewangphoto"
+  ]
+}
+</script>
 <% if params[:controller].include?('admin') || params[:controller].include?('post') %>
     <!--[if lte IE 8]>
       <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">

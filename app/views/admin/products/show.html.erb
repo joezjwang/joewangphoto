@@ -1,0 +1,29 @@
+<div class="pure-g">
+  <div class="pure-u-2-24"></div>
+  <div class="pure-u-20-24">
+		<p id="notice"><%= notice %></p>
+
+		<%= link_to 'Edit', edit_admin_product_path(@product), class: 'pure-button' %>
+		<%= link_to 'Back', admin_products_path, class: 'pure-button' %>
+		<br><br>
+	  <h3>Name</h3>
+	  <p>
+		  <%= @product.name %>
+		</p>
+
+	  <h3>Shopify Handle</h3>
+	  <p>
+		  <%= @product.shopify_product_handle %>
+		</p>
+	<h3>Shopify Product Id</h3>
+	<p>
+	<%= @product.shopify_product_id %>
+	</p>
+	  <h3>Description</h3>
+	  <p>
+		  <%= @product.description %>
+		</p>
+	</div>
+  <div class="pure-u-2-24"></div>
+</div>
+

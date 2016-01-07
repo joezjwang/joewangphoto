@@ -1,0 +1,58 @@
+<% title "Shop" %>
+<% og_page_url request.original_url %>
+
+
+<div id="page-content">
+  <div class="products-content">
+	  <% @products.each_with_index do |product, index| %>
+	  	<div class="product">
+		  	<div class="product-left-section-container">
+		  	<div class="product-info-container">
+		  		<div class="product-name">
+		  			<%= product.name %>
+		  		</div>
+		  		<div class="product-description">
+						<%= product.description %>
+					</div>
+				</div>
+					<div class="shopify-iframe" data-embed_type="product" data-shop="joewangphoto.myshopify.com" data-product_name="<%= product.name %>" data-product_handle="<%= product.shopify_product_handle %>" data-has_image="false" data-show_product_price="true" data-display_size="regular" data-redirect_to="cart" data-buy_button_text="Add to Cart" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-button_background_color="7db461" data-button_text_color="ffffff" data-background_color="f0f0f0" data-product_modal="false" data-product_title_color="000000" data-next_page_button_text="Next page"></div>
+					<noscript><a href="https://joewangphoto.myshopify.com/cart/<%= product.shopify_product_id %>:1" target="_blank">Buy <%= product.name %></a></noscript>
+
+				</div>
+				<div class="product-photo">
+				<% if mobile_device? %>
+		  		<%= image_tag product.product_photo.url(:mobile) %>
+		  	<% else %>
+		  		<%= image_tag product.product_photo.url(:pc) %>
+		  	<% end %>
+		  	</div>
+			</div>
+	  <% end %>
+
+  </div>
+
+	<br>
+	<div class="shop-message">
+	All Prices in Canadian Dollars ($CAD). Zero taxes on all orders.
+	</div><br>
+	<div class="shop-message">
+	Printed in Canada	&#x1f341; on professional luster photo paper.
+	</div>
+	<div class="shop-message">
+	We ship worldwide including the International Space Station.
+	</div>
+</div>
+
+<!-- Shopify Cart -->
+
+<div data-checkout_button_text="Checkout" data-cart_button_text="Cart" data-button_text_color="ffffff" data-button_background_color="7fb466" data-background_color="ffffff" data-text_color="000000" data-accent_color="767676" data-cart_title="Your Cart" data-discount_notice_text="Shipping and discount codes are added at checkout. Prices in Canadian Dollars" data-cart_total_text="Total" data-sticky="true" data-empty_cart_text="Your cart is empty." data-embed_type="cart" data-shop="joewangphoto.myshopify.com"></div>
+
+<!-- End of Shopify Cart -->
+
+<!-- Shopify js Includes -->
+
+<script type="text/javascript">
+document.getElementById('ShopifyEmbedScript') || document.write('<script type="text/javascript" src="https://widgets.shopifyapps.com/assets/widgets/embed/client.js" id="ShopifyEmbedScript"><\/script>');
+</script>
+
+<!-- End of Shopify js Includes -->
