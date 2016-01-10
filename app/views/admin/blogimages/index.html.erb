@@ -1,14 +1,9 @@
 <div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-20-24">
+  <div class="pure-u-4-24"></div>
+  <div class="pure-u-18-24">
     <p id="notice"><%= notice %></p>
 
     <h1>Listing Blog Images</h1>
-
-    <%= link_to 'Posts', admin_posts_path , class: "pure-button" %>
-
-    <br><br>
-
     <%= form_for Blogimage.new do |f| %>
       <%= f.label :image, "Upload paintings:" %>
       <%= f.file_field :image, multiple: true, name: "blogimage[image]" %>
