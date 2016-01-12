@@ -1,10 +1,16 @@
 <style>
 .custom-restricted-width {
     /* To limit the menu width to the content of the menu: */
-    display: inline-block;
+    /*display: inline-block;*/
     /* Or set the width explicitly: */
     width: 10em; 
-    position: fixed;
+    position: absolute;
+    top: 50%; 
+    -webkit-transform: translate(0%, -50%); 
+    -moz-transform: translate(0%, -50%); 
+    -ms-transform: translate(0%, -50%); 
+    -o-transform: translate(0%, -50%); 
+    transform: translate(0%, -50%);
 }
 
 .pure-menu {
@@ -13,19 +19,11 @@
     border-width: 1px;
 }
 
-.pure-menu a {
-
-}
-
-.pure-menu a:hover {
+.pure-menu a:hover, a:focus {
     text-decoration: none;
 }
-.pure-menu-item a:hover {
+.pure-menu-item a:hover, a:focus {
     background-color: #CCC;
-}
-
-.pure-menu-heading {
-    font-weight: 200%;
 }
 
 .pure-menu-stats {
@@ -36,6 +34,7 @@
     <span class="pure-menu-heading"></span>
 
     <ul class="pure-menu-list">
+        <li class="pure-menu-heading"></li>
         <li class="pure-menu-heading">Create New</li>
         <li class="pure-menu-item"><%= link_to "+ Blog Post" , new_admin_post_path, class: "pure-menu-link" %></li>
         <li class="pure-menu-item"><%= link_to "+ Collection" , new_admin_collection_path, class: "pure-menu-link" %></li> 
@@ -51,5 +50,6 @@
         <li class="pure-menu-heading"></li>
         <li class="pure-menu-heading">Uptime</li>
         <li class="pure-menu-heading pure-menu-stats"><%= uptime %></li>
+        <li class="pure-menu-heading"></li>
     </ul>
 </div>

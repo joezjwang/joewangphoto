@@ -9,11 +9,10 @@
       <thead>
         <tr>
           <th>Id</th>
+          <th>Preview</th>
           <th style="max-width:100px;">Title</th>
           <th>Location</th>
-          <th style="max-width:400px;">Description</th>
           <th>Collection</th>
-          <th>Preview</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -22,18 +21,17 @@
         <% @photographs.each do |photograph| %>
           <tr>
             <td><%= photograph.id %></td>
+            <td>
+              <%= image_tag photograph.photo.url(:mobile_large), :height => '80'%>
+            </td>
             <td style="max-width:100px;"><%= photograph.title %></td>
             <td><%= photograph.location %></td>
-            <td style="max-width:400px;"><%= photograph.description %></td>
             <td>
             <% unless photograph.collections.empty? %>
                 <% photograph.collections.each do |collection| %>
                 <%= link_to collection.name, admin_collection_path(collection) %><br>
                 <% end %>
               <% end %>
-            </td>
-            <td>
-              <%= image_tag photograph.photo.url(:thumb), :height => '60'%>
             </td>
             <td><%= link_to 'Show', admin_photograph_path(photograph), class: "pure-button" %></td>
             <td><%= link_to 'Edit', edit_admin_photograph_path(photograph), class: "pure-button" %></td>

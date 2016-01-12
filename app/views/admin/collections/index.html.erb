@@ -8,13 +8,13 @@
     <table class="pure-table pure-table-horizontal">
       <thead>
         <tr>
+          <th>ID</th>
+          <th>Collection Cover</th>
           <th>Published?</th>
           <th>Featured?</th>
           <th>Prominence</th>
           <th style="max-width:100px;">Name</th>
-          <th style="max-width:400px;">Description</th>
           <th>Photograph Count</th>
-          <th>Collection Cover</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -22,18 +22,18 @@
       <tbody>
         <% @collections.each do |collection| %>
           <tr>
-            <td><%= collection.published %></td>
-            <td><%= collection.featured %></td>
-            <td><%= collection.prominence %></td>
-            <td style="max-width:100px;"><%= collection.name %></td>
-            <td style="max-width:400px;"><%= collection.description %></td>
-            <td><%= collection.photographs.count %></td>
+            <td><%= collection.id %>
             <td><% unless collection.cover_photograph_id.nil? %>
-              <%= image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:thumb), :height => '60') %>
+              <%= image_tag(Photograph.find(collection.cover_photograph_id).photo.url(:mobile_large), :height => '100') %>
               <% else %>
               No Cover
               <% end %>
             </td>
+            <td><%= collection.published %></td>
+            <td><%= collection.featured %></td>
+            <td><%= collection.prominence %></td>
+            <td style="max-width:100px;"><%= collection.name %></td>
+            <td><%= collection.photographs.count %></td>
             <td><%= link_to 'Show', admin_collection_path(collection), class: "pure-button" %></td>
             <td><%= link_to 'Edit', edit_admin_collection_path(collection), class: "pure-button" %></td>
             <td><%= link_to 'Destroy', admin_collection_path(collection), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>
