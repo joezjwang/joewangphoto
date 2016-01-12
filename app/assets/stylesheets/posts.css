@@ -67,7 +67,7 @@
 
 /*Post Show Mobile (Tablet size and Phone media queries)*/
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 799px)  {
 
   .show-post-assets-container {
     max-width: 100%;
@@ -125,7 +125,7 @@
   padding-bottom: 70px;
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 799px)  {
 
   .post-assets-container {
     max-width: 100%;
@@ -225,7 +225,7 @@
     float:right;
   }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 799px)  {
 
 /*THis is relavent for mobile user who is viewing the website
 in desktop view. It basically copies the small asset styles into

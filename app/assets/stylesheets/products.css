@@ -1,10 +1,11 @@
 
 	.products-content {
-		padding-top: 30px;
+		padding-top: 10px;
 		float: left;
+		padding-bottom: 30px;
 	}
 	.product {
-		padding: 0px 0px 50px 10px;
+		padding: 20px 0px 20px 10px;
 		min-height: 400px;
 		float: left;
 		clear:both;
@@ -44,21 +45,19 @@
 		white-space: nowrap;
 	}
 	.shop-message {
-    padding: 0.4em 1em;
-    margin: 6px 20px;
-    color: #333;
-    font-size: 18px;
-    background: #eee;
-    float: left;
-    display: inline-block;
-    text-align: center;
-    clear: both;
-  }
+	    padding: 0.4em 1em;
+	    margin: 10px 10px;
+	    color: #333;
+	    font-size: 18px;
+	    background: #eee;
+	    float: left;
+	    text-align: center;
+	    clear: both;
+	 }
 
-@media only screen and (max-width: 1279px)  {
+/*@media only screen and (max-width: 1239px) {
 
 	.product {
-		padding: 0px 0px 50px 10px;
 		min-height: 320px;
 		float: left;
 		clear:both;
@@ -86,17 +85,18 @@
 	.product-photo img {
 		height: 320px;
 	}
-}
+}*/
 
-@media only screen and (max-width: 1023px)  {
+@media only screen and (max-width: 1239px)  {
 
 	.products-content {
-		padding-top: 30px;
+		padding-top: 10px;
 	}
-  .product {
-  	width: 450px;
-  	height:100%;
-  }	
+  	.product {
+  		padding: 20px 0px 20px 10px;
+  		width: 450px;
+  		height:100%;
+  	}	
 
  	.product-left-section-container {
 		float: left;
@@ -127,7 +127,7 @@
 		float:left;
 		width: 450px;
 		height: auto;
-		margin-bottom: 50px;
+		margin-bottom: 0px;
 	}
 
 	.product-photo img {
@@ -137,18 +137,25 @@
 
  }
 
-@media only screen and (max-width: 767px)  {
+@media only screen and (max-width: 799px)  {
 
 	.products-content {
-		padding-top: 60px;
+		padding-top: 40px;
 		margin: 0 auto;
 		float: none;
 	}
-  .product {
-		padding: 0px 0px 50px 0px;
-  	margin: 0 auto;
+  	.product {
+  		padding: 20px 0px 20px 0px;
+	  	margin: 0 auto;
 		float: none;
-  }	
+  	}
+  	.shop-message {
+
+  		text-align: center;
+		margin: 10px auto;
+		float: none;
+		max-width: 450px;
+	}
 
 }
 
@@ -166,15 +173,15 @@
 		padding-bottom: 0px;
 		background-color: #f0f0f0;
 	}
-  .product {
-  	width: 90%;
-  	margin: 0 auto;
+  	.product {
+  		width: 90%;
+  		margin: 0 auto;
 		float: none;
-  }	
-  .product-left-section-container {
-  	height:360px;
-	  width:100%;
-  }
+  	}	
+  	.product-left-section-container {
+  		height:360px;
+		width:100%;
+  	}
 	.product-info-container {
 		height:200px;
 		width:100%;
@@ -199,6 +206,9 @@
 
 	.product-photo img {
 		width: 100%;
+	}
+	.shop-message {
+		margin: 10px 5%;
 	}
 
  }

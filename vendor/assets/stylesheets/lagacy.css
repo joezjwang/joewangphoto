@@ -294,7 +294,7 @@ h1 {
      margin:  15px 0;
      font-size:  1.3em;
      position: fixed;
-     bottom: 110px;
+     bottom: 70px;
      left: 0px;
      list-style-type: none;
      width:220px;
@@ -385,7 +385,8 @@ h1 {
 }
 
 #nav-section #menu-section .extraspace {
-     line-height:  3;
+     margin-top: 10px;
+     margin-bottom: 10px;
  }
 
 #nav-section #menu-section a.current  {
@@ -405,7 +406,7 @@ h1 {
  }
 */
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 799px)  {
 
   #page-content  {
     margin-left:  0px;
@@ -526,6 +527,8 @@ h1 {
  }
 
 #nav-section #menu-section .extraspace {
+    margin-top: 0px;
+    margin-bottom: 0px;
     line-height:  1.5;
     text-transform: uppercase;
  }
