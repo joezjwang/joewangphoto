@@ -1,21 +1,14 @@
 <div class="pure-g">
-  <div class="pure-u-2-24"></div>
-  <div class="pure-u-20-24">
+  <div class="pure-u-4-24"></div>
+  <div class="pure-u-18-24">
     <p id="notice"><%= notice %></p>
-
     <h1>Listing Posts</h1>
-
-
-    <%= link_to 'New Post', new_admin_post_path , class: "pure-button pure-button-primary" %>
-
-    <br><br>
-
     <table class="pure-table pure-table-horizontal">
       <thead>
         <tr>
           <th>Id</th>
-          <th>Published Date</th>
-          <th>Last Updated</th>
+          <th>Cover Photo</th>
+          <th>Published Date/Last Updated</th>
           <th style="max-width:200px;">Title</th>
           <th style="max-width:400px;">Body</th>
           <th>Word Count</th>
@@ -28,12 +21,12 @@
         <% @posts.each do |post| %>
           <tr>
             <td><%= post.id %></td>
-            <td><% if post.published_at.present? %><%= post.published_at.to_formatted_s(:post_date) %><% end %></td>
-            <td><%= post.updated_at.to_formatted_s(:post_date) %></td>
+            <td><%= image_tag Blogimage.find(post.cover_blogimage_id).image(:mobile_large) , height: 100 %></td>
+            <td><% if post.published_at.present? %><%= post.published_at.to_formatted_s(:post_date) %><% end %>/<%= post.updated_at.to_formatted_s(:post_date) %></td>
             <td style="max-width:200px;"><%= post.title %></td>
             <td style="max-width:400px;"><%= post.body_preview_admin %></td>
             <td><%= post.body_word_count %></td>
-            <td><%= post.blogimages.count %></td>
+            <td><%= post.photo_count %></td>
             <td><%= link_to 'Show', admin_post_path(post), class: "pure-button" %></td>
             <td><%= link_to 'Edit', edit_admin_post_path(post), class: "pure-button" %></td>
             <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>

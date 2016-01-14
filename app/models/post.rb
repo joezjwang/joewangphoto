@@ -37,10 +37,11 @@ class Post < ActiveRecord::Base
 		else
 			1
 		end
+
 	end
 	def photo_count
-		3
-		#count number of photos associated with post. Count in database relation or in body?
+		#Looks for "![" in the markdown as an indication of attached photo
+		body.scan(/(!\[)/).count
 	end
 
 	#Ideally this function should be based on number of words and cut off at the end of sentences
@@ -48,7 +49,7 @@ class Post < ActiveRecord::Base
 		body.split(/\.\s+/, number_of_sentences+1)[0...number_of_sentences].join(' ').concat('...')
 	end
 	def body_preview_admin
-		body_preview(4)
+		body_preview(2)
 	end
 	def body_preview_pc
 		#should count the number of words and reduce the sentence count if it is too long

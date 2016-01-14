@@ -43,13 +43,18 @@
           <% end %>
         </ul>
       <% end %>
-       
+
+      <li class="extraspace captital-on-mobile">
+        <%= '<span class=\'directory-arrows\'>❯</span>'.html_safe if '/shop' == request.env['PATH_INFO'] && !mobile_device? %>
+        <%= link_to "Shop", products_path %>
+      </li>
+
       <li class="extraspace captital-on-mobile">
         <%= '<span class=\'directory-arrows\'>❯</span>'.html_safe if '/about' == request.env['PATH_INFO'] && !mobile_device? %>
         <%= link_to "About", page_path("about") %>
       </li>
 
-      <li class="captital-on-mobile">
+      <li class="extraspace captital-on-mobile">
         <%= '<span class=\'directory-arrows\'>❯</span>'.html_safe if '/contact' == request.env['PATH_INFO'] && !mobile_device? %> 
         <%= link_to "Contact", page_path("contact") %>
       </li>

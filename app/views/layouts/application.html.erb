@@ -12,6 +12,8 @@
     <span id="page-top"></span>
     <% unless params[:controller].include?('admin') %>
         <%= render 'layouts/nav' %>
+    <% else %>
+      <%= render 'layouts/nav_admin' %>
     <% end %>
 
     <%= yield %>

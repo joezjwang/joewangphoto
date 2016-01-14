@@ -4,7 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.where({featured: false}).order("created_at" + " " + "desc")
+    @featured_product = Product.where({featured: true}).first
   end
 
   # GET /products/1
@@ -68,6 +69,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :shopify_product_handle, :shopify_product_id, :shopify_embed_code, :product_photo)
+      params.require(:product).permit(:name, :description, :shopify_product_handle, :shopify_product_id, :shopify_embed_code, :product_photo, :featured)
     end
 end

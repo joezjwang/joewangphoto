@@ -1,6 +1,6 @@
 <div class="pure-g">
-  <div class="pure-u-1-24"></div>
-  <div class="pure-u-22-24">
+  <div class="pure-u-4-24"></div>
+  <div class="pure-u-18-24">
 	  <p id="notice"><%= notice %></p>
 		<%= link_to 'Back', admin_blogimages_path, class: 'pure-button' %>
 		<%= link_to 'Destroy', admin_blogimage_path(@blogimage), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %>
@@ -9,6 +9,6 @@
 		<br>
 		<%= image_tag @blogimage.image.url(:pc_small) %>
 	</div>
-	<div class="pure-u-1-24"></div>
+	<div class="pure-u-2-24"></div>
 
 </div>

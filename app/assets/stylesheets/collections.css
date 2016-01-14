@@ -89,7 +89,7 @@
 /*gallery Small Asset Group Mobile*/
 
 
-@media only screen and (max-width: 850px)  {
+@media only screen and (max-width: 799px)  {
 
   .gallery-asset {
     border-bottom-left-radius: 8px;
@@ -234,7 +234,7 @@ affect a very low percentage of users.*/
   display: inline-block;
 }
 
-@media only screen and (max-width: 768px)  {
+@media only screen and (max-width: 799px)  {
   
   .gallery-description  {
     text-align:  center;

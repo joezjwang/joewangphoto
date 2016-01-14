@@ -23,6 +23,9 @@ module ApplicationHelper
     content_for :og_type, text
   end
 
+  def uptime
+    time_ago_in_words(Joewangphotography::BOOTED_AT)
+  end
   	
   def markdown(text)
 
