@@ -1,17 +1,18 @@
 
 	.products-content {
+		width: 100%;
 		padding-top: 10px;
-		float: left;
+		float: none;
 		padding-bottom: 30px;
+		text-align: center;
 	}
-	.product {
-		padding: 20px 0px 20px 10px;
+	.featured-product {
+		padding: 20px 0px 40px 10px;
 		min-height: 400px;
-		float: left;
 		clear:both;
 	}
 	.product-left-section-container {
-		float: left;
+		display: inline-block;
 		height: 400px;
 		width: 300px;
 		position: relative;
@@ -42,22 +43,54 @@
 		text-align: left;
 	}
 	.product-photo {
+		display: inline-block;
 		white-space: nowrap;
+		/*negative margin accounting for gaps due to use of inline-block*/
+		margin-left: -4px;
 	}
 	.shop-message {
 	    padding: 0.4em 1em;
 	    margin: 10px 10px;
 	    color: #333;
-	    font-size: 18px;
-	    background: #eee;
-	    float: left;
+	    font-size: 17px;
+	   	font-style: italic;
+	    float: none;
 	    text-align: center;
 	    clear: both;
 	 }
 
+	 .shopify-buy-button-section {
+		width:100%;
+		text-align: center;
+		display: inline-block;
+		float: none;
+		padding-top:30px;
+		max-width: 1200px;
+		margin:0 auto;
+	}
+
+	.shopify-buy-button-container {
+		display: inline-block;
+		float: none;
+		width:33%;
+		padding: 30px 20px;
+
+	}
+
+
+	.shop-divider {
+		display: block;
+		float: none;
+		padding: 50px 0px 20px 0px;
+		font-size: 30px;
+		text-align: center;
+		margin:0 auto;
+		clear:both;
+	}
+
 /*@media only screen and (max-width: 1239px) {
 
-	.product {
+	.featured-product {
 		min-height: 320px;
 		float: left;
 		clear:both;
@@ -91,15 +124,19 @@
 
 	.products-content {
 		padding-top: 10px;
+		margin: 0 auto;
+		float: none;
 	}
-  	.product {
+  	.featured-product {
   		padding: 20px 0px 20px 10px;
   		width: 450px;
   		height:100%;
+	  	margin: 0 auto;
+		float: none;
   	}	
 
  	.product-left-section-container {
-		float: left;
+		display: block;
 		height: 330px;
 		width: 450px;
 		position: relative;
@@ -124,7 +161,9 @@
 		text-align: left;
 	}
 	.product-photo {
-		float:left;
+		/*reset margin accounting for gaps due to use of inline-block*/
+		margin-left: 0px;
+		display: block;
 		width: 450px;
 		height: auto;
 		margin-bottom: 0px;
@@ -137,6 +176,15 @@
 
  }
 
+ @media only screen and (max-width: 1023px)  {
+	.shopify-buy-button-container {
+		width:48%;
+	}
+	.shop-divider {
+		display: none;
+	}
+}
+
 @media only screen and (max-width: 799px)  {
 
 	.products-content {
@@ -144,17 +192,16 @@
 		margin: 0 auto;
 		float: none;
 	}
-  	.product {
+  	.featured-product {
   		padding: 20px 0px 20px 0px;
 	  	margin: 0 auto;
 		float: none;
   	}
   	.shop-message {
-
   		text-align: center;
 		margin: 10px auto;
 		float: none;
-		max-width: 450px;
+		max-width: 500px;
 	}
 
 }
@@ -173,7 +220,7 @@
 		padding-bottom: 0px;
 		background-color: #f0f0f0;
 	}
-  	.product {
+  	.featured-product {
   		width: 90%;
   		margin: 0 auto;
 		float: none;
@@ -202,6 +249,7 @@
 	.product-photo {
 		float:left;
 		width: 100%;
+		margin-bottom: 30px;
 	}
 
 	.product-photo img {
@@ -209,6 +257,12 @@
 	}
 	.shop-message {
 		margin: 10px 5%;
+	}
+	.shopify-buy-button-container {
+		width:100%;
+	}
+	.shopify-buy-button-section {
+		padding-top: 25px;
 	}
 
  }

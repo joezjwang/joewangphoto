@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= label_tag "Paste Shopify embed code:" %><br>
-    <%= text_area_tag 'shopify_embed_code', nil, cols: 95, rows: 10 %>
+    <%= text_area_tag 'shopify_embed_code', nil, cols: 95, rows: 9 %>
+  </div>
+  <div class="field">
+    <%= f.check_box :featured %>
+    <%= f.label :featured %>
   </div>
   <div class="field">
   <%= label_tag "Upload Product Photo:" %><br>
