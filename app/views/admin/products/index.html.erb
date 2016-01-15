@@ -32,6 +32,38 @@
       </tbody>
     </table>
 
+    <h1>Listing of Product Collections</h1>
+    <%= link_to 'New Product Collection', new_admin_product_collection_path, class: 'pure-button pure-button-primary' %>
+    <br><br>
+    <table class="pure-table pure-table-horizontal">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Published?</th>
+          <th>Prominence</th>
+          <th style="max-width:100px;">Name</th>
+          <th>Shopify Collection Handle</th>
+          <th style="max-width:400px;">Description</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @product_collections.each do |product_collection| %>
+          <tr>
+            <td><%= product_collection.id %></td>
+            <td><%= product_collection.published %>
+            <td><%= product_collection.prominence %>
+            <td style="max-width:100px;"><%= product_collection.name %></td>
+            <td style="max-width:100px;"><%= product_collection.shopify_collection_handle %></td>
+            <td style="max-width:400px;"><%= product_collection.description %></td>
+            <td><%= link_to 'Edit', edit_admin_product_collection_path(product_collection), class: "pure-button" %></td>
+            <td><%= link_to 'Destroy', admin_product_collection_path(product_collection), method: :delete, data: { confirm: 'Are you sure?' }, class: "pure-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
     <br>
 
   </div>

@@ -8,7 +8,7 @@ class Photograph < ActiveRecord::Base
   validates :title, :presence => true
   before_destroy :find_remove_cover
 
-  has_attached_file :photo, :styles => {:original => "1600x1600>", :thumb => "320x320>#", :pc_large => "x720", :pc_small => "x480", :mobile_large => "480x"}, :convert_options => { :thumb => '-quality 80 -interlace Plane', :pc_large => '-quality 85 -interlace Plane', :pc_small => '-quality 85 -interlace Plane', :mobile_large => '-quality 80 -interlace Plane'},  :default_url => "/missing.png"
+  has_attached_file :photo, :styles => {:original => "1600x1600>", :thumb => "320x320>#", :pc_large => "x720", :pc_small => "x480", :mobile_large => "480x"}, :convert_options => { :thumb => '-quality 75 -interlace Plane', :pc_large => '-quality 80 -interlace Plane', :pc_small => '-quality 75 -interlace Plane', :mobile_large => '-quality 75 -interlace Plane'},  :default_url => "/missing.png"
   validates_attachment_content_type :photo, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png)$/
   validates_attachment_size :photo, :less_than => 10.megabytes
 

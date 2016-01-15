@@ -4,8 +4,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.where({featured: false}).order("created_at" + " " + "desc")
-    @featured_product = Product.where({featured: true}).first
+    @featured_products = Product.where({featured: true}).order("created_at" + " " + "desc")
+
+    @published_product_collections = ProductCollection.where({published: true}).order("prominence IS NULL, prominence ASC")
+
   end
 
   # GET /products/1
