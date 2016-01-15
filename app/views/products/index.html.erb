@@ -4,31 +4,31 @@
 <% message=["All Prices in Canadian Dollars ($CAD). Zero taxes on all orders.", "Printed in Canada	&#x1f341; on professional luster photo paper. We ship worldwide including the International Space Station" ] %>
 <div id="page-content">
   <div class="products-content">
-<!--   <div class="shop-divider">
-  Order Prints
-  </div> -->
+
+  <% @featured_products.each_with_index do |featured_product, index| %>
 	  	<div class="featured-product">
 		  	<div class="product-left-section-container">
 		  	<div class="product-info-container">
 		  		<div class="product-name">
-		  			<%= @featured_product.name %>
+		  			<%= featured_product.name %>
 		  		</div>
 		  		<div class="product-description">
-						<%= @featured_product.description %>
+						<%= featured_product.description %>
 					</div>
 				</div>
-					<div class="shopify-iframe" data-embed_type="product" data-shop="joewangphoto.myshopify.com" data-product_name="<%= @featured_product.name %>" data-product_handle="<%= @featured_product.shopify_product_handle %>" data-has_image="false" data-show_product_price="true" data-display_size="regular" data-redirect_to="cart" data-buy_button_text="Add to Cart" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-button_background_color="7db461" data-button_text_color="ffffff" data-background_color="f0f0f0" data-product_modal="false" data-product_title_color="000000" data-next_page_button_text="Next page"></div>
-					<noscript><a href="https://joewangphoto.myshopify.com/cart/<%= @featured_product.shopify_product_id %>:1" target="_blank">Buy <%= @featured_product.name %></a></noscript>
+					<div class="shopify-iframe" data-embed_type="product" data-shop="joewangphoto.myshopify.com" data-product_name="<%= featured_product.name %>" data-product_handle="<%= featured_product.shopify_product_handle %>" data-has_image="false" data-show_product_price="true" data-display_size="regular" data-redirect_to="cart" data-buy_button_text="Add to Cart" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-button_background_color="7db461" data-button_text_color="ffffff" data-background_color="f0f0f0" data-product_modal="false" data-product_title_color="000000" data-next_page_button_text="Next page"></div>
+					<noscript><a href="https://joewangphoto.myshopify.com/cart/<%= featured_product.shopify_product_id %>:1" target="_blank">Buy <%= featured_product.name %></a></noscript>
 
 				</div>
 				<div class="product-photo">
 				<% if mobile_device? %>
-		  		<%= image_tag @featured_product.product_photo.url(:mobile) %>
+		  		<%= image_tag featured_product.product_photo.url(:mobile) %>
 		  	<% else %>
-		  		<%= image_tag @featured_product.product_photo.url(:pc) %>
+		  		<%= image_tag featured_product.product_photo.url(:pc) %>
 		  	<% end %>
 		  	</div>
 			</div>
+		<% end %>
 <div class="shop-message">
   				All prices in Canadian Dollars. Zero taxes on all orders.
 				</div>
@@ -36,11 +36,16 @@
   				Printed in Canada	&#x1f341; on luster photo paper. Worldwide shipping.
 				</div>
 	  <div class="shopify-buy-button-section">
-		  <% @products.each_with_index do |product, index| %>
-		  <div class="shopify-buy-button-container">
-				<div data-embed_type="product" data-shop="joewangphoto.myshopify.com" data-product_name="<%= product.name %>" data-product_handle="<%= product.shopify_product_handle %>" data-has_image="true" data-display_size="regular" data-redirect_to="modal" data-buy_button_text="Add to cart" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-button_background_color="7db461" data-button_text_color="ffffff" data-background_color="f0f0f0" data-product_modal="true" data-product_title_color="000000" data-next_page_button_text="Next page"></div>
-				<noscript><a href="https://joewangphoto.myshopify.com/cart/<%= product.shopify_product_id %>:1" target="_blank">Buy <%= product.name %></a></noscript>
-				</div>
+		  <% @published_product_collections.each_with_index do |published_product_collection, index| %>
+			  <div class="shop-divider">
+			  <%= published_product_collection.name %>
+			  </div>
+				<div data-background_color="f0f0f0" data-button_background_color="7fb466" data-button_text_color="f0f0f0" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-buy_button_text="Add to cart" data-collection_handle="<%= published_product_collection.shopify_collection_handle %>" data-display_size="regular" data-embed_type="collection" data-has_image="true" data-next_page_button_text="Next page" data-product_handle="" data-product_modal="true" data-product_name="" data-product_title_color="222222" data-redirect_to="modal" data-shop="joewangphoto.myshopify.com"></div>
+			  <div class="shop-divider">
+			  <%= published_product_collection.name %>
+			  </div>
+				<div data-background_color="f0f0f0" data-button_background_color="7fb466" data-button_text_color="f0f0f0" data-buy_button_out_of_stock_text="Out of Stock" data-buy_button_product_unavailable_text="Unavailable" data-buy_button_text="Add to cart" data-collection_handle="<%= published_product_collection.shopify_collection_handle %>" data-display_size="regular" data-embed_type="collection" data-has_image="true" data-next_page_button_text="Next page" data-product_handle="" data-product_modal="true" data-product_name="" data-product_title_color="222222" data-redirect_to="modal" data-shop="joewangphoto.myshopify.com"></div>
+
 			<% end %>
 		</div>
 

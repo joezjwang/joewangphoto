@@ -81,11 +81,12 @@
 	.shop-divider {
 		display: block;
 		float: none;
-		padding: 50px 0px 20px 0px;
-		font-size: 30px;
+		padding: 50px 0px 60px 0px;
+		font-size: 29px;
 		text-align: center;
 		margin:0 auto;
 		clear:both;
+		color: #555;
 	}
 
 /*@media only screen and (max-width: 1239px) {
@@ -180,9 +181,6 @@
 	.shopify-buy-button-container {
 		width:48%;
 	}
-	.shop-divider {
-		display: none;
-	}
 }
 
 @media only screen and (max-width: 799px)  {
@@ -263,6 +261,10 @@
 	}
 	.shopify-buy-button-section {
 		padding-top: 25px;
+	}
+	.shop-divider {
+		font-size: 25px;
+		padding: 30px 10px 40px 10px;
 	}
 
  }

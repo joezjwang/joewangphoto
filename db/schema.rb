@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113062307) do
+ActiveRecord::Schema.define(version: 20160115031428) do
 
   create_table "blogimages", force: :cascade do |t|
     t.string   "title",              limit: 255
@@ -113,6 +113,16 @@ ActiveRecord::Schema.define(version: 20160113062307) do
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
+
+  create_table "product_collections", force: :cascade do |t|
+    t.string   "name",                      limit: 255
+    t.string   "shopify_collection_handle", limit: 255
+    t.text     "description",               limit: 65535
+    t.integer  "prominence",                limit: 4
+    t.boolean  "published",                 limit: 1,     default: false, null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                       limit: 255
