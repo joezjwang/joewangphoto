@@ -1,6 +1,6 @@
 <div class="blogimage" id="<%= dom_id(blogimage) %>">
   <%= image_tag blogimage.image.url(:pc_small), :height => '140', class: "blogimage-preivew" %>
-  <div class="title"><%= blogimage.title %> [<%= blogimage.id %>]</div>
+  <div class="title"><%= blogimage.title %> ![](<%= blogimage.id %> 'pc_small')</div>
   <div class="caption"><%= blogimage.caption %></div>
   <div class="actions">
     <%= link_to 'Edit', edit_admin_blogimage_path(blogimage), class: "pure-button", target: "_blank" %>
