@@ -9,8 +9,9 @@ class Post < ActiveRecord::Base
 
   	#callback functions
 
+  	#Check if publish time needs to be added
   	def published_at_create
-  		if self.published?
+  		if self.published? && !self.published_at.present?
   			self.published_at=Time.now
   		end
   	end
