@@ -19,7 +19,8 @@ end
     {
         display: block;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
+        max-width: 700px;
     }
     figure{
 
@@ -41,6 +42,11 @@ end
       padding-right:50px;
       padding-left:50px;
       line-height: 1.5;
+    }
+    h2, h3{
+      padding-top:20px;
+      padding-right:50px;
+      padding-left:50px;
     }
   @media only screen and (max-width: 768px)  {
     figure img
@@ -70,6 +76,17 @@ end
       color: #666;
       font-size: 1.05em;
     }
+    h2{
+      padding-right:5%;
+      padding-left:5%;
+      font-size: 18px;
+    }
+    h3{
+      padding-top:15px;
+      padding-right:5%;
+      padding-left:5%;
+      font-size: 16px;
+    }
   }
 </style>
 
@@ -83,11 +100,11 @@ end
       <div class="article-date">
         Posted: <%= @post.published_at.to_formatted_s(:post_date) %>
       </div><br>
-      
+      <% if @post.updated_at > @post.published_at+1.days %>
       <div class="article-date">
         Updated: <%= @post.updated_at.to_formatted_s(:post_date) %>
       </div>
-     
+     <% end %>
     </div>
 	</header>
 
