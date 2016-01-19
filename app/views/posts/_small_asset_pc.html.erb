@@ -2,12 +2,12 @@
   <%= link_to post_path(post) do %>
     <header class="post-small-asset-header">
       <% if post.long_title? %>
-        <h2 class="post-small-asset-title" style="font-size: 17px;">
+        <h1 class="post-small-asset-title" style="font-size: 17px;">
       <% else %>
-        <h2 class="post-small-asset-title">
+        <h1 class="post-small-asset-title">
       <% end %>
       <%= post.title %>
-      </h2>
+      </h1>
       <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
       </div>
     </header>
