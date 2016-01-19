@@ -16,12 +16,11 @@
       </li>
       
       <% unless mobile_device? %>
-        <% @posts= Post.where({published: true}) %>
+        <% @posts= Post.where({published: true}).where("created_at > ?", Time.now-5.days) %>
         <ul style="padding:0;">
-          <% @posts.first(5).each do |post| %>
+          <% @posts.first(2).each do |post| %>
             <li style="list-style-type: none; font-size:15px; padding-bottom:5px; line-height:1.3; text-transform: none;">
-            <%= '❯❯'.html_safe if post_path(post) == request.env['PATH_INFO'] %> 
-            <%= link_to post.title, post_path(post) %>
+            [new] <%= link_to post.title, post_path(post) %>
             </li>
           <% end %>
         </ul>
@@ -37,7 +36,6 @@
         <ul style="padding:0;">
           <% @collections.each do |collection| %>
             <li style="list-style-type: none; font-size:15px; padding-bottom:5px; line-height:1.3; text-transform: none;">
-              <%= '❯❯' if collection_path(collection) == request.env['PATH_INFO'] %> 
               <%= link_to collection.name, collection_path(collection) %>
             </li>
           <% end %>

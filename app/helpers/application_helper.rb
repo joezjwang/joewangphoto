@@ -35,11 +35,12 @@ module ApplicationHelper
       no_intra_emphasis: true,
       disable_indented_code_blocks: true,
       lax_html_blocks: true,
-      superscript:        true,
+      superscript: true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
       fenced_code_blocks: true,
-      strikethrough: true
+      strikethrough: true,
+      footnotes: true
   }
 
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe

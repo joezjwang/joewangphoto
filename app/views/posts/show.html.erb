@@ -81,8 +81,13 @@ end
   	</h1>
   	<div class="article-meta">
       <div class="article-date">
-        <%= @post.published_at.to_formatted_s(:post_date) %>
+        Posted: <%= @post.published_at.to_formatted_s(:post_date) %>
+      </div><br>
+      
+      <div class="article-date">
+        Updated: <%= @post.updated_at.to_formatted_s(:post_date) %>
       </div>
+     
     </div>
 	</header>
 

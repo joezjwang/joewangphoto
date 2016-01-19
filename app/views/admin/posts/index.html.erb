@@ -21,7 +21,12 @@
         <% @posts.each do |post| %>
           <tr>
             <td><%= post.id %></td>
-            <td><%= image_tag Blogimage.find(post.cover_blogimage_id).image(:mobile_large) , height: 100 %></td>
+
+            <td>
+            <% if post.cover_blogimage_id.present? %>
+            <%= image_tag(Blogimage.find(post.cover_blogimage_id).image(:mobile_large) , height: 100) %>
+            <% end %>
+            </td>
             <td><% if post.published_at.present? %><%= post.published_at.to_formatted_s(:post_date) %><% end %>/<%= post.updated_at.to_formatted_s(:post_date) %></td>
             <td style="max-width:200px;"><%= post.title %></td>
             <td style="max-width:400px;"><%= post.body_preview_admin %></td>
