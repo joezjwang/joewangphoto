@@ -1,5 +1,5 @@
 body  {
-    font-family:  Tahoma, Geneva, sans-serif;
+    font-family: 'Droid Sans', sans-serif;
     color: #444;
     font-size: 14px;
     line-height: 1.43;
@@ -32,8 +32,6 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-
-
 
 /**/
 
@@ -99,6 +97,8 @@ a:focus {
     max-width:  600px;
     text-align:  left;
     padding:  0px 40px;
+    font-family: 'Merriweather', serif;
+    line-height: 1.65;  
 }
 
 #slideshow-asset  {

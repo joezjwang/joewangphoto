@@ -200,6 +200,8 @@ affect a very low percentage of users.*/
     max-width: 600px;
     float:right;
     font-size:1.4em;
+    font-family: 'Merriweather', serif;
+    line-height: 1.69;
 }
 
 .photograph-group {
