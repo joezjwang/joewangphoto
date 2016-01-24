@@ -8,7 +8,9 @@
       <% end %>
       <%= post.title %>
       </h1>
-      <div class="post-small-asset-meta-right"><%= post.reading_time %> min read
+      <div class="post-small-asset-meta post-small-asset-meta-published-date"><%= post.published_at.to_formatted_s(:post_date) %>
+      </div>
+      <div class="post-small-asset-meta post-small-asset-meta-reading-time"><%= post.reading_time %> min read
       </div>
     </header>
     <div class="post-small-asset-image">

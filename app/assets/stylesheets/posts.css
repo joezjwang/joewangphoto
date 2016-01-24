@@ -25,9 +25,9 @@
 .article-date {
 	font-size: 13px;
 	padding:0px 30px 0px 30px;
-	color: #444;
-	text-align: right;
-	float:right;
+	color: #666;
+	display: inline-block;
+	float:none;
 }
 .article-meta {
   max-width: 720px;
@@ -48,7 +48,9 @@
   height: inherit;
 }
 .show-post-assets-container {
-  width: 792px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  width: 768px;
   margin: 0 auto;
   padding-top:100px;
   padding-bottom: 70px;
@@ -76,15 +78,9 @@
 
 /*Post Show Mobile (Tablet size and Phone media queries)*/
 
-@media only screen and (max-width: 799px)  {
+@media only screen and (max-width: 1023px)  {
 
-  .show-post-assets-container {
-    max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 50px;
-    padding-bottom: 30px;
-  }
+
   .article-body {
     width: 100%;
     font-size: 16px;
@@ -99,6 +95,9 @@
     color:#333;
 
   }
+  .article-body img {
+    width:100%;
+  }
   .article-title {
     text-align: center;
     padding-top: 55px;
@@ -109,9 +108,6 @@
   .article-date {
     font-size: 13px;
     padding:0px 10px 0px 10px;
-    color: #444;
-    display: inline-block;
-    float: none;
   }
   .article-meta {
     width: 90%;
@@ -129,89 +125,133 @@
     width: inherit;
     height: inherit;
   }
+  .show-post-assets-container {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
 
 }
 
 /*Post Index*/
 
 .post-assets-container {
-  width: 792px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  width: 768px;
   margin: 0 auto;
   padding-bottom: 70px;
 }
 
-@media only screen and (max-width: 799px)  {
+@media only screen and (max-width: 1023px)  {
 
   .post-assets-container {
     max-width: 100%;
     text-align: center;
     margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 479px)  {
+
+  .post-assets-container {
     padding-top: 30px;
     padding-bottom: 30px;
   }
 }
 /*Post Assets*/
 
+
+/*Post Asset General */
+
+
 /*Post Large Asset*/
 
   .post-large-asset {
     position: relative;
     overflow: hidden;
-    margin: 30px 36px 80px 36px;
+    margin: 30px 24px 80px 24px;
     width: 720px;
-    background-color: #f2f2f2;
+    background-color: #f8f8f8;
+    border:  0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   .post-large-asset-header {
     padding: 15px 25px 25px 30px;
     position: relative;
-    height: 160px;
+    height: 140px;
+    overflow: hidden;
+    border:  #EEE solid 1px;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   .post-large-asset-image {
     position: relative;
-    overflow: hidden;
-    cursor: pointer;
     clear: both;
     line-height: 0;
     background-color: #E2E3E4;
+    width: 720px;
+    height: 480px;
   }
+
   .post-large-asset-title{
-    font-size: 28px;
+    position: absolute;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
     line-height: 33px;
-    height: 75px;
-    margin-bottom: 10px;
-    overflow: hidden;
+    top: 27%;
+    left: 50%;
+    margin-right: -50%;
+    letter-spacing: 0.6px; 
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .post-large-asset-meta {
+    position: absolute;
+    font-size: 15px;
+    color: #777;
+    bottom:14px;
   }
   
-  .post-large-asset-meta-right {
-    font-size: 15px;
-    color: #666;
-    overflow: hidden;
-    font-weight: 200;
-    float:right;
+  .post-large-asset-meta-reading-time {
+    right:30px;
   }
-  .post-large-asset-meta-left {
-    padding: 0.2em 1em;
-    color: #eee;
-    position: relative;
-    top: -5px;
-    font-size: 16px;
-    background: #5aba59;
-    float:left;
-}
+  .post-large-asset-meta-published-date {
+    left:30px;
+  }
 
 /*Post Small Asset Group PC*/
 
   .post-small-asset {
     float:left;
     overflow: hidden;
-    margin: 10px 36px 50px 36px;
-    width: 324px;
-    background-color: #f2f2f2;
+    margin: 10px 24px 50px 24px;
+    width: 336px;
+    background-color: #f8f8f8;
+    border:  0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
   .post-small-asset-header {
-    padding: 8px 18px 10px 20px;
+    padding: 15px 18px 30px 20px;
     position: relative;
-    height: 150px;
+    height: 121px;
+    border:  #EEE solid 1px;
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
   .post-small-asset-image {
     position: relative;
@@ -219,27 +259,49 @@
     cursor: pointer;
     clear: both;
     line-height: 0;
-    max-height: 216px;
+    height:224px;
+    width:336px;
     background-color: #E4E4E4;
   }
   .post-small-asset-image img {
-    max-width:100%;
+    height:100%;
   }
   .post-small-asset-title{
-    font-size: 22px;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 19px;
     line-height: 28px;
-    height: 80px;
-    margin-bottom: 15px;
     overflow: hidden;
+    top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    letter-spacing: 0.6px; 
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
   }
-  .post-small-asset-meta-right {
+  .post-small-asset-meta {
+    position: absolute;
     font-size: 14px;
-    color: #666;
+    color: #777;
     overflow: hidden;
-    float:right;
   }
 
-@media only screen and (max-width: 799px)  {
+  .post-small-asset-meta-reading-time {
+    bottom:10px;
+    right:20px;
+  }
+  .post-small-asset-meta-published-date {
+    bottom:10px;
+    left:20px;
+  }
+
+@media only screen and (max-width: 1023px)  {
 
 /*THis is relavent for mobile user who is viewing the website
 in desktop view. It basically copies the small asset styles into
@@ -251,13 +313,13 @@ no used in most cases as is_mobile? handles it*/
     overflow: hidden;
     margin: 0 auto;
     margin-top: 30px;
-    width: 89%;
     float: none;
+    width: 450px;
   }
   .post-large-asset-header {
-    padding: 5px 18px 10px 25px;
+    padding: 15px 18px 30px 20px;
     position: relative;
-    height: 150px;
+    height: 121px;
   }
   .post-large-asset-image {
     position: relative;
@@ -266,59 +328,108 @@ no used in most cases as is_mobile? handles it*/
     clear: both;
     line-height: 0;
     background-color: #E4E4E4;
-    height: auto;
+    height: 300px;
+    width:100%;
   }
   .post-large-asset-image img {
-    max-width:100%;
+    height:100%;
   }
   .post-large-asset-title{
-    font-size: 22px;
-    line-height: 28px;
-    height: 80px;
-    margin-bottom: 15px;
+    font-size: 19px;
+    line-height: 1.45;
     overflow: hidden;
   }
-  .post-large-asset-meta-right {
+  .post-large-asset-meta {
     font-size: 14px;
-    color: #666;
-    overflow: hidden;
-    float:right;
+  }
+  .post-large-asset-meta-reading-time {
+    bottom:10px;
+    right:20px;
+  }
+  .post-large-asset-meta-published-date {
+    bottom:10px;
+    left:20px;
   }
 }
+
+@media only screen and (max-width: 479px)  {
+  .post-large-asset {
+    width: 89%;
+  }
+  .post-large-asset-title {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .post-large-asset-image {
+    height:auto;
+    width:100%;
+  }
+  .post-large-asset-image img {
+    width:100%;
+    height: auto;
+  }
+  .post-large-asset-meta {
+    font-size: 13px;
+  }
+}
+
+
   /*End of what is only relevent for mobile users viewing in desktop mode*/
 
 
 
 /*Post Small Asset Group Mobile*/
 
-@media only screen and (max-width: 479px)  {
+@media only screen and (max-width: 1023px)  {
 
   .post-small-asset {
     display: inline-block;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 30px;
-    width: 89%;
     float: none;
+    width: 450px;
   }
   .post-small-asset-header {
     padding: 5px 18px 10px 20px;
     position: relative;
-    height: 150px;
+    height: 121px;
   }
   .post-small-asset-image {
-    height: auto;
+    width:100%;
+    height:300px;
   }
   .post-small-asset-image img {
-    max-width:100%;
+    height:100%;
   }
-  .post-small-asset-title{
+  .post-small-asset-title {
+    font-size: 19px;
+    line-height: 1.45;
+    overflow: hidden;
   }
-  .post-small-asset-meta-right {
-  }
-
   .share-section {
     padding-top: 0px;
   }
 
   }
+
+@media only screen and (max-width: 479px)  {
+  .post-small-asset {
+    width: 89%;
+  }
+  .post-small-asset-image {
+    height: auto;
+    width:100%;
+  }
+  .post-small-asset-image img {
+    width:100%;
+    height: auto;
+  }
+  .post-small-asset-title {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .post-small-asset-meta {
+    font-size: 13px;
+  }
+}

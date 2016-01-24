@@ -1,16 +1,12 @@
 <section class="post-large-asset">
   <%= link_to post_path(@post_most_recent) do %>
     <header class="post-large-asset-header">
-      <% if @post_most_recent.long_title? %>
-        <h1 class="post-large-asset-title" style="font-size: 24px;">
-      <% else %>
-        <h1 class="post-large-asset-title">
-      <% end %>
+      <h1 class="post-large-asset-title">
       <%= @post_most_recent.title %>
       </h1>
-      <div class="post-large-asset-meta-left">NEW POST
+      <div class="post-large-asset-meta post-large-asset-meta-published-date"><%= @post_most_recent.published_at.to_formatted_s(:post_date) %>
       </div>
-      <div class="post-large-asset-meta-right"><%= @post_most_recent.reading_time %> min read
+      <div class="post-large-asset-meta post-large-asset-meta-reading-time"><%= @post_most_recent.reading_time %> min read
       </div>
     </header>
     <div class="post-large-asset-image">
