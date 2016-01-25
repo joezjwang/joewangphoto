@@ -29,18 +29,16 @@
   ]
 }
 </script>
-<% if params[:controller].include?('admin') %>
-    <!--[if lte IE 8]>
+
+  <% unless params[:controller].include?('admin') %>
+    <script src="/js/lagacy.js"></script>
+  <% else %>
+     <!--[if lte IE 8]>
       <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-  	<![endif]-->
-  	<!--[if gt IE 8]><!-->
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  	<!--<![endif]-->
+    <!--<![endif]-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <% end %>
-  <% unless params[:controller].include?('admin')  %>
-    <script src="/js/lagacy.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
-<% end %>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700|Raleway:600' rel='stylesheet' type='text/css'>
