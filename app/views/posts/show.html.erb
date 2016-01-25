@@ -18,11 +18,6 @@ end
       <div class="article-date">
         Posted: <%= @post.published_at.to_formatted_s(:post_date) %>
       </div><br>
-      <% if @post.updated_at > @post.published_at+1.days %>
-      <div class="article-date">
-        Updated: <%= @post.updated_at.to_formatted_s(:post_date) %>
-      </div>
-     <% end %>
     </div>
 	</header>
 
