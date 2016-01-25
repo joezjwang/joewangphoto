@@ -1,19 +1,19 @@
-<section class="post-small-asset">
+<section class="asset post-small-asset">
   <%= link_to post_path(post) do %>
-    <header class="post-small-asset-header">
+    <header class="asset-header post-small-asset-header">
       <% if post.long_title? %>
-        <h1 class="post-small-asset-title" style="font-size: 17px;">
+        <h1 class="asset-title post-small-asset-title" style="font-size: 17px;">
       <% else %>
-        <h1 class="post-small-asset-title">
+        <h1 class="asset-title post-small-asset-title">
       <% end %>
       <%= post.title %>
       </h1>
-      <div class="post-small-asset-meta post-small-asset-meta-published-date"><%= post.published_at.to_formatted_s(:post_date) %>
+      <div class="asset-meta post-small-asset-meta post-small-asset-meta-published-date"><%= post.published_at.to_formatted_s(:post_date) %>
       </div>
-      <div class="post-small-asset-meta post-small-asset-meta-reading-time"><%= post.reading_time %> min read
+      <div class="asset-meta post-small-asset-meta post-small-asset-meta-reading-time"><%= post.reading_time %> min read
       </div>
     </header>
-    <div class="post-small-asset-image">
+    <div class="asset-image post-small-asset-image">
     <% if post.cover_blogimage_id.present? %>
     <%= image_tag(Blogimage.find(post.cover_blogimage_id).image.url(:mobile_large), alt: post.title) %>
     <% end %>

@@ -14,3 +14,121 @@
  *= require_self
  *= require lagacy.css
  */
+
+
+.assets-container {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  width: 768px;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+
+.asset {
+	float:left;
+    overflow: hidden;
+    width: 336px;
+    background-color: #f8f8f8;
+    border:  0px;
+}
+.asset-header {
+	position: relative;
+  border:  #EEE solid 1px;
+}
+.asset-image {
+		position: relative;
+    overflow: hidden;
+    clear: both;
+    line-height: 0;
+    height:224px;
+    width:336px;
+    background-color: #E4E4E4;
+}
+
+.asset-title {
+		position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 19px;
+    line-height: 28px;
+    overflow: hidden;
+    letter-spacing: 0.6px; 
+    text-transform: uppercase;
+    text-align: center;
+}
+.asset-meta {
+	position: absolute;
+    font-size: 14px;
+    color: #777;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1023px)  {
+
+  .assets-container {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
+  .asset {
+  	display: inline-block;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 30px;
+    float: none;
+    width: 450px;
+  }
+.asset-header {
+	position: relative;
+    border:  #EEE solid 1px;
+	}
+	.asset-image {
+	    width:100%;
+	    height:300px;
+	}
+	.asset-image img {
+		height:auto;
+		overflow: hidden;
+	}
+	.asset-title {
+	    font-size: 19px;
+	    line-height: 1.45;
+	}
+	.asset-meta {
+		position: absolute;
+	    font-size: 14px;
+	    color: #888;
+	    overflow: hidden;
+	}
+}
+@media only screen and (max-width: 479px)  {
+
+  .assets-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .asset {
+		width: 89%;
+  }
+	.asset-header {
+	position: relative;
+    border:  #EEE solid 1px;
+	}
+	.asset-image {
+	  height: auto;
+    width:100%;
+	}
+	.asset-image img {
+		width:100%;
+    height: auto;
+	}
+	.asset-title {
+	  font-size: 16px;
+    line-height: 1.35;
+	}
+	.asset-meta {
+		font-size: 13px;
+	}
+}

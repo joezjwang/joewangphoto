@@ -1,21 +1,21 @@
 <%= link_to collection_path(collection) do %>
-  <section class="gallery-asset" id="<%= 
+  <section class="asset gallery-asset" id="<%= 
           "gallery-#{index}" %>">
-    <div class="gallery-asset-image">
+    <div class="asset-image gallery-asset-image">
     <%= image_tag(Photograph.find(collection.cover_photograph_id).photo.url(size), alt: collection.name) %>
     </div>
-    <header class="gallery-asset-header">
-      <div class="gallery-asset-header-date">
+    <header class="asset-header gallery-asset-header">
+      <div class="asset-meta gallery-asset-meta gallery-asset-meta-left">
       <% if collection.date_taken.present? %>
         <%= collection.date_taken.to_formatted_s(:gallery_date) %>
       <% end %>
       </div>
-      <div class="gallery-asset-header-photo-count">
-        <%= collection.photographs.count %> Photographs
+      <div class="asset-meta gallery-asset-meta gallery-asset-meta-right">
+        <%= collection.photographs.count %> photos
       </div>
-      <div class="gallery-asset-header-name">
-        <p><%= collection.name %></p>
-      </div>
+      <h1 class="asset-title gallery-asset-header-name">
+        <%= collection.name %>
+      </h1>
     </header>
   </section>
 <% end %>

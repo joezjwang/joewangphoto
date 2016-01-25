@@ -8,85 +8,6 @@ end
 <% og_page_url request.original_url %>
 <% og_type "article" %>
 
-<style type="text/css">
-
-
-    pre {
-      margin-top:50px;
-      margin-bottom:50px;
-    }
-    figure img
-    {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 700px;
-    }
-    figure{
-
-      padding: 0;
-      margin: 0 auto;
-      padding-top: 40px;
-    }
-    figcaption {
-      text-align: center;
-      font-size: 0.9em;
-      font-style: italic;
-      color: #666;
-      padding-bottom: 30px;
-      margin: 0 auto;
-      width: 90%;
-    }
-
-    p{
-      padding-right:50px;
-      padding-left:50px;
-    }
-    h2, h3{
-      padding-top:20px;
-      padding-right:50px;
-      padding-left:50px;
-    }
-  @media only screen and (max-width: 768px)  {
-    figure img
-    {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width:100%;
-    }
-    figure{
-      padding: 0;
-      margin: 0 auto;
-      padding-top: 40px;
-    }
-    figcaption {
-      width: 90%;
-    }
-
-    pre {
-      margin-top:30px;
-      margin-bottom:30px;
-    }
-    p{
-      padding-right:5%;
-      padding-left:5%;
-      color: #666;
-    }
-    h2{
-      padding-right:5%;
-      padding-left:5%;
-      font-size: 20px;
-    }
-    h3{
-      padding-top:15px;
-      padding-right:5%;
-      padding-left:5%;
-      font-size: 18px;
-    }
-  }
-</style>
-
 <div id="page-content">
 <article class='post'>
 	<header class="article-title">
@@ -109,7 +30,7 @@ end
   	  <%= markdown(@post.body) %>
   </article>
   <%= render "layouts/social_share" %>
-  <div class="show-post-assets-container">
+  <div class="assets-container show-post-assets-container">
     <% @posts.each do |post| %>
       <%= render 'small_asset_pc', post: post %>
     <% end %>

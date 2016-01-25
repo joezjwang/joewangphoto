@@ -2,10 +2,10 @@
   <%= link_to "http://www.facebook.com/sharer.php?u=#{request.original_url}",  target: "_blank" do %>
     <div class="share-button facebook-button">Share on Facebook &#x27A6;</div>
   <% end %>
+  <%= link_to "https://twitter.com/share?url=#{request.original_url}",  target: "_blank" do %>
+    <div class="share-button twitter-button">Share on Twitter &#x27A6;</div>
+  <% end %>
   <%= link_to "http://vk.com/share.php?url=#{request.original_url}",  target: "_blank" do %>
     <div class="share-button vk-button">Доля на ВКонтакте &#x27A6;</div>
-  <% end %>
-  <%= link_to "http://service.weibo.com/share/share.php?url=#{request.original_url}",  target: "_blank" do %>
-    <div class="share-button weibo-button">分享到微博 &#x27A6;</div>
   <% end %>
 </div>

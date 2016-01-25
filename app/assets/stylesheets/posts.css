@@ -3,17 +3,50 @@
 	width: 720px;
 	font-size: 16px;
 	padding-top: 70px;
-	padding-bottom: 75px;
+	padding-bottom: 65px;
 	margin: 0 auto;
 }
 
 .article-body p, figcaption {
   font-family: 'Merriweather', serif;
 }
-
+.article-body h2, h3{
+  padding-top:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
 .article-body p {
+  padding-right:50px;
+  padding-left:50px;
   line-height: 1.75;
   font-size: 18px;
+}
+
+.article-body pre {
+  margin-top:50px;
+  margin-bottom:50px;
+}
+.article-body figure img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+.article-body figure{
+
+  padding: 0;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.article-body figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  font-style: italic;
+  color: #666;
+  padding-bottom: 30px;
+  margin: 0 auto;
+  width: 90%;
 }
 .article-title {
 	text-align: center;
@@ -67,13 +100,14 @@
   color: #eee;
   margin: 10px;
   position: relative;
-  font-size: 18px;
+  font-size: 17px;
   background: #3b5998;
   display: inline-block;
 }
-.vk-button{ background: #45668e; }
-.facebook-button { background: #3b5998; }
+.vk-button{ background: #45668E; }
+.facebook-button { background: #3B5998; }
 .weibo-button { background: #E6162D; }
+.twitter-button { background: #55ACEE; }
 
 
 /*Post Show Mobile (Tablet size and Phone media queries)*/
@@ -88,16 +122,48 @@
     padding-bottom: 70px;
     margin: 0 auto;
   }
-
-  .article-body p {
+  .article-body p{
+    padding-right:5%;
+    padding-left:5%;
+    color: #666;
     font-size: 16px;
     line-height: 1.65;
-    color:#333;
-
+  }
+  .article-body h2{
+    padding-right:5%;
+    padding-left:5%;
+    font-size: 20px;
+  }
+  .article-body h3{
+    padding-top:15px;
+    padding-right:5%;
+    padding-left:5%;
+    font-size: 18px;
   }
   .article-body img {
     width:100%;
   }
+  .article-body figure img
+  {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+  }
+  .article-body figure{
+    padding: 0;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+  .article-body figcaption {
+    width: 90%;
+  }
+
+  .article-body pre {
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+
   .article-title {
     text-align: center;
     padding-top: 55px;
@@ -126,48 +192,13 @@
     height: inherit;
   }
   .show-post-assets-container {
-    max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 30px;
   }
 
 }
 
-/*Post Index*/
-
-.post-assets-container {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  width: 768px;
-  margin: 0 auto;
-  padding-bottom: 70px;
-}
-
-@media only screen and (max-width: 1023px)  {
-
-  .post-assets-container {
-    max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 0px;
-    padding-bottom: 50px;
-  }
-}
-@media only screen and (max-width: 479px)  {
-
-  .post-assets-container {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
 /*Post Assets*/
-
-
-/*Post Asset General */
-
-
 /*Post Large Asset*/
 
   .post-large-asset {
@@ -234,62 +265,36 @@
 
 /*Post Small Asset Group PC*/
 
+/* note repeated code is present, see collections.css */
   .post-small-asset {
-    float:left;
-    overflow: hidden;
     margin: 10px 24px 50px 24px;
-    width: 336px;
-    background-color: #f8f8f8;
-    border:  0px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
   .post-small-asset-header {
-    padding: 15px 18px 30px 20px;
-    position: relative;
     height: 121px;
-    border:  #EEE solid 1px;
+    padding: 15px 18px 30px 20px;
     border-bottom: none;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
   }
   .post-small-asset-image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    clear: both;
-    line-height: 0;
-    height:224px;
-    width:336px;
-    background-color: #E4E4E4;
+    
   }
   .post-small-asset-image img {
     height:100%;
   }
   .post-small-asset-title{
-    position: absolute;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 19px;
-    line-height: 28px;
-    overflow: hidden;
     top: 25%;
     left: 50%;
     margin-right: -50%;
-    letter-spacing: 0.6px; 
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    text-align: center;
   }
   .post-small-asset-meta {
-    position: absolute;
-    font-size: 14px;
-    color: #777;
-    overflow: hidden;
   }
 
   .post-small-asset-meta-reading-time {
@@ -318,7 +323,6 @@ no used in most cases as is_mobile? handles it*/
   }
   .post-large-asset-header {
     padding: 15px 18px 30px 20px;
-    position: relative;
     height: 121px;
   }
   .post-large-asset-image {
@@ -371,6 +375,14 @@ no used in most cases as is_mobile? handles it*/
   .post-large-asset-meta {
     font-size: 13px;
   }
+  .post-large-asset-meta-reading-time {
+    bottom:8px;
+    right:15px;
+  }
+  .post-large-asset-meta-published-date {
+    bottom:8px;
+    left:15px;
+  }
 }
 
 
@@ -383,29 +395,15 @@ no used in most cases as is_mobile? handles it*/
 @media only screen and (max-width: 1023px)  {
 
   .post-small-asset {
-    display: inline-block;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 30px;
-    float: none;
-    width: 450px;
   }
   .post-small-asset-header {
     padding: 5px 18px 10px 20px;
-    position: relative;
-    height: 121px;
   }
   .post-small-asset-image {
-    width:100%;
-    height:300px;
   }
   .post-small-asset-image img {
-    height:100%;
   }
   .post-small-asset-title {
-    font-size: 19px;
-    line-height: 1.45;
-    overflow: hidden;
   }
   .share-section {
     padding-top: 0px;
@@ -415,21 +413,24 @@ no used in most cases as is_mobile? handles it*/
 
 @media only screen and (max-width: 479px)  {
   .post-small-asset {
-    width: 89%;
   }
   .post-small-asset-image {
-    height: auto;
-    width:100%;
+    
   }
   .post-small-asset-image img {
-    width:100%;
-    height: auto;
+    
   }
   .post-small-asset-title {
-    font-size: 16px;
-    line-height: 1.35;
+    
   }
   .post-small-asset-meta {
-    font-size: 13px;
+  }
+  .post-small-asset-meta-reading-time {
+    bottom:8px;
+    right:15px;
+  }
+  .post-small-asset-meta-published-date {
+    bottom:8px;
+    left:15px;
   }
 }

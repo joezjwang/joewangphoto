@@ -1,188 +1,100 @@
 /*Galleries List View*/
 
-.galleries-content {
-  width:100%;
-  max-width:1500px;
-  padding-top: 20px;
-  text-align: center;
+.gallery-assets-container {
+  padding-top:20px;
 }
-.galleries-left-column{
-  width:45%;
-  margin-left: 0%;
-  margin-right:4%;
-  float: left;
-}
-.galleries-right-column{
-  width:45%;
-  margin-left: 4%;
-  margin-right:0%;
-  float: left;
-}
-.galleries-single-column{
-  width:100%;
-  margin: 0 auto;
-  text-align: center;
-}
+
 .gallery-asset {
-  float:left;
-  overflow: hidden;
-  margin: 10px 16px 50px 16px;
-  padding: 0;
-  width: 100%;
-  background-color: #f2f2f2;
-/*  border-width: 2px;
-  border-color: #d2d2d2;*/
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  margin: 10px 24px 50px 24px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .gallery-asset-header {
   padding: 12px 33px 12px 34px;
-  position: relative;
-  height: 110px;
+  height: 121px;
+  border-top: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
+
 .gallery-asset-image {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  line-height: 0;
-  background-color: #E4E4E4;
 }
 .gallery-asset-image img {
-  max-width:100%;
-  padding: 0;
-  margin: 0;
+  width:100%;
 }
 .gallery-asset-header-name{
-  overflow: hidden;
-  font-size: 23px;
-  line-height: 28px;
-}
-.gallery-asset-header-name p {
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 60px;
-  margin-top: 20px;
-  position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   margin-right: -50%;
-  letter-spacing: 1.5px; 
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.gallery-asset-header-date {
-  font-size: 14px;
-  color: #666;
-  overflow: hidden;
-  float:left;
+.gallery-asset-meta {
 }
-.gallery-asset-header-photo-count {
-  font-size: 14px;
-  color: #666;
-  overflow: hidden;
-  float:right;
+.gallery-asset-meta-left {
+    top:10px;
+    left:20px;
+  }
+.gallery-asset-meta-right {
+    top:10px;
+    right:20px;
 }
-
 /*gallery Small Asset Group Mobile*/
 
 
 @media only screen and (max-width: 799px)  {
 
   .gallery-asset {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
   }
 
   .gallery-asset-header {
     padding: 10px 28px 10px 28px;
-    position: relative;
-    height: 100px;
   }
-
-  .gallery-asset-header-name p{
-    font-size: 16px;
-    line-height: 28px;
-    height: 60px;
-    margin-top: 22px;
-    overflow: hidden;
+  .gallery-asset-image {
   }
-  .gallery-asset-header-date {
-    font-size: 12px;
+  .gallery-asset-image img {
   }
-  .gallery-asset-header-photo-count {
-    font-size: 12px;
+  .gallery-asset-header-name {
+  }
+  .gallery-asset-meta {
+    font-size: 13px;
+  }
+  .gallery-asset-meta-right {
+    bottom:8px;
+    right:15px;
+  }
+  .gallery-asset-meta-left {
+    bottom:8px;
+    left:15px;
   }
 
 }
 
 @media only screen and (max-width: 479px)  {
 
-
-/*This is a hackish way to prevent mobile user who has desktop view
-enabled to view single column instead of two. The order of the 
-collection is not sorted properly with this solution. However it will
-affect a very low percentage of users.*/
-
-  .galleries-left-column{
-    width:100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .galleries-right-column{
-    width:100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-/*End of hackish way*/
-
-  .galleries-content {
-    display: inline-block;
-    text-align: center;
-    padding-top: 58px;
-  }
   .gallery-asset {
-    margin: 0 auto;
-    overflow: hidden;
-    margin-bottom: 60px;
-    width: 88%;
-    float: none;
-    background-color: #f2f2f2;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
   }
   .gallery-asset-header {
-    padding: 12px 28px 10px 28px;
-    position: relative;
-    height: 105px;
   }
   .gallery-asset-image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    line-height: 0;
-    background-color: #E4E4E4;
   }
   .gallery-asset-image img {
-    max-width:100%;
-    padding: 0;
-    margin: 0;
   }
-  .gallery-asset-header-name p{
-    font-size: 20px;
-    line-height: 30px;
-    overflow: hidden;
+  .gallery-asset-header-name {
+
   }
-  .gallery-asset-header-date {
-    font-size: 15px;
-    color: #777;
+  .gallery-asset-meta {
   }
-  .gallery-asset-header-photo-count {
-    font-size: 15px;
-    color: #777;
+  .gallery-asset-meta-right {
+    bottom:8px;
+    right:15px;
+  }
+  .gallery-asset-meta-left {
+    bottom:8px;
+    left:15px;
   }
 
 }
@@ -233,7 +145,9 @@ affect a very low percentage of users.*/
   float:none;
   padding: 50px;
   padding-top: 80px;
+  width: 100%;
   display: inline-block;
+  margin:0 auto;
 }
 
 @media only screen and (max-width: 799px)  {
