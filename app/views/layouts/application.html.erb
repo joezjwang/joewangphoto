@@ -7,8 +7,29 @@
     <%= render 'layouts/head_content' %>
   <!-- end -->
   <%= csrf_meta_tags %>
+
+
+
 </head>
   <body>
+
+  <script type="text/javascript">
+
+$("body").on("contextmenu", ".article-body img, .photograph-group img", function(e)  {
+var $copyright_tool_tip=$(".copyright-tool-tip");
+if ($copyright_tool_tip.css("display") == 'none') {
+  $copyright_tool_tip.css({top: e.pageY + "px", left: e.pageX + 20 + "px", display: "block"});
+ 
+}
+   return false;
+
+}).bind("mousemove", function(event) {
+    $copyright_tool_tip.delay(3000).fadeOut(200);
+});
+
+
+
+</script>
     <span id="page-top"></span>
     <% unless params[:controller].include?('admin') %>
         <%= render 'layouts/nav' %>

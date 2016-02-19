@@ -7,55 +7,7 @@ end
 %>
 <% og_page_url request.original_url %>
 
-<script type="text/javascript">
-
-function changePhotoHeight () {
-    var pageHeight = jQuery(window).height();
-    var pageWidth = jQuery(window).width();
-
-    if (pageWidth>768) {
-        var photoHeight = pageHeight-50;
-        var photoWidth = photoHeight*3/2;
-        console.log(photoWidth);
-        
-        $('.photograph').css({ "max-height": photoHeight + 'px' });
-    }
-  }
-
-  window.onload = changePhotoHeight;
-
-
-$("body").on("contextmenu", ".photograph-group img", function(e) {
- 	$("<div class='copyright-tool-tip'>You may share this page but unauthorized use of these photos are prohibited. </div>").appendTo("body").css({top: e.pageY + "px", left: e.pageX + 20 + "px"});
-
-  return false;
-}).bind("mousemove", function(event) {
-    $("div.copyright-tool-tip").delay(3000).fadeOut();
-});
-
-
-
-</script>
-
-
-<style type="text/css">
-	.copyright-tool-tip {
-    z-index:1000;
-    position: absolute;
-    background-color:#888;
-	-webkit-box-shadow: 1px 1px 9px 1px rgba(97,97,97,0.5);
-	-moz-box-shadow: 1px 1px 9px 1px rgba(97,97,97,0.5);
-	box-shadow: 1px 1px 9px 1px rgba(97,97,97,0.5);
-    color:#eee;
-    font-size: 12px;
-    width:auto;
-    max-width: 265px;
-    border-radius:2px;
-    padding: 4px 10px;
-}
-
-</style>
-
+<div class='copyright-tool-tip'>You may share this page but unauthorized use of these photos are prohibited. </div>
 <div id="page-content">
 	<div class="gallery-description">
 		<p>
