@@ -19,7 +19,7 @@
   padding-right:50px;
   padding-left:50px;
   line-height: 1.75;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .article-body pre {
@@ -126,8 +126,8 @@
     padding-right:5%;
     padding-left:5%;
     color: #666;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.6;
   }
   .article-body h2{
     padding-right:5%;
@@ -157,6 +157,7 @@
   }
   .article-body figcaption {
     width: 90%;
+    font-size: 0.7em;
   }
 
   .article-body pre {
