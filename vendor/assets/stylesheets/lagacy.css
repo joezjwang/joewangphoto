@@ -51,38 +51,6 @@ a:focus {
 
 }
 
-/* for slideshow are by responsiveslides.com */
-.rslides  {
-    position:  relative;
-    list-style:  none;
-    overflow:  hidden;
-    width:  100%;
-    padding:  0;
-    margin:  0;
-}
-
-.rslides li  {
-    -webkit-backface-visibility:  hidden;
-    position:  absolute;
-    display:  none;
-    width:  100%;
-    left:  0;
-    top:  0;
-}
-
-.rslides li:first-child  {
-    position:  relative;
-    display:  block;
-    float:  left;
-}
-
-.rslides img  {
-    display:  block;
-    height:  auto;
-     float:  left;
-    width:  100%;
-    border:  0;
-}
 
 #page-content  {
     font-family:  Tahoma, Geneva, sans-serif;
@@ -94,32 +62,11 @@ a:focus {
 }
 
 #about-me  {
-    max-width:  600px;
+    max-width:  650px;
     text-align:  left;
     padding:  0px 40px;
     font-family: 'Merriweather', serif;
     line-height: 1.65;  
-}
-
-#slideshow-asset  {
-    position:  relative;
-    padding:  30px 0px;
-}
-
-#slideshow-asset-mobile  {
-    position:  absolute;
-    width:100%;
-    top:0;
-    left:0;
-    bottom: 0;
-    z-index: -1;
-    padding:  0px 0px;
-    overflow: hidden;
-}
-
-#slideshow-asset-mobile img{
-    position:  absolute;
-    height:100%;
 }
 
 
@@ -237,6 +184,7 @@ a:focus {
      left:  0px;
      text-align: left;
      color: #AAA;
+     font-size: 11px;
 }
 
 #nav-section .copyright  {

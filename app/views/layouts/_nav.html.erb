@@ -19,7 +19,7 @@
         <% @posts= Post.where({published: true}).where("created_at > ?", Time.now-5.days) %>
         <ul style="padding:0;">
           <% @posts.first(2).each do |post| %>
-            <li style="list-style-type: none; font-size:15px; padding-bottom:5px; line-height:1.3; text-transform: none;">
+            <li style="list-style-type: none; font-size:0.85em; padding-bottom:5px;  line-height:1.2; text-transform: none;">
             [new] <%= link_to post.title, post_path(post) %>
             </li>
           <% end %>
@@ -35,7 +35,7 @@
         <% @collections= Collection.where({featured: true, published: true}).order("prominence IS NULL, prominence ASC") %>
         <ul style="padding:0;">
           <% @collections.each do |collection| %>
-            <li style="list-style-type: none; font-size:15px; padding-bottom:5px; line-height:1.3; text-transform: none;">
+            <li style="list-style-type: none; font-size:0.85em; padding-bottom:5px; line-height:1.2; text-transform: none;">
               <%= link_to collection.name, collection_path(collection) %>
             </li>
           <% end %>
